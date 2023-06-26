@@ -1,0 +1,13 @@
+.confirmation {
+  &__dialog {
+    &-container {
+      min-width: 800px;
+    }
+    &-wrapper {
+      padding: 20px;
+    }
+  }
+  &__content {
+    font-size: 110%;
+  }
+}

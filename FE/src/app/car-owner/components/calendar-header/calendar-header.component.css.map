@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "calendar-header.component.scss"
+    ],
+    "names": [],
+    "file": "calendar-header.component.css"
+}

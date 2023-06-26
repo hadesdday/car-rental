@@ -1,0 +1,143 @@
+.destination-slt {
+  position: relative;
+  margin-top: 80px;
+  padding-bottom: 20px;
+}
+
+.destination-slt .title-car {
+  color: #6E6E6E;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.destination-carousel-item {
+  margin-right: 15px;
+}
+
+.destination-carousel-item__image {
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  padding-bottom: 133.33%;
+}
+
+.destination-carousel-item__image--overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 60%;
+  border-radius: 0 0 10px 10px;
+}
+
+.destination-carousel-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.airport-slt {
+  position: relative;
+  padding-top: 20px;
+}
+
+.airport-note {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.airport-note span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 25%;
+}
+
+.airport-carousel-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.airport-carousel-item-wrapper {
+  margin-right: 15px;
+}
+
+.airport-carousel-item-wrapper h4 {
+  font-size: 1.6rem;
+  font-weight: 500 !important;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.airport-carousel-item {
+  border-radius: 100%;
+  border: 2px solid;
+}
+
+.airport-carousel-item:hover img {
+  padding: unset;
+}
+
+.airport-carousel-item__image {
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.airport-carousel-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  padding: 6px;
+  border-radius: 100%;
+}
+
+.carousel-dots {
+  bottom: -25px;
+}
+
+.carousel-dot {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+::ng-deep .carousel-arrow--next {
+  right: 15px;
+}
+
+::ng-deep .carousel-dots {
+  bottom: -20px;
+}
+/*# sourceMappingURL=prominent-place.component.css.map */

@@ -1,0 +1,351 @@
+body{
+    background: #e8eaef;
+}
+.account {
+    font-size: 1.4rem;
+    background: #e8eaef;
+    position: relative;
+    padding-bottom: 20px
+}
+
+.profile-cover {
+    height: 26vw;
+    background-position: right 100%;
+    background-image: url("https://www.mioto.vn/static/media/car-9.4970ef2e.jpg");
+    background-size: cover;
+    position: relative
+}
+.profile-cover__qr-btn{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.profile-cover__qr-btn .qr-code-icon{
+    background-position: -352px -380px;
+    width: 35px;
+    height: 35px;
+    background-size: 550px;
+    border-radius: 100%;
+}
+.profile-cover__edit-slt{
+    
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    top: calc(100% + 5px);
+    right: 0;
+    min-width: 350px;
+    z-index: 2;
+    box-shadow: 0 1px 12px 0 rgb(0 0 0 / 12%);
+}
+.profile-cover__edit-slt .profile-cover__edit-ops{
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+.profile-cover__edit-slt .profile-cover__edit-ops i{
+    font-size: 2rem;
+}
+.profile-cover__edit-slt .profile-cover__edit-ops:hover{
+    background-color: #ccc;
+}
+
+.profile-content {}
+
+.profile-content .profile-desc {}
+
+.profile-content .profile-desc .avatar-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -100px 0 30px;
+}
+
+.profile-content .profile-desc .avatar-box .avatar {
+    border: 4px solid #e8eaef;
+    position: relative;
+}
+.profile-content .profile-desc .avatar-box .avatar:hover::before, .profile-content .profile-desc .avatar-box .avatar:hover::after{
+    display: block;
+}
+.profile-content .profile-desc .avatar-box .avatar::before{
+    display: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: url("https://www.mioto.vn/static/media/main_sprites.a58f006e.png") -72px -120px no-repeat;
+    background-size: 400px 400px;
+    width: 48px;
+    height: 48px;
+}
+.profile-content .profile-desc .avatar-box .avatar::after{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    content: "";
+    background-color: rgba(0,0,0,.5);
+    border-radius: 100%;
+}
+
+.profile-content .profile-desc .snippet {
+    padding-top: 20px;
+    margin-left: -30px;
+}
+
+.profile-content .profile-desc .snippet .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.profile-content .profile-desc .snippet .profile-info .item-content {}
+
+.profile-content .profile-desc .snippet .profile-info .item-content .line {
+    width: 45px;
+    height: 1px;
+    background: #141414;
+    margin: 0 10px;
+}
+
+.profile-content .profile-desc .snippet .profile-info .item-content .item-title {
+    color: #141414;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 5px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile-content .profile-desc .snippet .profile-info .item-content .edit-icon {
+    background-position: -24px -144px;
+}
+.profile-content .profile-desc .snippet .profile-info .item-content .edit-icon:hover{
+    opacity: .5;
+}
+
+.profile-content .profile-desc .snippet .profile-info .item-points {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background: #fafbfc;
+    border-radius: 5px;
+}
+
+.profile-content .profile-desc .snippet .profile-info .item-points span {
+    font-size: 1.6rem;
+    margin: 0 3px;
+    font-weight: 500;
+}
+
+.profile-content .profile-desc .snippet .profile-info .item-points .question-icon {
+    background-position: -168px -169px;
+    font-size: 2.4rem;
+    transform: scale(.65);
+}
+
+.profile-content .profile-desc .snippet {
+    padding-top: 20px;
+    margin-left: -30px;
+}
+.profile-content .profile-desc .snippet .profile-line{
+    display: flex;
+    align-items: center;
+}
+.profile-content .profile-desc .snippet .profile-line .profile-line__item{
+    padding: 4px 16px;
+    background: #fafbfc;
+    border-radius: 5px;
+    min-width: 150px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    
+}
+.profile-content .profile-desc .snippet .profile-line .profile-line__item strong{
+    color: #6e6e6e;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+    display: block;
+}
+.profile-content .account-info{
+}
+.profile-content .account-info .account-info__inside{
+    padding: 1.5rem 0;
+    background: hsla(0,0%,100%,.8);
+    margin-bottom: 15px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    text-align: center;
+}
+.profile-content .account-info .account-info__inside .label{
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.profile-content .account-info .account-info__inside i.error-icon{
+    background-position: -215px -120px;
+}
+.profile-content .account-info .account-info__inside .content{
+    position: relative;
+}
+.profile-content .account-info .account-info__inside .content a.function-edit{
+    position: absolute;
+    top: -24px;
+    right: 10px;
+    font-size: 12px;
+}
+.profile-content .account-info .account-info__inside .content a.function-edit:hover .edit-icon{
+    opacity: .5;
+}
+.profile-content .account-info .account-info__inside .edit-icon{
+    background-position: -24px -144px;
+    transform: scale(.7);
+}
+.profile-content .account-info .account-info__inside .verify-icon{
+    background-position: -119px -120px;
+}
+.profile-content .account-info .account-info__inside .remove-icon{
+    background-position: -167px -120px;
+}
+.profile-content .account-info .account-info__inside .link-icon{
+    background-position: -191px -120px; 
+}
+// profile wrap
+.profile__wrapper{
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    padding: 0 0 2.4rem;
+}
+// profile + review
+.profile__wrapper .review-sect{
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+    padding-right: 0;
+    display: flex;
+}
+
+.profile__wrapper .review-sect .review-container{
+    width: 100%;
+}
+
+
+// review
+.profile__wrapper .review-sect .review-container .review {}
+
+.profile__wrapper .review-sect .review-container .review .title {
+    font-size: 2.4rem;
+    color: #141414;
+    margin-bottom: 5px;
+}
+
+.profile__wrapper .review-sect .review-container .review .group-view {
+    display: flex;
+    align-items: center;
+}
+
+.profile__wrapper .review-sect .review-container .review .group-view .star {
+    display: flex;
+    align-items: center;
+}
+
+.profile__wrapper .review-sect .review-container .review .group-view .bar-line {
+    width: 60px;
+    height: 1px;
+    background-color: #141414;
+    margin: 0 15px;
+}
+
+.profile__wrapper .review-sect .review-container .review .line {
+    margin-top: 15px;
+    border: .5px solid #ccc;
+}
+
+.profile__wrapper .review-sect .review-container .review .comment-list {}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item {
+    padding: 25px 0;
+    border-bottom: 0.25px solid rgba(0, 0, 0, .3);
+}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .fix-avatar {
+    position: relative;
+    padding-bottom: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 2px 5px rgb(0 0 0 / 30%);
+}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .fix-avatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .name {}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .comment-box {}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .comment-box .group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .comment-box .group .star-ratings {
+    display: flex;
+}
+
+.profile__wrapper .review-sect .review-container .review .comment-list .comment-item .comment-box .desc {
+    font-size: 1.4rem;
+}
+.service-type{
+    border-radius: 30px;
+    background-color: rgba(0,165,80,.6);
+    padding: .4rem 1.6rem;
+    font-size: .75rem;
+    color: #fff;
+}
+// profile + properties
+.profile__wrapper .properties{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-left: 0;
+}
+.profile__wrapper .review__wrapper, .profile__wrapper .properties__wrapper{
+    padding: 30px 45px 45px;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.profile__wrapper .properties__wrapper{
+    padding: 30px 45px;
+    margin-bottom: 0
+}
+.wd-carousel-wrapper{
+    margin-bottom: 4    0px
+}

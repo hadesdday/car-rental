@@ -1,0 +1,85 @@
+// carousel
+
+::ng-deep .cover .carousel-dots{
+    bottom: 20px
+}
+::ng-deep .cover .carousel-arrow--prev{
+    left: 30px
+}
+::ng-deep .cover .carousel-arrow--next{
+    right: 30px
+}
+
+.cover {
+    position: relative
+}
+
+.cover .favorite-car,
+.cover .cccd {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover .favorite-car {
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    top: 15px;
+    left: 15px;
+    border-radius: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.cover .cccd {
+    height: 35px;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 1.4rem;
+    background-color: var(--first-dark-cyan-color);
+}
+
+.cover .favorite-car.favorite-car--active {
+    background-color: var(--gemstone-color);
+}
+
+//carousel 
+
+.destination-carousel-item {}
+
+.destination-carousel-item--active .destination-carousel-item__image--overlay {
+    display: none;
+}
+
+.destination-carousel-item__image {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    padding-bottom: 75%;
+}
+
+.destination-carousel-item__image--overlay {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+}
+
+.destination-carousel-item__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}

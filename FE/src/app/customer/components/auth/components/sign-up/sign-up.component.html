@@ -1,0 +1,186 @@
+<div class="sign-up__wrapper">
+    <div class="sign-up__background"></div>
+    <div class="form__wrapper">
+        <form class="sign-up__form" [formGroup]="signUpFG">
+            <div class="progress__wrapper">
+                <mat-progress-bar mode="indeterminate"
+                    *ngIf="(progressBarService.isActive$ | async)"></mat-progress-bar>
+            </div>
+            <div class="header">
+                <h2>Đăng ký</h2>
+                <div class="subtitle">Đăng ký để trở thành thành viên của Rental
+                    Car</div>
+            </div>
+            <div class="line-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput
+                        placeholder="Ex. huynhgiahuy492@gmail.com"
+                        formControlName="username">
+                    <mat-error *ngIf="usernameControl!.hasError('email') &&
+                        !usernameControl!.hasError('required')">
+                        Vui lòng nhập email hợp lệ
+                    </mat-error>
+                    <mat-error *ngIf="usernameControl!.hasError('required')">
+                        Email <strong>không được để trống</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="line-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Vui lòng mật khẩu</mat-label>
+                    <input type="password" matInput
+                        placeholder="Nhập mật khẩu" formControlName="password">
+                    <mat-error *ngIf="passwordControl!.hasError('required')">
+                        Mật khẩu <strong>không được để trống</strong>
+                    </mat-error>
+                    <mat-error
+                        *ngIf="passwordControl!.hasError('invalidPassword')">
+                        Mật khẩu phải chứa ít nhất <strong>một chữ hoa, số, kí
+                            tự đặc biệt</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="line-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Vui lòng nhập lại mật khẩu</mat-label>
+                    <input type="password" matInput
+                        placeholder="Nhập lại mật khẩu"
+                        formControlName="confirmPassword">
+                    <mat-error
+                        *ngIf="confirmPasswordControl!.hasError('invalidPassword')">
+                        Mật khẩu phải chứa ít nhất <strong>một chữ hoa, số, kí
+                            tự đặc biệt</strong>
+                    </mat-error>
+                    <mat-error
+                        *ngIf="confirmPasswordControl!.hasError('notMatch') &&
+                        !confirmPasswordControl!.hasError('required') &&
+                        !confirmPasswordControl!.hasError('invalidPassword')">
+                        Mật khẩu không trùng khớp
+                    </mat-error>
+                    <mat-error
+                        *ngIf="confirmPasswordControl!.hasError('required')">
+                        Mật khẩu <strong>không được để trống</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row m-gutters">
+                <div class="col l-12">
+                    <div class="line-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Họ và tên</mat-label>
+                            <input type="text" matInput
+                                placeholder="Ex: Huỳnh Gia Huy"
+                                formControlName="fullName">
+                            <mat-error
+                                *ngIf="fullNameControl!.hasError('required')">
+                                Họ tên <strong>không được để trống</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-gutters">
+                <div class="col l-12">
+                    <div class="line-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Số điện thoại</mat-label>
+                            <span matPrefix>+84 &nbsp;</span>
+                            <input type="tel" matInput placeholder="0776425949"
+                                formControlName="phone">
+                            <mat-icon matSuffix>mode_edit</mat-icon>
+                            <mat-error
+                                *ngIf="phoneControl!.hasError('required')">
+                                Số điện thoại <strong>không được để trống</strong>
+                            </mat-error>
+                            <mat-error
+                                *ngIf="phoneControl!.hasError('pattern')">
+                                Số điện thoại <strong>không hợp lệ</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex-bo align-items-center-bo
+                justify-content-center-bo">
+                <button class="sign-up-btn"
+                    (click)="onClickSignUp(signUpFG.value)"
+                    [disabled]="signUpFG.invalid">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Đăng ký
+                </button>
+            </div>
+            <div class="separate__group">
+                <span></span>
+                <p>Tiếp tục với</p>
+                <span></span>
+            </div>
+            <div class="more-connect__group">
+                <div class="grid">
+                    <div>
+                        <!-- <asl-google-signin-button data-text="Đăng nhập với Google" type='standard' size='medium' width="400" theme="filled_black">
+                        </asl-google-signin-button> -->
+                        <div id="g_id_onload"
+                            data-client_id="157325840295-pmeacr9ak8e0beepamml4lsoqtkgajam.apps.googleusercontent.com"
+                            data-context="signin"
+                            data-ux_mode="popup"
+                            data-callback="signInWithGoogleCallback"
+                            data-auto_prompt="false">
+                        </div>
+                        <div class="g_id_signin"
+                            data-type="standard"
+                            data-shape="rectangular"
+                            data-theme="filled_black"
+                            data-text="signin_with"
+                            data-size="large"
+                            data-locale="vi"
+                            data-logo_alignment="left"
+                            data-width="400">
+                        </div>
+                    </div>
+                    <div class="space m"></div>
+                    <div class="row m-gutters">
+                        <div class="col l-12">
+                            <button
+                                id="fbSignInBtn"(click)="signInWithFacebook()">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="18" height="18"
+                                        fill="currentColor" class="bi
+                                        bi-facebook" viewBox="0 0 16 16"> <path
+                                            d="M16
+                                            8.049c0-4.446-3.582-8.05-8-8.05C3.58
+                                            0-.002 3.603-.002 8.05c0 4.017 2.926
+                                            7.347 6.75
+                                            7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017
+                                            1.195-3.131 3.022-3.131.876 0
+                                            1.791.157
+                                            1.791.157v1.98h-1.009c-.993
+                                            0-1.303.621-1.303
+                                            1.258v1.51h2.218l-.354
+                                            2.326H9.25V16c3.824-.604 6.75-3.934
+                                            6.75-7.951z"/> </svg>
+                                    </div>
+                                    <span> Đăng nhập bằng Facebook</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separate__group">
+                        <span></span>
+                    </div>
+                    <div class="grid">
+                        <div>
+                            <button id="signInButton" (click)="openSignInDialog()">
+                                Bạn đã có tài khoản? <strong class="mr-l-5">Đăng
+                                    nhập ngay!</strong>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

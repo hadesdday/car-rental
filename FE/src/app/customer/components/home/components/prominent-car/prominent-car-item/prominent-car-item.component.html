@@ -1,0 +1,66 @@
+<div class="car-card-item-wrapper" (click)="openCarDetailDialog(car.serviceType, car.id)">
+  <div class="car-card-item">
+    <div class="car-card-item__image">
+      <img 
+        *ngIf="thumb"
+        [src]="thumb.imageUrl"
+        alt=""
+      />
+      <div class="price-car" *ngIf="car.service">
+        {{ car.service.defaultPrice | currency : "VND" }}
+      </div>
+    </div>
+    <div class="desc-car">
+      <div class="desc-car__name d-flex-bo">
+        <h4 *ngIf="car.model">{{car.model.name}} {{car.yearOfManufacture}}</h4>
+        <i class="icon-bo icon-insurance"></i>
+      </div>
+      <div class="group-line">
+        <span class="star">
+          <div class="star_rate-num">5.0</div>
+          <div class="star-container">
+            <svg
+              viewBox="0 0 51 48"
+              class="widget-svg"
+              style="
+                width: 17px;
+                height: 17px;
+                transition: transform 0.2s ease-in-out 0s;
+              "
+            >
+              <path
+                class="star"
+                d="m25,1
+                                        6,17h18l-14,11 5,17-15-10-15,10
+                                        5-17-14-11h18z"
+                style="
+                  fill: var(--gemstone-color);
+                  transition: fill 0.2s ease-in-out 0s;
+                "
+              ></path>
+            </svg>
+          </div>
+          <div class="dot-car mr-side-5">•</div>
+          <div class="trips mr-r-5">93 chuyến</div>
+          <div class="certificate-wrapper">
+            <app-certificate-svg></app-certificate-svg>
+          </div>
+        </span>
+      </div>
+      <div class="group-label">
+        <span *ngIf="car.transmission === 'AUTOMATIC'">Số tự động</span>
+        <span *ngIf="car.transmission === 'MANUAL'">Số sàn</span>
+        <span>Giao xe tận nơi</span>
+      </div>
+      <div class="location">
+        <p class="d-flex-bo align-items-center-bo" *ngIf="car.address">
+          <i class="icon-bo location-icon"></i>
+          {{ car.address.district.prefix }}, {{ car.address.district.name }} ,{{
+            car.address.province.domain
+          }}
+          {{ car.address.province.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

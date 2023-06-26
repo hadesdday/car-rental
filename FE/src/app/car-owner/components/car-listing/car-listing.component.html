@@ -1,0 +1,76 @@
+<div class="car__listing-container">
+    <div class="d-flex-bo flex-wrap-bo car__listing-content">
+        <div class="car__listing-column bx__shadow-1" [formGroup]="myCarsFormGroup">
+            <h2 style="text-transform: uppercase;">{{'common.status'|i18next}}</h2>
+            <mat-form-field class="w-fit cl-black" appearance="outline">
+                <mat-select matInput formControlName="carStatus">
+                    <mat-option value="ALL">{{'common.all'|i18next}}</mat-option>
+                    <mat-option value="ACTIVE">{{'common.active'|i18next}}</mat-option>
+                    <mat-option value="PENDING_APPROVAL">{{'common.pending'|i18next}}</mat-option>
+                    <mat-option value="BUSY">{{'common.busy'|i18next}}</mat-option>
+                    <mat-option value="RENTED">{{'common.rented'|i18next}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="car__listing-empty" *ngIf="filteredCarList.length < 1">
+            <p class="text-center">{{"message.noData"|i18next}}</p>
+        </div>
+        <div class="car__listing-column bx__shadow-1" *ngIf="filteredCarList.length > 0">
+            <h2 style="text-transform: uppercase;">{{"car.listing"|i18next}}</h2>
+            <div class="d-flex-bo flex-wrap-bo car__list">
+                <!-- start car item -->
+                <div class="d-flex-bo flex-wrap-bo car__list-items" *ngFor="let item of filteredCarList">
+                    <div class="car__listing-item">
+                        <div [class]="'car__status '+ getStatusClassname(item.status)">
+                            <p [class]="'status-text ' + getStatusClassname(item.status)">
+                                {{getStatusName(item.status)}}</p>
+                        </div>
+                        <img [src]="BASE_IMG+item.imageUrl">
+                    </div>
+                    <div class="car__listing-item mt-2-h">
+                        <h2 class="text-uppercase">{{item.name}}</h2>
+                        <span *ngIf="item.avgRating>0">
+                            <i class="fa-solid fa-star cl-star"
+                                *ngFor="let item of [].constructor(getRoundedRate(item.avgRating))"></i>
+                            <i class="fa-solid fa-star text-secondary"
+                                *ngFor="let item of [].constructor(5-getRoundedRate(item.avgRating))"></i>
+                            - {{item.totalRental}} {{'common.rental'|i18next}}</span>
+                        <span *ngIf="item.avgRating===0">
+                            <i class="fa-solid fa-star text-secondary" *ngFor="let item of [].constructor(5)"></i>
+                        </span>
+                        <div class="text-price">
+                            <h3>{{getMoneyInFormat(item.defaultPrice)}}</h3>
+                        </div>
+                        <div class="car__listing-action">
+                            <button routerLink="/car/huy/312" class="btn__detail">{{"car.viewDetails"|i18next}}</button>
+                            <button [routerLink]="'/car-owner/car-listing/'+item.id"
+                                class="btn__management">{{"car.carManagement"|i18next}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="d-flex-bo flex-wrap-bo car__listing-content">
+    <div class="car__listing-column bx__shadow-1" [formGroup]="myCarsFormGroup">
+      <h2>TRẠNG THÁI</h2>
+      <mat-form-field class="w-fit cl-black" appearance="outline">
+        <mat-select matInput formControlName="carStatus">
+          <mat-option value="0">Tất cả</mat-option>
+          <mat-option value="1">Đang hoạt động</mat-option>
+          <mat-option value="2">Đang chờ duyệt</mat-option>
+          <mat-option value="3">Đã bị từ chối</mat-option>
+          <mat-option value="4">Đang tạm ngừng</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="car__listing-column bx__shadow-1" *ngIf="cars$ | async as cars">
+      <h2>DANH SÁCH XE</h2>
+      <div class="d-flex-bo flex-wrap-bo car__list">
+        <ng-container *ngFor="let car of cars">
+          <app-car-item [car]="car"> </app-car-item>
+        </ng-container>
+      </div>
+    </div>
+  </div> -->
+    </div>

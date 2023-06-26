@@ -1,0 +1,38 @@
+<div #imageCarousel class="image-carousel">
+    <div class="image-carousel__item-list-wrapper grid">
+        <ul #imageCarouselList class="image-carousel__item-list row no-gutters
+            no-wrap">
+            <ng-container *ngFor="let item of specItems; index as idx">
+                <ng-container [ngTemplateOutlet]="itemRender" [ngTemplateOutletContext]="{item: item, idx: idx, curIdx:
+                    currentIdx}">
+                </ng-container>
+            </ng-container>
+        </ul>
+    </div>
+    <ng-container *ngIf="isActiveControl">
+        <div #carouselArrowPrev class="carousel-arrow carousel-arrow--hint
+            carousel-arrow--prev" (click)="preCarousel($event)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div #carouselArrowNext class="carousel-arrow carousel-arrow--hint
+            carousel-arrow--next" (click)="nextCarousel($event)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!dotRender; else notDotRender">
+        <ul class="carousel-dots" [class.carousel-dots--show]="isActiveDots">
+            <ng-container *ngFor="let dot of dotsView; index as idx">
+                <li class="carousel-dot" [class.carousel-dot--active]="dot === currentIdx"></li>
+            </ng-container>
+        </ul>
+    </ng-container>
+    <ng-template #notDotRender>
+        <ul class="carousel-dots" [class.carousel-dots--show]="isActiveDots">
+            <ng-container *ngFor="let dot of dotsView; index as idx">
+                <ng-container [ngTemplateOutlet]="dotRender"
+                    [ngTemplateOutletContext]="{dotIdx: dot, currentIdx: currentIdx}">
+                </ng-container>
+            </ng-container>
+        </ul>
+    </ng-template>
+</div>

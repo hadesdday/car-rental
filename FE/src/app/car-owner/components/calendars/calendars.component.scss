@@ -1,0 +1,54 @@
+.car {
+  &__calendars {
+    &-container {
+      min-height: 100vh;
+    }
+    &-content {
+      gap: 10px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+    &-col {
+      flex: 0 0 47%;
+      .btn-sort {
+        background-color: transparent;
+        padding: 10px;
+        margin-right: 10px;
+        font-size: 200%;
+        border: 2px solid var(--secondary-color);
+        transition: all 0.2s ease-out;
+        &:hover {
+          background-color: var(--secondary-color);
+        }
+      }
+      .calendars__labels {
+        list-style-type: none;
+        li {
+          float: left;
+          width: 25%;
+          i {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.text-header {
+  padding: 1.5em 0;
+  font-size: 250%;
+}
+
+mwl-calendar-month-view {
+  font-size: 110%;
+}
+
+::ng-deep {
+  &.mat-mdc-select-value,
+  &.mat-mdc-select-arrow {
+    color: black;
+  }
+}

@@ -1,0 +1,30 @@
+//prominent
+.prominent-car{
+    margin-top: 80px
+}
+
+// carousel
+.carousel-arrow.carousel-arrow--next{
+    right: 15px
+}
+
+.carousel-dots {
+    bottom: -25px;
+}
+.carousel-dot{
+    background-color: var(--primary-color);
+    opacity: .4;
+    width: 10px;
+    height: 10px;
+}
+.carousel-dot--active{
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+::ng-deep .prominent-car .carousel-arrow--prev{
+    left: -25px
+}
+::ng-deep .prominent-car .carousel-arrow--next{
+    right: -25px
+}

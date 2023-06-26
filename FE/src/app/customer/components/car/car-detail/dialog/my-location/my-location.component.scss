@@ -1,0 +1,46 @@
+*{
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: -.5px;
+}
+form.form-default{
+
+}
+form.form-default .primary-text{
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 15px;
+}
+.form-default .line-form{
+    margin-bottom: 20px;
+}   
+.form-default p{
+    margin: 0 0 20px;
+    color: #a9aaad;
+    font-size: 1.4rem;
+}
+.form-default .line-form label.label{
+    display: block;
+    margin-bottom: 10px;
+    color: #141414;
+    font-size: 1.4rem;
+    font-weight: 700;
+}    
+.form-default .line-form .subtext{
+    margin-bottom: 15px;
+    color: #6e6e6e;
+    font-size: 12px;
+    line-height: 15px;
+}    
+.notice-form {
+    background-color: rgba(250,125,25,.1);
+    padding: 1rem 1.5rem;
+    margin-bottom: 10px;
+}
+.notice-form p{
+    margin-bottom: 10px;
+    color: #141414;
+    line-height: 12px;
+}
+.notice-form p:last-child{
+    margin-bottom: 0
+}

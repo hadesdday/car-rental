@@ -1,0 +1,175 @@
+.car__calendars-container {
+  min-height: 100vh;
+}
+
+.car__calendars-content {
+  gap: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.car__calendars-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  background-color: var(--secondary-color);
+}
+
+.car__calendars-col .calendars__labels {
+  list-style-type: none;
+}
+
+.car__calendars-col .calendars__labels li {
+  float: left;
+  width: 25%;
+  font-size: 110%;
+  padding: 10px 20px 5px;
+}
+
+.car__calendars-col .calendars__labels li i {
+  padding: 5px;
+}
+
+.options__control {
+  padding-left: 4em;
+}
+
+mat-radio-button i.fa-clock-rotate-left {
+  font-size: 130%;
+  padding: 0 10px;
+  -webkit-transform: scaleX(-1) rotate(230deg);
+          transform: scaleX(-1) rotate(230deg);
+}
+
+.text-header {
+  padding: 1.5em 0;
+  font-size: 250%;
+}
+
+mwl-calendar-month-view {
+  font-size: 110%;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 3% auto;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal-content.iterate {
+  padding: 40px;
+}
+
+.modal-content h2 {
+  padding: 20px;
+}
+
+.modal-content .sub__title-1 {
+  padding: 15px 0;
+}
+
+.modal-content .sub__title-2 {
+  padding: 20px 0;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.day__title {
+  padding-right: 2em;
+}
+
+.day__title-last {
+  padding-right: 0.5em;
+}
+
+.price__iterate-group {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.iterate__option-group p {
+  padding: 20px 0;
+}
+
+.btn__actions {
+  margin-top: 20px;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.btn__actions button {
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 120%;
+}
+
+.btn__actions:hover {
+  opacity: 0.8;
+}
+
+.limit__timerange-group {
+  gap: 10px;
+}
+
+.limit__timerange-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 47%;
+          flex: 0 0 47%;
+}
+
+.limit__timerange-col p {
+  padding-bottom: 10px;
+}
+
+.limit__timerange-header {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.limit__timerange-btn {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 110%;
+}
+
+.limit__timerange-btn:hover {
+  opacity: 0.8;
+}
+
+.price__date-group {
+  padding: 20px 0 5px;
+}
+
+.price__date-group mat-form-field {
+  padding-right: 10px;
+}
+/*# sourceMappingURL=car-management.component.css.map */

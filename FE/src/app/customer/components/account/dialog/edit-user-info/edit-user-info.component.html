@@ -1,0 +1,41 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h1>Cập nhật thông tin</h1>
+    </div>
+    <div class="modal-body">
+        <form (ngSubmit)="onClickUpdateUser(updatedUserFG.value)" class="form-default form--s" [formGroup]="updatedUserFG">
+            <div class="line-form">
+                <label for="" class="label">Họ tên</label>
+                <div class="wrap-input">
+                    <input type="text" placeholder="Vui lòng nhập họ và tên"
+                        formControlName="fullName">
+                </div>
+            </div>
+            <div class="line-form">
+                <label for="" class="label">Ngày sinh</label>
+                <div>
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Chọn ngày sinh</mat-label>
+                        <input formControlName="dob" matInput
+                            [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="line-form">
+                <label for="" class="label">Giới tính</label>
+                <div>
+                    <mat-radio-group formControlName="gender" aria-label="Select
+                        an option " class="w-fit">
+                        <ng-container *ngFor="let option of genderOptions">
+                            <mat-radio-button [value]="option.value">{{option.label}}</mat-radio-button>
+                        </ng-container>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <button type="submit" style="margin: 0" class="w-fit btn btn--m" mat-raised-button
+                color="primary" [disabled]="updatedUserFG.invalid">Cập nhật</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.promo-list{
+    max-height: 500px;
+    overflow: auto;
+}
+.promo-item{
+    display: flex;
+    align-items: center;
+}
+.promo-item .promo__icon{
+}
+.promo-item .promo__icon img{
+    width: 80px;
+    height: 80px;
+}
+.promo-item .promo__info{
+    flex: 3;
+}
+.promo-item .promo__info .promo__sub-info{
+    color: #ccc;
+    font-size: 1.3rem;
+    flex: 2
+}
+.promo-item .promo__action{
+
+}

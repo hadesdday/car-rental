@@ -1,0 +1,55 @@
+<div class="rental__listing-container">
+    <div class="d-flex-bo flex-wrap-bo rental__listing-content">
+        <div class="rental__listing-column bx__shadow-1" [formGroup]="rentalListSortFormGroup">
+            <h2>{{'common.orderBy'|i18next}}</h2>
+            <mat-form-field class="w-fit cl-black" appearance="outline">
+                <mat-select matInput formControlName="orderBy" class="cl-black">
+                    <mat-option value="0">{{'common.latest'|i18next}}</mat-option>
+                    <mat-option value="1">{{'common.oldest'|i18next}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="empty-column text-center" *ngIf="sortedRentalList.length < 1">
+            <p>{{'message.noData'|i18next}}</p>
+        </div>
+        <div class="rental__listing-column bx__shadow-1" *ngIf="sortedRentalList.length > 0">
+            <h2 style="text-transform: uppercase;">{{'rentalListing.listing'|i18next}}</h2>
+            <div class="d-flex-bo flex-wrap-bo rental__list" *ngFor="let item of sortedRentalList">
+                <!-- start rental item -->
+                <div class="rental__listing-item">
+                    <img [src]="BASE_IMG+item.bannerUrl" [alt]="item.model">
+                </div>
+                <div class="rental__listing-item">
+                    <h3 class="text-uppercase">{{item.model+ ' '+ item.yearOfManufacture + ' - '+ item.plate}}</h3>
+                    <h4>{{item.customerName}}</h4>
+                    <span>
+                        <i class="fa-solid fa-star cl-star"
+                            *ngFor="let i of [].constructor(getRoundedRating(item.avgRating))"></i>
+                        <i class="fa-solid fa-star text-secondary"
+                            *ngFor="let i of [].constructor(5-getRoundedRating(item.avgRating))"></i>
+                    </span>
+                    <div class="text-price">
+                        <h3>{{getFormattedMoney(item.price)}}</h3>
+                    </div>
+                    <div class="d-flex-bo flex-wrap-bo text-daterange">
+                        <div>
+                            <p>
+                                {{'rentalDetails.startTime'|i18next}}: {{getFormattedDate(item.startDate)}}
+                            </p>
+                        </div>
+                        <div class="date__end">
+                            <p>
+                                {{'rentalDetails.endTime'|i18next}}: {{getFormattedDate(item.endDate)}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rental__listing-action">
+                        <button [routerLink]="['/car-owner/rental-listing/details/',item.id]"
+                            class="btn__detail">{{'car.viewDetails'|i18next}}</button>
+                    </div>
+                </div>
+                <!-- end rental item -->
+            </div>
+        </div>
+    </div>
+</div>

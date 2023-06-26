@@ -1,0 +1,123 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h1>Bộ lọc chuyến đi</h1>
+    </div>
+    <div class="modal-body">
+        <form id="filter-form" class="form-default form--s">
+            <div class="line-form">
+                <label for="" class="label">Theo chế độ</label>
+                <div>
+                    <mat-radio-group  [(ngModel)]="sltServiceType" [ngModelOptions]="{standalone: true}">
+                        <ng-container *ngFor="let i of serviceTypes">
+                            <mat-radio-button [value]="i.value">{{i.label}}</mat-radio-button>
+                        </ng-container>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <ng-container *ngIf="data.sltTabIdx === 0; else tripHistoryFilterOption">
+                <ng-container [ngTemplateOutlet]="curTripFilterOption"></ng-container>
+            </ng-container>
+            <div class="d-flex-bo">
+                <div class="wrap-fit">
+                    <button style="margin: 0" class="w-fit btn btn--m" mat-raised-button color="primary">Áp
+                        dụng</button>
+                </div>
+                <div class="wrap-fit">
+                    <button style="margin: 0" class="w-fit btn btn--m btn-secondary" mat-raised-button>Bỏ
+                        lọc</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<ng-template #curTripFilterOption>
+    <div class="line-form">
+        <label for="" class="label">Theo thời gian</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn thời gian</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let i of timeOptions">
+                        {{i.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="line-form">
+        <label for="" class="label">Theo loại chuyến</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn loại chuyến</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let i of tripOptions">
+                        {{i.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="line-form">
+        <label for="" class="label">Theo trạng thái</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn trạng thái</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let i of statusOptions">
+                        {{i.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</ng-template>
+<ng-template #tripHistoryFilterOption>
+    <div class="line-form">
+        <label for="" class="label">Theo loại chuyến</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn loại chuyến</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let i of tripOptions">
+                        {{i.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="line-form">
+        <label for="" class="label">Theo trạng thái</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn trạng thái</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let i of statusOptions">
+                        {{i.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="line-form">
+        <label for="" class="label">Thời gian bắt đầu thuê</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn ngày bắt đầu</mat-label>
+                <input matInput [matDatepicker]="startDate">
+                <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+                <mat-datepicker #startDate></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="line-form">
+        <label for="" class="label">Thời gian kết thúc thuê</label>
+        <div>
+            <mat-form-field appearance="fill" class="w-fit">
+                <mat-label>Chọn ngày bắt đầu</mat-label>
+                <input matInput [matDatepicker]="endDate">
+                <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+                <mat-datepicker #endDate></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+</ng-template>

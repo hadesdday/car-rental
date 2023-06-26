@@ -1,0 +1,124 @@
+.rental {
+  &__listing {
+    &-container {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 5em;
+    }
+    &-content {
+      gap: 30px;
+    }
+    &-column {
+      background-color: #fff;
+      padding: 20px;
+      &:nth-child(1) {
+        flex: 0 0 25%;
+        height: 20vh;
+        mat-form-field {
+          margin-top: 10px;
+          color: #000;
+        }
+      }
+      &:nth-child(2) {
+        border-radius: 3px;
+        flex: 0 0 70%;
+      }
+    }
+    &-item {
+      flex: 0 0 47%;
+      margin-top: 1em;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      span {
+        font-size: 120%;
+      }
+      .text-price {
+        color: var(--gemstone-color);
+        padding-top: 15px;
+        padding-bottom: 30%;
+      }
+      .text-daterange {
+        border-bottom: 2px solid var(--secondary-color);
+      }
+    }
+    &-action {
+      padding: 10px 0;
+      button {
+        padding: 15px;
+        width: 100%;
+        border-radius: 3px;
+        border-color: transparent;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        font-size: 90%;
+        &:hover {
+          opacity: 0.8;
+        }
+        &.btn__detail {
+          background-color: #000;
+        }
+        &.btn__management {
+          background-color: var(--gemstone-color);
+        }
+      }
+    }
+  }
+  &__list {
+    gap: 25px;
+    padding-top: 10px;
+  }
+}
+
+.date__end {
+  margin-left: auto;
+}
+
+.empty-column {
+  flex: 0 0 70%;
+}
+
+//mobile
+@media screen and (max-width: 739px) {
+  .car__listing {
+    &-column {
+      flex: 0 0 100% !important;
+    }
+    &-action {
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+//tablet
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+  .car__listing {
+    &-column {
+      flex: 0 0 100% !important;
+    }
+    &-action {
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+//desktop and larger
+@media screen and (min-width: 1023px) {
+  .car__listing {
+    &-action {
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

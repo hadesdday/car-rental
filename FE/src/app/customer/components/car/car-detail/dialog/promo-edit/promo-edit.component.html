@@ -1,0 +1,39 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="modal-body">
+        <div class="form-default">
+            <div class="line-form">
+                <div class="wrap-input">
+                    <input type="text" placeholder="Nhập mã khuyến mãi">
+                </div>
+            </div>
+            <div class="line-form">
+                <ul class="promo-list">
+                        <li class="promo-item" *ngFor="let promo of (promos$ | async)">
+                            <div class="promo__icon">
+                                <div class="fix-image">
+                                    <img src="https://n1-cstg.mioto.vn/g/2018/03/17/16/52.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="promo__info">
+                                <strong>{{promo.title}}</strong>
+                                <div class="promo__sub-info">
+                                    <p>Giảm <span class="cl-gem">{{promo.discountPercent}}%</span>. (tối đa <span class="cl-gem">{{promo.maxPrice | currency: 'VND'}}</span>)</p>
+                                    <a class="d-flex-bo align-items-center-bo cl-gem--hover">
+                                        <!-- <span>Chi tiết</span>
+                                        <i class="mr-l-5 fa-solid fa-chevron-down"></i>     -->
+                                        <span>Số lượng: {{promo.quantity}}</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="promo__action">
+                                <button mat-raised-button color="primary" (click)="selectPromo(promo.id)">Áp dụng</button>
+                            </div>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

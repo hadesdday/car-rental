@@ -1,0 +1,26 @@
+<div class="prominent-car">
+  <div class="grid m-wide">
+    <div class="row">
+      <div class="col l-12">
+        <h3 class="title-car">
+          <ng-content select=".title-car"></ng-content>
+        </h3>
+        <app-carousel
+          [specItems]="categories"
+          [itemRender]="carouselItemsTemplateRef"
+          [isPerItemInStep]="true"
+          [list$]="cars$"
+        ></app-carousel>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template
+  #carouselItemsTemplateRef
+  let-item="item"
+  let-idx="idx"
+  let-curIdx="curIdx"
+>
+  <li #imageCarouselItem class="image-carousel__item col l-3 c-3">
+    <app-prominent-car-item [car]="item"></app-prominent-car-item></li
+></ng-template>

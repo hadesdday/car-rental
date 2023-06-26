@@ -1,0 +1,4 @@
+<mat-list role="list" class="bx__shadow" style="height:100vh">
+    <mat-list-item *ngFor="let i of sidebarRedirects" [routerLink]="[i.path]"
+        role="listitem">{{i.label}}</mat-list-item>
+</mat-list>

@@ -1,0 +1,95 @@
+.my-trip .my-trip__header {
+  background-color: white;
+}
+
+.my-trip .my-trip__header .filter {
+  z-index: 1;
+}
+
+.my-trip .my-trip__header .filter button {
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid var(--gemstone-color);
+  background-color: white;
+}
+
+.my-trip .my-trip__body {
+  background-color: #e7eaef;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.empty-trip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10vh;
+}
+
+.empty-trip p {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.mat-tab-wrapper {
+  position: relative;
+}
+
+.mat-tab-wrapper {
+  position: relative;
+}
+
+.mat-tab-wrapper .filter {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: unset;
+  border: .5px solid #ccc;
+  background-color: #fff;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+::ng-deep .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs > .mat-mdc-tab-header .mat-mdc-tab {
+  -webkit-box-flex: unset !important;
+      -ms-flex-positive: unset !important;
+          flex-grow: unset !important;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+  color: var(--gemstone-color);
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: var(--gemstone-color);
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label {
+  color: black;
+}
+/*# sourceMappingURL=my-trip.component.css.map */

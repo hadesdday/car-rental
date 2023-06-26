@@ -1,0 +1,139 @@
+@import "./styles/typography/config";
+@import "./assets/customize-style/common-style.scss";
+@import "./assets/customize-style/flex-custom.scss";
+@import "./assets/customize-style/grid.scss";
+@import "./assets/customize-style/responsive.scss";
+@import "./assets/customize-style/layout.scss";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "ngx-toastr/toastr";
+
+:root {
+  --primary-color: black;
+  --primary-text-color: white;
+  --gemstone-color: #00a550;
+  --lighter-gemstone-color: rgb(240, 255, 247);
+  --gemstone-color-hover: rgba(240, 255, 247, 0.8);
+  --first-purple-color: #5d5fef;
+  --second-purple-color: #b4b5f8;
+  --third-purple-color: #efeffe;
+  --first-dark-cyan-color: #159093;
+  --second-dark-cyan-color: #9acfd0;
+  --third-dark-cyan-color: #f3f9f9;
+  --secondary-color: #e8eaef;
+  --white: #fff;
+  --secondary-text: #a9aaad;
+  --busy-color: #a9a9a9;
+  --suspend-color: #a9a9a9;
+  --active-color: var(--gemstone-color);
+  --pending-color: #fba86d;
+  --rented-color: red;
+}
+
+// reset
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font: 900 3.2rem Roboto, sans-serif !important;
+}
+
+h2 {
+  font: 900 2.4rem Roboto, sans-serif !important;
+}
+
+h3 {
+  font: 900 1.872rem Roboto, sans-serif !important;
+}
+
+h4 {
+  font: 900 1.6rem Roboto, sans-serif !important;
+}
+
+h5 {
+  font: 900 1.328rem Roboto, sans-serif !important;
+}
+
+h6 {
+  font: 900 1.082rem Roboto, sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input {
+  display: inline-block;
+  background-color: #fff;
+  width: 100%;
+  padding: 14px 20px 13px;
+  font-size: 1.4rem;
+  border: none;
+  box-shadow: none;
+}
+
+/* Common */
+html {
+  height: 100%;
+}
+
+// app icon
+i.icon-bo {
+  display: inline-block;
+  background-image: url("https://www.mioto.vn/static/media/main_sprites.a58f006e.png");
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  text-indent: -9999px;
+}
+
+.spinner__wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+.spinner__wrapper body {
+  overflow: hidden;
+}

@@ -1,0 +1,66 @@
+.my-trip{
+
+}
+.my-trip .my-trip__header{
+    background-color: white;
+}
+.my-trip .my-trip__header .filter{
+    z-index: 1
+}
+.my-trip .my-trip__header .filter button{
+    box-shadow: unset;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--gemstone-color);
+    background-color: white;
+}
+.my-trip .my-trip__body{
+    background-color: rgb(231,234,239);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.empty-trip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh
+}
+.empty-trip p{
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+.mat-tab-wrapper{
+    position: relative;
+}
+.mat-tab-wrapper{
+    position: relative;
+}
+.mat-tab-wrapper .filter{
+    position: absolute;
+    right: 0;
+    top: 0
+}
+//input material
+.my-trip .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: unset;
+    border: .5px solid #ccc;
+    background-color: #fff;
+}
+.my-trip .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+}
+//tabs material
+.my-trip .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab{
+    flex-grow: unset !important;
+}
+.my-trip .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color: var(--gemstone-color);
+}
+.my-trip .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+    border-color: var(--gemstone-color);
+}
+.my-trip .mat-mdc-tab .mdc-tab__text-label {
+    color: black
+}

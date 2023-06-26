@@ -1,0 +1,30 @@
+.qr-container{
+    position: relative
+}
+.control-container{
+    position: fixed;
+    right: 40px;
+    top: 40px;
+    border: 2px;
+    display: flex;
+    color: #fff
+}
+.control-container i{
+    font-size: 2.4rem;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.control-container .zoom-in-button{
+}
+.control-container .zoom-out-button{
+}
+
+.overlay{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+    background-color: rgba($color: #000000, $alpha: .8);
+}

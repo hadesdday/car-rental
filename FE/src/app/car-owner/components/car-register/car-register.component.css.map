@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,wBAAwB,CAAC;EACvB,UAAU,EAAE,KAAK;EACjB,gBAAgB,EAAE,IAAI;CACvB;;AAED,AAAA,oBAAoB,CAAC;EACnB,KAAK,EAAE,eAAe;EACtB,gBAAgB,EAAE,qBAAqB;EACvC,cAAc,EAAE,SAAS;EACzB,WAAW,EAAE,GAAG;EAChB,OAAO,EAAE,SAAS;EAClB,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "car-register.component.scss"
+    ],
+    "names": [],
+    "file": "car-register.component.css"
+}

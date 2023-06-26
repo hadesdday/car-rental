@@ -1,0 +1,21 @@
+<div class="feature-form__wrapper">
+    <form action="" [formGroup]="featureFG">
+        <div class="icon__wrapper">
+            <button type="button" mat-raised-button (click)="iconFileInput.click()">Chọn biểu tượng</button>
+            <input type="file" [style.display]="'none'" #iconFileInput (change)="sltIconFileInput($event)">
+        </div>
+        <div class="space m">
+        </div>
+        <div class="row">
+            <div class="col l-6">
+                <mat-form-field appearance="fill" class="w-fit">
+                    <mat-label>Tên đặt trưng</mat-label>
+                    <input formControlName="name" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="d-flex-bo justify-content-end">
+            <button mat-raised-button color="primary" [disabled]="featureFG.invalid" (click)="onSubmitFeature()">Tạo</button>
+        </div>
+    </form>
+</div>

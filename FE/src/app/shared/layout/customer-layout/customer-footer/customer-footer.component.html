@@ -1,0 +1,74 @@
+<div class="footer footer--bg">
+    <div class="grid wide footer-container">
+        <div class="about-us">
+            <div class="row">
+                <div class="col col l-4">
+                    <a class="logo-image-wrapper" routerLink="/home">
+                        <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/34/8213141034_2055db8e-bdec-44dc-a1a7-61331b64d79f.png?cb=1679202023"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col col l-8">
+                    <div class="row">
+                        <div class="col l-4">
+                            <h4 class="title">{{'common.policies'|i18next}}</h4>
+                            <ul>
+                                <li *ngFor="let i of policies" class="pd-upper-5 mr-b-10">
+                                    {{i.label}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-4">
+                            <h4 class="title">{{'common.findMore'|i18next}}</h4>
+                            <ul>
+                                <li *ngFor="let i of infoMores" class="pd-upper-5 mr-b-10">
+                                    {{i.label}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-4">
+                            <h4 class="title">{{'common.collaborators'|i18next}}</h4>
+                            <ul>
+                                <li *ngFor="let i of partners" class="pd-upper-5 mr-b-10">
+                                    {{i.label}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="payment">
+                <h4 class="title">{{'common.paymentMethod'|i18next}}</h4>
+                <div class="payment-logo">
+                    <div class="payment-logo-wrapper">
+                        <div class="fix-img">
+                            <img src="/assets/logo/payment-method/momo-logo.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="payment-logo-wrapper">
+                        <div class="fix-img">
+                            <img src="/assets/logo/payment-method/paypal-logo.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="language">
+                <h4 class="title">{{'common.language'|i18next}}</h4>
+                <div class="language-logo">
+                    <div class="language-logo-wrapper cursor-pointer" (click)="changeLanguage('en')">
+                        <div class="fix-img">
+                            <img src="/assets/images/us-flag.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="language-logo-wrapper cursor-pointer" (click)="changeLanguage('vi')">
+                        <div class="fix-img">
+                            <img src="/assets/images/vietnam-flag.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

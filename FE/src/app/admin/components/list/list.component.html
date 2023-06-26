@@ -1,0 +1,12 @@
+<mat-tab-group animationDuration="0ms" [selectedIndex]="1">
+    <mat-tab label="Mã giảm giá">
+        <ng-template matTabContent>
+            <app-promo-list></app-promo-list>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Xe đăng ký">
+        <ng-template matTabContent>
+            <app-registered-car-listing></app-registered-car-listing>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

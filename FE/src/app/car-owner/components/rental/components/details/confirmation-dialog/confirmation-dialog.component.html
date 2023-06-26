@@ -1,0 +1,12 @@
+<div class="confirmation__dialog-container">
+    <div class="confirmation__dialog-wrapper">
+        <h1>{{dialog_data.title}}</h1>
+
+        <p class="confirmation__content">{{dialog_data.content}}</p>
+
+        <div class="d-flex-bo justify-content-end-bo actions__container">
+            <button class="btn" mat-raised-button color="warn" (click)="onCancelAction()">Hủy bỏ</button>
+            <button class="btn" mat-raised-button color="primary" (click)="onAcceptAction()">Xác nhận</button>
+        </div>
+    </div>
+</div>

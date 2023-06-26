@@ -1,0 +1,80 @@
+.promo-title{
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+.promo-detail__container{
+    padding: 20px;
+    max-width: 570px;
+}
+.promo-detail__cover{
+    background-image: url("https://www.mioto.vn/static/media/img_car.f934f207.jpg");
+    background-size: 100%;
+    background-position: 50%;
+    width: 100%;
+    height: 150px;
+}
+.promo-detail__content{
+    border: 1px solid #ccc;
+}
+.promo-detail__cover-detail{
+    position: relative;
+}
+.promo-detail__cover-detail .cover-image{
+    width: 80px;
+    height: 80px;
+    margin: -45px auto 0 
+}
+.promo-detail__cover-detail .cover-image img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 1px 3px 3px rgb(0 0 0 / 20%);
+}
+.promo-detail__cover-detail .desc{
+    text-align: center;
+    margin-top: 20px
+}
+.promo-detail__cover-detail .desc h4{
+    font-size: 2.3rem !important;
+}
+.promo-detail__cover-detail .desc p{
+    font-size: 1.4rem
+}
+.promo-detail__cover-detail .desc p span{
+    color: var(--gemstone-color)
+}
+.promo-detail__body{
+    text-align: center;
+    padding: 20px
+}
+.promo-detail__body h3{
+    color: var(--gemstone-color);
+    font-size: 1.68rem;
+    font-weight: 700;
+}
+.promo-detail__body p{
+    font-size: 1.4rem;
+}
+.promo-detail__body p span{
+    font-size: 1.5rem;
+    color: var(--gemstone-color)
+}
+.promo-detail__body ul{
+    padding-left: 20px;
+}
+.promo-detail__body ul li{
+    position: relative;
+    font-size: 1.5rem;
+    text-align: left;
+}
+.promo-detail__body ul li::before{
+    position: absolute;
+    content: "";
+    left: -15px;
+    width: 5px;
+    height: 5px;
+    background-color: #141414;
+    top: 10px;
+    border-radius: 50%;
+    color: #141414;
+}

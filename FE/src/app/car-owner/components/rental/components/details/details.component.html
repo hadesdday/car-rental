@@ -1,0 +1,161 @@
+<div class="rental__details-container">
+
+    <div class="rental__details-stepper bg-white">
+        <mat-stepper linear #stepper>
+            <mat-step [editable]="false">
+                <ng-template matStepLabel>{{'rentalDetails.checkInformation'|i18next}}</ng-template>
+            </mat-step>
+            <mat-step [editable]="false">
+                <ng-template matStepLabel>{{'rentalDetails.acceptRental'|i18next}}</ng-template>
+            </mat-step>
+            <mat-step [editable]="false">
+                <ng-template matStepLabel>{{'rentalDetails.rentaling'|i18next}}</ng-template>
+            </mat-step>
+            <mat-step [editable]="false">
+                <ng-template matStepLabel>{{'rentalDetails.completeRental'|i18next}}</ng-template>
+            </mat-step>
+        </mat-stepper>
+    </div>
+
+    <div class="rental__details-warning" *ngIf="isPending()">
+        <p>{{'rentalDetails.acceptRentalWarning'|i18next}}</p>
+        <p>{{'rentalDetails.timeLeft'|i18next}}: {{timeLeft}}</p>
+    </div>
+
+    <div class="d-flex-bo flex-wrap-bo rental__details-content bg-white" *ngIf="rental_details">
+        <div class="rental__details-column">
+            <div class="d-flex-bo flex-wrap-bo rental__details-header">
+                <img [src]="BASE_IMG+rental_details.bannerUrl" [alt]="rental_details.model">
+                <span>
+                    <h2>{{rental_details.model}}</h2>
+                    <i class="fa-solid fa-star cl-star"
+                        *ngFor="let item of [].constructor(getRoundedRating(rental_details.avgRating))"></i>
+                    <i class="fa-solid fa-star text-secondary"
+                        *ngFor="let item of [].constructor(5-getRoundedRating(rental_details.avgRating))"></i>
+                </span>
+            </div>
+            <div class="rental__details-daterange">
+                <h2>Thời gian thuê xe</h2>
+                <div class="d-flex-bo flex-wrap-bo">
+                    <div>
+                        <p>
+                            {{'rentalDetails.startTime'|i18next}}: {{getFormattedDate(rental_details.startDate)}}
+                        </p>
+                    </div>
+                    <div class="ml-auto">
+                        <p>
+                            {{'rentalDetails.endTime'|i18next}}: {{getFormattedDate(rental_details.endDate)}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="rental__details-limit">
+                <h2>{{'rentalDetails.limitDistance'|i18next}}</h2>
+                <p *ngIf="rental_details.distanceLimit < 1">{{'rentalDetails.unlimitedDistance'|i18next}}</p>
+                <p *ngIf="rental_details.distanceLimit > 1">{{rental_details.distanceLimit}} KM</p>
+            </div>
+        </div>
+        <div class="rental__details-column">
+            <div class="renter__information text-center">
+                <a routerLink="/">
+                    <img src="../../../../../../assets/images/common.jpg" alt="avatar">
+                </a>
+                <p>{{'common.renter'|i18next}}</p>
+                <h4>{{rental_details.customerName}}</h4>
+                <span>
+                    <!-- customer rating by owner -->
+                    <i class="fa-solid fa-star cl-star"></i>
+                    <i class="fa-solid fa-star cl-star"></i>
+                    <i class="fa-solid fa-star cl-star"></i>
+                    <i class="fa-solid fa-star cl-star"></i>
+                    <i class="fa-solid fa-star cl-star"></i>
+                    <!-- <i class="fa-solid fa-star text-secondary"></i> -->
+                </span>
+            </div>
+            <h3 class="renter__phone-title">{{'common.phone'|i18next}}</h3>
+            <p class="renter__phone" *ngIf="!gtAcceptedRental()">**********</p>
+            <p class="renter__phone" *ngIf="gtAcceptedRental()" style="padding-bottom:10px;">
+                {{rental_details.customerPhone}}</p>
+            <p *ngIf="!gtAcceptedRental()">{{'rentalDetails.phoneTips'|i18next}}</p>
+            <span>
+                <i [class]="'fa-solid fa-square cl-'+getStatusClassname(rental_details.status)"></i>
+                {{'common.status'|i18next}}:
+                {{getRentalStatus(rental_details.status)}}
+            </span>
+            <p *ngIf="isAccepted()" style="padding-top:10px;">{{'rentalDetails.contactTips'|i18next}}</p>
+        </div>
+        <div class="rental__details-column">
+            <h2>{{'rentalDetails.priceTable'|i18next}}</h2>
+            <div class="table__price">
+                <div class="d-flex-bo flex-wrap-bo table__row">
+                    <div class="table__title">
+                        <p>{{'rentalDetails.rentalPrice'|i18next}}</p>
+                    </div>
+                    <div class="table__data">
+                        {{formatMoney(rental_details.price)}} / {{'common.day'|i18next}}
+                    </div>
+                </div>
+                <div class="d-flex-bo flex-wrap-bo table__row">
+                    <div class="table__title">
+                        <p>{{'rentalDetails.totalRentalPrice'|i18next}}</p>
+                    </div>
+                    <div class="table__data">
+                        {{formatMoney(rental_details.price)}} x
+                        <strong>{{calculateDateDiff(rental_details.startDate,rental_details.endDate)}}
+                            {{'common.day'|i18next}}</strong>
+                    </div>
+                </div>
+                <div class="d-flex-bo flex-wrap-bo table__row">
+                    <div class="table__title">
+                        <strong>{{'common.total'|i18next}}</strong>
+                    </div>
+                    <div class="table__data">
+                        <strong>{{formatMoney(calculateTotalPrice(calculateDateDiff(rental_details.startDate,rental_details.endDate),rental_details.price))}}</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cancel__policy-container">
+                <h2>{{'rentalDetails.cancellationPolicies'|i18next}}</h2>
+
+                <div class="cancel__policies">
+                    <div class="cancel__policy">
+                        - {{"rentalDetails.cancellationDate"|i18next}} <strong>
+                            <=7 </strong> {{'rentalDetails.beforeDate'|i18next}} <strong>50%</strong> tiền đã trả.
+                    </div>
+                    <div class="cancel__policy">
+                        - {{"rentalDetails.cancellationDate"|i18next}} <strong>
+                            >7
+                        </strong> {{'rentalDetails.beforeDate'|i18next}}
+                        <strong>0%</strong> {{'rentalDetails.paidMoney'|i18next}}.
+                    </div>
+                    <p class="small-note">* {{'rentalDetails.smallCancellationRentalNote'|i18next}} <strong>1
+                            {{'common.hours'|i18next}}</strong>
+                        {{'rentalDetails.secondSmallCancellationRentalNote'|i18next}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="rental__details-column pt-0">
+            <div class="renter__money-col">
+                <p style="text-transform: uppercase;">{{'rentalDetails.paidMoney'|i18next}}</p>
+                <p class="primary-text">
+                    {{formatMoney(calculateTotalPrice(calculateDateDiff(rental_details.startDate,rental_details.endDate),rental_details.price))}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="btn__actions" *ngIf="isPending()">
+        <button class="btn__decline" (click)="onDeclineRentalRequest()">{{'common.rejectRequest'|i18next}}</button>
+        <button class="btn__accept" (click)="onAcceptRentalRequest()">{{'common.acceptRequest'|i18next}}</button>
+    </div>
+
+    <div class="section-footer w-fit" *ngIf="isAccepted()">
+        <button mat-raised-button color="primary" (click)="onConfirmDeliveredCarToRenter()"
+            class="w-fit">{{'rentalDetails.confirmDelivery'|i18next}}</button>
+    </div>
+    <div class="section-footer w-fit" *ngIf="isRented()"
+        [matTooltip]="isSoonerThanEndDate()?('common.unableToPerformActionBeforeEndDate'|i18next):''">
+        <button (click)="onCompleteRental()" mat-raised-button color="primary" class="w-fit"
+            [disabled]="isSoonerThanEndDate()">{{'common.completedRental'|i18next}}</button>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+.car__owner-container {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  padding-bottom: 15px;
+}
+/*# sourceMappingURL=car-owner.component.css.map */

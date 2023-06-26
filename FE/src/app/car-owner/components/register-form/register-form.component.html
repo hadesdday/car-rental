@@ -1,0 +1,500 @@
+<div class="owner__register-form">
+    <div class="owner__register-container">
+        <div class="owner__register-content bg-white">
+            <mat-stepper [linear]="true" #stepper>
+                <mat-step [stepControl]="carInformationFormGroup">
+                    <form [formGroup]="carInformationFormGroup">
+                        <ng-template matStepLabel>{{"common.information"|i18next}}</ng-template>
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{"calendar.carPlate"|i18next}}</h2>
+                            <p class="cl-danger register__car-subtitle">{{"registerCar.carPlateWarning"|i18next}}</p>
+                        </div>
+                        <mat-form-field class="input__car-form cl-black" appearance="outline">
+                            <mat-label class="cl-black">{{"calendar.carPlate"|i18next}}</mat-label>
+                            <input matInput [placeholder]="'calendar.carPlate'|i18next" formControlName="carNumberPlate"
+                                required>
+                            <mat-error
+                                *ngIf="carInformationFormGroup.hasError('pattern') || !carInformationFormGroup.hasError('required')">
+                                {{"error.requiredCarPlate"|i18next}}
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- end form field -->
+
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{"registerCar.basicInformation"|i18next}}</h2>
+                            <p class="cl-danger register__car-subtitle">{{"registerCar.basicInformation"|i18next}}</p>
+                        </div>
+                        <div class="d-flex-bo flex-wrap-bo basic__information-container">
+                            <mat-form-field class="basic__information-field cl-black" appearance="outline">
+                                <mat-label class="cl-black">{{"common.brand"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carBrand">
+                                    <mat-option [value]="item.id"
+                                        *ngFor="let item of fetchedBrands">{{item.name}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredCarBrand"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="basic__information-field cl-black" appearance="outline">
+                                <mat-label class="cl-black">{{"common.model"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carModel">
+                                    <mat-option [value]="item.id"
+                                        *ngFor="let item of fetchedCarModels">{{item.name}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredCarModel"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="basic__information-field cl-black" appearance="outline">
+                                <mat-label class="cl-black">{{"common.seats"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carSeats">
+                                    <mat-option *ngFor="let i of carSeatRange;" [value]="i">{{i}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredCarSeats"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="basic__information-field cl-black" appearance="outline">
+                                <mat-label class="cl-black">{{"common.yearOfManufacture"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carProdYear">
+                                    <mat-option *ngFor="let i of carProduceYearRange;" [value]="i">{{i}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredYearOfManufacture"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="basic__information-field cl-black" appearance="outline">
+                                <mat-label class="cl-black">{{"common.transmission"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carTransmission">
+                                    <mat-option value="MANUAL">{{"common.automaticTransmission"|i18next}}</mat-option>
+                                    <mat-option value="AUTOMATIC">{{"common.manualTransmission"|i18next}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredTransmission"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="basic__information-field cl-black" appearance="outline">
+                                <mat-label class="cl-black">{{"common.fuel"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carFuel">
+                                    <mat-option value="PETROL">{{"common.petrol"|i18next}}</mat-option>
+                                    <mat-option value="DIESEL">{{"common.diesel"|i18next}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredFuel"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <!-- end form field -->
+
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{"common.fuelConsumption"|i18next}}</h2>
+                            <p class="text-secondary register__car-subtitle">
+                                {{"registerCar.oneHundredFuelConsumption"|i18next}}</p>
+                        </div>
+                        <div class="d-flex-bo flex-wrap-bo basic__information-container">
+                            <mat-form-field class="basic__information-field" appearance="outline">
+                                <mat-label class="cl-black">{{"common.fuelConsumption"|i18next}}</mat-label>
+                                <input matInput [placeholder]="'common.fuelConsumption'|i18next"
+                                    formControlName="carFuelConsumption" type="number" required>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredFuelConsumption"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <!-- end form field -->
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{"common.color"|i18next}}</h2>
+                        </div>
+                        <div class="d-flex-bo flex-wrap-bo basic__information-container">
+                            <mat-form-field class="basic__information-field" appearance="outline">
+                                <mat-label class="cl-black">{{"common.color"|i18next}}</mat-label>
+                                <mat-select matInput formControlName="carColor">
+                                    <mat-option [value]="item.value"
+                                        *ngFor="let item of colors">{{item.name}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredColor"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <!-- end form field -->
+
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{'common.description'|i18next}}</h2>
+                        </div>
+                        <div class="d-flex-bo flex-wrap-bo basic__information-container mr-t-10">
+                            <mat-form-field class="w-fit" appearance="outline">
+                                <textarea matInput [placeholder]="'common.description'|i18next"
+                                    formControlName="carDescription" required></textarea>
+                                <mat-error *ngIf="!carInformationFormGroup.hasError('required')">
+                                    {{"error.requiredDescription"|i18next}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <!-- end form field -->
+
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{"common.features"|i18next}}</h2>
+                        </div>
+                        <div
+                            class="d-flex-bo flex-wrap-bo align-items-center-bo text-center car__information-features mr-t-10">
+                            <div class="car__information-feature" *ngFor="let item of fetchedCarFeatures"
+                                (click)="handleClickFeature(item.id)">
+                                <div class="car__features-item" [id]="item?.id">
+                                    <img [src]="FEATURE_DIRECT_LINK+item.iconFilename" [alt]="item.name" width="30">
+                                    <p>{{item?.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end form field -->
+
+                        <div class="d-flex-bo flex-wrap-bo align-items-center-bo car__information__footer">
+                            <button mat-button matStepperPrevious
+                                class="btn__secondary">{{"common.back"|i18next}}</button>
+                            <button mat-button matStepperNext class="btn__primary">{{"common.next"|i18next}}</button>
+                        </div>
+                    </form>
+                </mat-step>
+
+                <!-- second form -->
+                <mat-step [stepControl]="forRentFormGroup" [label]="'registerCar.forRent'|i18next">
+                    <form [formGroup]="forRentFormGroup">
+                        <!-- start form field -->
+                        <div class="register__car-title">
+                            <h2>{{"registerCar.defaultPrice"|i18next}}</h2>
+                            <p class="text-secondary register__car-subtitle">{{"registerCar.defaultPriceTips"|i18next}}
+                            </p>
+                            <p class="text-secondary register__car-subtitle">{{"calendar.recommendPrice"|i18next}}:
+                                {{recommendPriceInFormat}}
+                            </p>
+                        </div>
+                        <mat-form-field class="input__car-form" appearance="outline">
+                            <mat-label class="cl-black">{{"registerCar.defaultPrice"|i18next}}</mat-label>
+                            <input matInput [placeholder]="'registerCar.defaultPrice'|i18next"
+                                formControlName="defaultPrice" type="number" required>
+                            <mat-error
+                                *ngIf="carInformationFormGroup.hasError('pattern') || !carInformationFormGroup.hasError('required')">
+                                {{"error.requiredDefaultPrice"|i18next}}
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- end form field -->
+
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{"common.discount"|i18next}}</h2>
+                            </div>
+                            <div class="discount__status-field ml-auto" [formGroup]="toggleDiscountGroup">
+                                <mat-slide-toggle formControlName="isDiscount">
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+
+                        <div *ngIf="toggleDiscountGroup.get('isDiscount')?.value===true"
+                            [formGroup]="toggleDiscountGroup" class="d-flex-bo flex-wrap-bo discount__field-group">
+                            <div class="discount__field mobile-fw-flex">
+                                <p class="discount__subtitle">{{"common.discountWeek"|i18next}}</p>
+                                <mat-slider min="1" max="100" step="1">
+                                    <input matSliderThumb formControlName="discountPercentByWeek">
+                                </mat-slider>
+                                <p class="discount__subtitle">
+                                    {{toggleDiscountGroup.get('discountPercentByWeek')?.value+"%"}}</p>
+                            </div>
+                            <div class="discount__field flex-end mobile-fw-flex">
+                                <p class="discount__subtitle">{{"common.discountMonth"|i18next}}</p>
+                                <mat-slider min="1" max="100" step="1">
+                                    <input matSliderThumb formControlName="discountPercentByMonth">
+                                </mat-slider>
+                                <p class="discount__subtitle">
+                                    {{toggleDiscountGroup.get('discountPercentByMonth')?.value+"%"}}</p>
+                            </div>
+                        </div>
+                        <!-- end form field -->
+
+                        <!-- start form field -->
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{"common.fastRent"|i18next}}</h2>
+                            </div>
+                            <div class="discount__status-field ml-auto" [formGroup]="toggleFastRentGroup">
+                                <mat-slide-toggle formControlName="isFastRent">
+                                </mat-slide-toggle>
+                            </div>
+                            <p class="cl-danger register__car-subtitle">
+                                {{"registerCar.fastRentTips"|i18next}}
+                                <br />
+                                {{"registerCar.fastRentWarning"|i18next}}
+                            </p>
+                        </div>
+
+                        <!-- <div *ngIf="toggleFastRentGroup.get('isFastRent')?.value===true"
+                            [formGroup]="toggleFastRentGroup"
+                            class="d-flex-bo flex-wrap-bo align-between g-20 cl-black">
+                            <mat-form-field class="fast__rent-6 mobile-fw-flex" appearance="outline">
+                                <mat-label class="cl-black">Giới hạn từ</mat-label>
+                                <mat-select matInput formControlName="limitFrom">
+                                    <mat-option value="6">6 tiếng tới</mat-option>
+                                    <mat-option value="12">12 tiếng tới</mat-option>
+                                    <mat-option value="24">24 tiếng tới</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="fast__rent-6 mobile-fw-flex" appearance="outline">
+                                <mat-label class="cl-black">Giới hạn từ</mat-label>
+                                <mat-select matInput formControlName="untilWeek">
+                                    <mat-option value="1">1 tiếng tới</mat-option>
+                                    <mat-option value="2">2 tiếng tới ( khuyến nghị )</mat-option>
+                                    <mat-option value="3">3 tiếng tới</mat-option>
+                                    <mat-option value="4">4 tiếng tới</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div> -->
+
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{"common.carAddress"|i18next}}</h2>
+                            </div>
+                        </div>
+
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container address__div-input">
+                            <div class="discount__status-field">
+                                <p>{{
+                                    forRentFormGroup.get("defaultLocation")?.value !==""
+                                    ?forRentFormGroup.get("defaultLocation")?.value:'registerCar.defaultLocationLabel'|i18next
+                                    }}</p>
+                            </div>
+                            <div class="discount__status-field ml-auto" (click)="toggleAddressModal()">
+                                <img src="../../../../assets/images/map.png" alt="404" width="20">
+                            </div>
+                        </div>
+                        <p class="cl-danger register__car-subtitle" *ngIf="!addressFormGroup.hasError('required')">
+                            {{"error.requiredAddressRegisterCar"|i18next}}</p>
+
+                        <div id="myModal" class="modal__address" *ngIf="showAddressModal===true">
+                            <div class="modal__address-content">
+                                <span class="close" (click)="toggleAddressModal()">&times;</span>
+                                <div class="modal__address-title">
+                                    <h2>{{"registerCar.changeAddressTitle"|i18next}}</h2>
+                                </div>
+                                <div class="modal__address-fields">
+                                    <h3>{{"registerCar.address"|i18next}} <span class="cl-danger">*</span></h3>
+                                    <div class="modal__address-field" [formGroup]="addressFormGroup">
+                                        <p class="text-secondary">{{"common.city"|i18next}}</p>
+                                        <mat-form-field appearance="outline" class="w-fit">
+                                            <mat-select matInput formControlName="city"
+                                                (selectionChange)="onChangeCity()"
+                                                [placeholder]="'common.chooseCity'|i18next">
+                                                <mat-option [value]="item.id"
+                                                    *ngFor="let item of fetchedProvinces">{{item.name}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="!addressFormGroup.hasError('required')">
+                                                {{"error.requiredCity"|i18next}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <p class="text-secondary">{{"common.district"|i18next}}</p>
+                                        <mat-form-field appearance="outline" class="w-fit">
+                                            <mat-select matInput formControlName="district"
+                                                (selectionChange)="onChangeDistrict()"
+                                                [placeholder]="'common.chooseDistrict'|i18next">
+                                                <mat-option [value]="item.id"
+                                                    *ngFor="let item of fetchedDistricts">{{item.name}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="!addressFormGroup.hasError('required')">
+                                                {{"error.requiredDistrict"|i18next}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <p class="text-secondary">{{"common.ward"|i18next}}</p>
+                                        <mat-form-field appearance="outline" class="w-fit">
+                                            <mat-select matInput formControlName="ward"
+                                                [placeholder]="'common.chooseWard'|i18next">
+                                                <mat-option [value]="item.id"
+                                                    *ngFor="let item of fetchedWards">{{item.name}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="!addressFormGroup.hasError('required')">
+                                                {{"error.requiredWard"|i18next}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <p class="text-secondary">{{"common.street"|i18next}}</p>
+                                        <mat-form-field appearance="outline" class="w-fit">
+                                            <input matInput [placeholder]="'common.typeAddress'|i18next"
+                                                formControlName="street" required [matAutocomplete]="auto">
+                                            <mat-autocomplete #auto="matAutocomplete">
+                                                <mat-option *ngFor="let option of fetchedLocation"
+                                                    [value]="option.address">
+                                                    {{option.address}}
+                                                </mat-option>
+                                            </mat-autocomplete>
+                                            <mat-error *ngIf="!addressFormGroup.hasError('required')">
+                                                {{"error.requiredStreet"|i18next}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <button class="btn__location-action bg-black"
+                                            (click)="toggleAddressModal()">{{"common.cancelAction"|i18next}}</button>
+                                        <button class=" btn__location-action ml-10 bg-gemstone"
+                                            [disabled]="this.addressFormGroup.status==='INVALID'?true:''"
+                                            (click)="onSubmitAddress()">{{"common.confirmAction"|i18next}}</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- start form field -->
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{"common.deliveryToTenant"|i18next}}</h2>
+                            </div>
+                            <div class="discount__status-field ml-auto" [formGroup]="toggleDeliveryGroup">
+                                <mat-slide-toggle formControlName="isDeliveryToTenant">
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+
+                        <div *ngIf="toggleDeliveryGroup.get('isDeliveryToTenant')?.value===true"
+                            [formGroup]="toggleDeliveryGroup" class="d-flex-bo flex-wrap-bo discount__field-group">
+                            <div class="discount__field mobile-fw-flex">
+                                <p class="discount__subtitle">{{"common.deliveryFee"|i18next}}</p>
+                                <mat-slider min="1000" max="20000" step="1000">
+                                    <input matSliderThumb formControlName="deliveryFee">
+                                </mat-slider>
+                                <p class="discount__subtitle">
+                                    {{toggleDeliveryGroup.get('deliveryFee')?.value+"Đ"}}</p>
+                            </div>
+                        </div>
+                        <!-- start form field -->
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{"common.limitDistance"|i18next}}</h2>
+                            </div>
+                            <div class="discount__status-field ml-auto" [formGroup]="toggleLimitDistanceGroup">
+                                <mat-slide-toggle formControlName="isLimitDistance">
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+
+                        <div *ngIf="toggleLimitDistanceGroup.get('isLimitDistance')?.value===true"
+                            [formGroup]="toggleLimitDistanceGroup" class="d-flex-bo flex-wrap-bo discount__field-group">
+                            <div class="discount__field mobile-fw-flex">
+                                <p class="discount__subtitle">{{"common.maximumKmInDay"|i18next}}</p>
+                                <mat-slider min="300" max="500" step="5">
+                                    <input matSliderThumb formControlName="limitDistance">
+                                </mat-slider>
+                                <p class="discount__subtitle">
+                                    {{toggleLimitDistanceGroup.get('limitDistance')?.value+"km"}}</p>
+                                <p class="text-secondary">{{"common.recommendKmInDay"|i18next}}: 400km</p>
+                            </div>
+                            <div class="discount__field mobile-fw-flex">
+                                <p class="discount__subtitle">{{"common.limitDistanceFee"|i18next}}</p>
+                                <mat-slider min="1000" max="5000" step="1000">
+                                    <input matSliderThumb formControlName="limitDistanceFee">
+                                </mat-slider>
+                                <p class="discount__subtitle">
+                                    {{toggleLimitDistanceGroup.get('limitDistanceFee')?.value+"Đ"}}</p>
+                                <p class="text-secondary">{{'common.recommendFee'|i18next}} : 3000Đ</p>
+                            </div>
+                        </div>
+
+                        <!-- start option  form field -->
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{'common.withDriver'|i18next}}</h2>
+                            </div>
+                            <div class="discount__status-field ml-auto" [formGroup]="toggleWithDriverGroup">
+                                <mat-slide-toggle formControlName="isWithDriver">
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                        <!-- end option form field -->
+                        <!-- start option  form field -->
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field"
+                                *ngIf="toggleWithDriverGroup.get('isWithDriver')?.value===true">
+                                <h2>{{"common.supportIntermunipical"|i18next}}</h2>
+                            </div>
+                            <div class="discount__status-field ml-auto" [formGroup]="toggleWithDriverInterstateGroup"
+                                *ngIf="toggleWithDriverGroup.get('isWithDriver')?.value===true">
+                                <mat-slide-toggle formControlName="isChecked">
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                        <!-- end option form field -->
+
+                        <!-- start form field -->
+                        <div
+                            class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                            <div class="discount__status-field">
+                                <h2>{{"common.carRentalTermsAndConditions"|i18next}}</h2>
+                                <p class="text-secondary register__car-subtitle mb-0">
+                                    {{"registerCar.carRentalTermsAndConditionsTips"|i18next}}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex-bo flex-wrap-bo basic__information-container mr-t-10"
+                            [formGroup]="forRentFormGroup">
+                            <mat-form-field class="w-fit" appearance="outline">
+                                <textarea matInput
+                                    [placeholder]="'registerCar.carRentalTermsAndConditionsPlaceholder'|i18next"
+                                    formControlName="policies" rows="5"></textarea>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="d-flex-bo flex-wrap-bo align-items-center-bo car__information__footer mt-0">
+                            <button mat-button matStepperPrevious
+                                class="btn__secondary">{{'common.back'|i18next}}</button>
+                            <button mat-button matStepperNext class="btn__primary">{{'common.next'|i18next}}</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>{{'common.image'|i18next}}</ng-template>
+                    <div
+                        class="register__car-title d-flex-bo flex-wrap-bo basic__information-container discount__status-container">
+                        <div class="discount__status-field">
+                            <h2>{{'common.image'|i18next}}</h2>
+                            <p class="text-secondary register__car-subtitle mb-0">{{'registerCar.imagesTips'|i18next}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <ngx-dropzone (change)="onSelect($event)" [accept]="'image/*'" [maxFileSize]="1000000"
+                        [expandable]="true">
+                        <ngx-dropzone-label>
+                            <i class="fa-solid fa-arrow-up-from-bracket ico__upload"></i>
+                            <p>
+                                {{'registerCar.dragImage'|i18next}} <button mat-raised-button
+                                    class="btn__upload">{{'registerCar.chooseImage'|i18next}}
+                                </button>
+                            </p>
+                        </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of cloneFiles"
+                            [removable]="true" (removed)="onRemove(f)" [file]="f">
+                            <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+                            <ngx-dropzone-label></ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                    </ngx-dropzone>
+                    <div class="d-flex-bo flex-wrap-bo align-items-center-bo car__information__footer">
+                        <button mat-button matStepperPrevious class="btn__secondary">{{'common.back'|i18next}}</button>
+                        <button mat-button matStepperNext class="btn__primary" (click)="onSubmitRegisterCar()"
+                            [disabled]="cloneFiles.length<1">{{'common.complete'|i18next}}</button>
+                        <!-- <div>
+                                <button mat-button matStepperPrevious>Back</button>
+                                <button mat-button (click)="stepper.reset()">Reset</button>
+                            </div> -->
+                    </div>
+                </mat-step>
+            </mat-stepper>
+
+        </div>
+    </div>
+</div>

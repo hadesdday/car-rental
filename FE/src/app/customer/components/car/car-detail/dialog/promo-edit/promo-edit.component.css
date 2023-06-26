@@ -1,0 +1,28 @@
+.promo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.promo-item .promo__icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.promo-item .promo__info {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.promo-item .promo__info .promo__sub-info {
+  color: #ccc;
+  font-size: 1.3rem;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+/*# sourceMappingURL=promo-edit.component.css.map */

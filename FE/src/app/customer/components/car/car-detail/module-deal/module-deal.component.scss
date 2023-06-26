@@ -1,0 +1,269 @@
+// carousel
+::ng-deep .car-detail-container.car-detail-dialog .module-deal .carousel-arrow--next{
+    right: 20px;
+}
+::ng-deep .car-detail-container.car-detail-dialog .module-deal .carousel-arrow--prev{
+    left: 5px;
+}
+.module-deal {
+    padding: 40px 20px
+}
+
+.module-deal .title {
+    font-size: 24px;
+    color: #141414;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+::ng-deep .car-detail-container.car-detail-dialog .module-deal .title {
+    color: #fff;
+}
+
+// relative-car
+.relative-car-item-wrapper {
+    padding: 5px;
+}
+
+.relative-car-item-wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.relative-car-item {
+    margin-right: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    color: #141414;
+    cursor: pointer;
+}
+
+.relative-car-item:hover .relative-car-item__image::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.relative-car-item:hover .price-car {
+    background-color: var(--gemstone-color)
+}
+
+.relative-car-item .price-car {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--gemstone-color-hover);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-top-left-radius: 5px;
+    font-weight: 800;
+    z-index: 2;
+    font-size: 1.4rem;
+}
+
+
+.relative-car-item__image {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 75%;
+}
+
+.relative-car-item__image::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: all .3s linear;
+}
+
+.relative-car-item__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+.carousel-dots {
+    bottom: -25px;
+}
+
+.carousel-dot {
+    background-color: var(--primary-color);
+    opacity: .4;
+    width: 10px;
+    height: 10px;
+}
+
+.carousel-dot--active {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+.desc-car {
+    padding: 10px;
+}
+
+.desc-car__name {
+    display: flex;
+    align-items: center;
+}
+
+.desc-car__name h4 {
+    max-width: calc(100% - 35px);
+    margin-right: 5px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    color: #141414;
+    font-weight: 700;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    margin: 0
+}
+
+.relative-car-item .group-line {
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.star {
+    display: flex;
+    align-items: center;
+}
+
+.star_rate-num {
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-right: 0;
+    color: #141414;
+    line-height: 24px;
+}
+
+.star-container {
+    display: flex;
+    align-items: center;
+}
+
+.location p {
+    font-size: 1.4rem;
+    color: #141414;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// icon-bo
+.icon-insurance {
+    background-position: -344px -69px;
+}
+
+.location-icon {
+    background-position: -147px -220px;
+    margin-right: 3px;
+    transform: scale(.8);
+}
+
+// carousel
+::ng-deep .module-deal .carousel-arrow--next {
+    right: -20px
+}
+
+::ng-deep .module-deal .carousel-arrow--prev {
+    left: -35px
+}
+
+
+//
+.relative-car-carousel-item-wrapper {}
+
+.relative-car-carousel-item-wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.relative-car-carousel-item {
+    margin-right: 15px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.relative-car-carousel-item:hover .relative-car-carousel-item__image::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.relative-car-carousel-item:hover .price-car {
+    background-color: var(--gemstone-color)
+}
+
+.relative-car-carousel-item .price-car {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--second-gemstone-color);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-top-left-radius: 5px;
+    font-weight: 800;
+    z-index: 2;
+    font-size: 1.4rem;
+}
+
+
+.relative-car-carousel-item__image {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 75%;
+}
+
+.relative-car-carousel-item__image::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: all .3s linear;
+}
+
+.relative-car-carousel-item__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+.carousel-dot {
+    background-color: var(--primary-color);
+    opacity: .4;
+    width: 10px;
+    height: 10px;
+}
+
+.carousel-dot--active {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+

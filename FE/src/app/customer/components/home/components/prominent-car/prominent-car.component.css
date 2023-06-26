@@ -1,0 +1,329 @@
+.destination-slt {
+  position: relative;
+  margin-top: 80px;
+  padding-bottom: 40px;
+}
+
+.destination-slt .title-car {
+  color: #6E6E6E;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+}
+
+.airport-slt {
+  position: relative;
+  padding-top: 20px;
+}
+
+.airport-note {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.airport-note span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 25%;
+}
+
+.airport-carousel-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.prominent-car-item-wrapper {
+  padding: 5px;
+}
+
+.prominent-car-item-wrapper h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.prominent-car-item {
+  margin-right: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  color: #141414;
+  cursor: pointer;
+}
+
+.prominent-car-item:hover .prominent-car-item__image::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.prominent-car-item:hover .price-car {
+  background-color: var(--gemstone-color);
+}
+
+.prominent-car-item .price-car {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--gemstone-color-hover);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-top-left-radius: 5px;
+  font-weight: 800;
+  z-index: 2;
+  font-size: 1.4rem;
+}
+
+.prominent-car-item__image {
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 75%;
+}
+
+.prominent-car-item__image::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.prominent-car-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.carousel-dots {
+  bottom: -25px;
+}
+
+.carousel-dot {
+  background-color: var(--primary-color);
+  opacity: .4;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-dot--active {
+  background-color: var(--primary-color);
+  opacity: 1;
+}
+
+.desc-car {
+  padding: 5px;
+}
+
+.desc-car__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.desc-car__name h4 {
+  max-width: calc(100% - 35px);
+  margin-right: 5px;
+  line-height: 24px;
+  color: #141414;
+  font-weight: 900;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  margin-bottom: 0;
+}
+
+.prominent-car-item .group-line {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.star {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.star_rate-num {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-right: 0;
+  color: #141414;
+  line-height: 24px;
+}
+
+.star-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prominent-car-item .group-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prominent-car-item .group-label span {
+  font-size: 1.2rem;
+  color: #6e6e6e;
+  background: #e8eaef;
+  padding: 0.3rem 0.75rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.location p {
+  font-size: 1.4rem;
+  color: #141414;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon-insurance {
+  background-position: -344px -69px;
+}
+
+.location-icon {
+  background-position: -147px -220px;
+  margin-right: 3px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.carousel-arrow.carousel-arrow--next {
+  right: 15px;
+}
+
+.prominent-car-carousel-item-wrapper h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.prominent-car-carousel-item {
+  margin-right: 15px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.prominent-car-carousel-item:hover .prominent-car-carousel-item__image::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.prominent-car-carousel-item:hover .price-car {
+  background-color: var(--gemstone-color);
+}
+
+.prominent-car-carousel-item .price-car {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--second-gemstone-color);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-top-left-radius: 5px;
+  font-weight: 800;
+  z-index: 2;
+  font-size: 1.4rem;
+}
+
+.prominent-car-carousel-item__image {
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 75%;
+}
+
+.prominent-car-carousel-item__image::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.prominent-car-carousel-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.carousel-dots {
+  bottom: -25px;
+}
+
+.carousel-dot {
+  background-color: var(--primary-color);
+  opacity: .4;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-dot--active {
+  background-color: var(--primary-color);
+  opacity: 1;
+}
+/*# sourceMappingURL=prominent-car.component.css.map */

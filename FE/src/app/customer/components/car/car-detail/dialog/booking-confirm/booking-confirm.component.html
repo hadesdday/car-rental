@@ -1,0 +1,239 @@
+<div class="modal-container">
+  <div class="modal-header">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="modal-body">
+    <form action="" class="form-detail">
+      <div class="line-form">
+        <h4>Thông tin chi tiết</h4>
+        <div class="detail">
+          <div class="detail__name">
+            {{ car.model.name }} {{ car.yearOfManufacture }}
+          </div>
+          <div class="detail__info">
+            <div class="row">
+              <div class="col l-4">
+                <div class="fix-img">
+                  <img
+                    src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2020/p/g/2020/07/13/00/8AJlKFKgHPtGPjM7gNr17w.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="about-owner">
+                  <img
+                    src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2020/p/g/2020/07/13/00/8AJlKFKgHPtGPjM7gNr17w.jpg"
+                    class="booking-oto-avatar"
+                  />
+                  <p class="about-owner__name">Huy Huynh</p>
+                </div>
+              </div>
+              <div class="col l-8">
+                <div class="detail__car-image"></div>
+                <div class="detail__owner">
+                  <div class="detail__owner__line">
+                    <h5>Thời gian thuê xe</h5>
+                    <div class="d-flex-bo justify-content-between-bo">
+                      <span
+                        >Bắt đầu:
+                        {{
+                          timerUtilService.formatDuration(
+                            sdFormValue.startTime
+                          )
+                        }}-{{
+                          sdFormValue.startDate | date : "dd/MM/yyyy"
+                        }}</span
+                      >
+                      <span
+                        >Kết thúc:
+                        {{
+                          timerUtilService.formatDuration(sdFormValue.endTime)
+                        }}-{{ sdFormValue.endDate | date : "dd/MM/yyyy" }}</span
+                      >
+                    </div>
+                  </div>
+                  <div class="detail__owner__line">
+                    <h5>Địa điểm giao nhận xe</h5>
+                    <p>
+                      {{ car.address.district.prefix }}
+                      {{ car.address.district.name }} ,{{
+                        car.address.province.domain
+                      }}
+                      {{ car.address.province.name
+                      }}<span class="fs-12"> (địa chỉ chủ xe)</span>
+                    </p>
+                  </div>
+                  <div class="detail__owner__line">
+                    <h5>Số điện thoại</h5>
+                    <p>***********</p>
+                    <p class="cl-danger fs-12">
+                      Lưu ý: số điện thoại chủ xe sẽ được hiển thị sau khi thanh
+                      toán
+                    </p>
+                  </div>
+                  <div class="detail__owner__line">
+                    <h5>Lời nhắn</h5>
+                    <textarea
+                      placeholder="Gợi ý: Chào anh chủ xe,...."
+                      class="w-fit"
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line-form">
+        <h4>Vị trí xe</h4>
+        <div class="car-location">
+          <p>
+            {{ car.address.district.prefix }}
+            {{ car.address.district.name }} ,{{ car.address.province.domain }}
+            {{ car.address.province.name }}
+            <span class="fs-12"
+              >(địa chỉ cụ thể sẽ được hiển thị sau khi thanh toán).</span
+            >
+          </p>
+          <div id="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border: 0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="line-form">
+        <h4>Giới hạn quãng đường</h4>
+        <div class="limit">
+          <ul>
+            <li>Không giới hạn quảng đường</li>
+          </ul>
+        </div>
+      </div>
+      <div class="line-form">
+        <h4>Bảng giá</h4>
+        <div class="price">
+          <div class="row">
+            <div class="col l-12">
+              <div class="price-table">
+                <div class="price-table__line">
+                  <div class="d-flex-bo justify-content-between-bo">
+                    <p>Đơn giá thuê</p>
+                    <span class="price-detail"
+                      >{{ car.service.defaultPrice | currency : "VND" }}/ngày</span
+                    >
+                  </div>
+                  <div class="d-flex-bo justify-content-between-bo">
+                    <p>Phí dịch vụ</p>
+                    <span class="price-detail">{{
+                      car.insuranceFee | currency : "VND"
+                    }}</span>
+                  </div>
+                  <div class="d-flex-bo justify-content-between-bo">
+                    <p>Phí bảo hiểm</p>
+                    <span class="price-detail">{{
+                      car.appServiceFee | currency : "VND"
+                    }}</span>
+                  </div>
+                </div>
+                <div class="price-table__line">
+                  <div
+                    class="d-flex-bo justify-content-between-bo"
+                    *ngIf="car.discountPrice > 0"
+                  >
+                    <p>Khuyến mãi:</p>
+                    <span class="price-detail"
+                      >-{{ car.discountPrice | currency : "VND" }}</span
+                    >
+                  </div>
+                  <div class="d-flex-bo justify-content-between-bo">
+                    <p>Tổng phí thuê xe</p>
+                    <span class="price-detail">
+                      {{ car.rentalFee | currency : "VND" }} x
+                      <strong>{{ car.rentalDay }} ngày</strong></span
+                    >
+                  </div>
+                </div>
+                <div class="d-flex-bo justify-content-between-bo">
+                  <p class="total cl-gem">Tổng cộng</p>
+                  <span class="price-detail">{{
+                    car.totalFee | currency : "VND"
+                  }}</span>
+                </div>
+              </div>
+              <div class="space m"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line-form">
+        <h4>Giấy tờ bắt buộc</h4>
+        <div class="license">
+          <ul class="license-list">
+            <li class="license-item" *ngFor="let i of [1, 1, 1, 1, 1]">
+              <p>CMND</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="line-form">
+        <h4>Các yêu cầu khác</h4>
+        <div class="more-request">
+          <ul>
+            <li>Xe máy và cà vẹt xe chính chủ có giá trị</li>
+          </ul>
+        </div>
+      </div>
+      <div class="line-form">
+        <h4>Chính sách huỷ chuyến</h4>
+        <div class="cancel-license">
+          <ul>
+            <li>
+              <p>
+                Thời điểm huỷ chuyến <=7 <strong>7 ngày</strong> trước khi khởi
+                hành, phí chuyến <strong>100%</strong> tiền cọc, hoàn trả
+                <strong>0%</strong> tiền đã cọc
+              </p>
+            </li>
+            <li>
+              <p>
+                Thời điểm huỷ chuyến > <strong>7 ngày</strong> trước khi khởi
+                hành, phí chuyến <strong>0%</strong> tiền cọc, hoàn trả
+                <strong>100%</strong> tiền đã cọc
+              </p>
+            </li>
+          </ul>
+          <p class="cl-danger fs-12">
+            *** Thời gian huỷ chuyến sẽ tăng từ 7 đến 15 ngày nếu thời gian đi
+            rơi vào dịp Tết âm lịch
+          </p>
+          <div class="note fs-12">
+            * Tất cả các trường hợp huỷ chuyến trong vòng <strong></strong> kể
+            từ thời điểm đặt cọc thành công sẽ không áp dụng việc tính Phí huỷ
+            chuyến
+          </div>
+        </div>
+      </div>
+      <div class="line-form">
+        <div class="confirm-box"></div>
+      </div>
+    </form>
+  </div>
+  <div class="model-actions">
+    <div class="d-flex-bo wrap-fit">
+      <div class="wrap-fit">
+        <button class="w-fit cancel-btn" mat-raised-button>Huỷ</button>
+      </div>
+      <div class="wrap-fit">
+        <button class="w-fit" color="primary" mat-raised-button (click)="bookCar()">Đặt xe</button>
+      </div>
+    </div>
+  </div>
+</div>

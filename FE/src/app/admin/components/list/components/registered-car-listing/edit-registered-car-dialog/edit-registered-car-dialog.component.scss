@@ -1,0 +1,10 @@
+.edit {
+  &__dialog {
+    padding: 20px;
+  }
+  &__car {
+    &-form {
+      min-width: 900px;
+    }
+  }
+}

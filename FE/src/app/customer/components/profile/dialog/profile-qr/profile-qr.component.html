@@ -1,0 +1,17 @@
+<div class="qr-container">
+    <qrcode [qrdata]="qrDataUrl" [width]="qrWidth" [imageHeight]="50" [imageWidth]="150" [errorCorrectionLevel]="'M'" [colorDark]="'#00a550'"  [title]="'Scan me!'"  [ariaLabel]="'Scan me!'" [elementType]="'canvas'"></qrcode>
+    <div class="control-container">
+        <div class="zoom-in-button" (click)="zoomIn()">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </div>
+        <div class="zoom-out-button" (click)="zoomOut()">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </div>
+        <div class="zoom-close-button" [mat-dialog-close]="true">
+            <i class="fa-solid fa-x"></i>
+        </div>
+    </div>
+</div>
+<div class="overlay">
+
+</div>

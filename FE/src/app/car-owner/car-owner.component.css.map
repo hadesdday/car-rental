@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EACpB,UAAU,EAAE,KAAK;EACjB,gBAAgB,EAAE,sBAAsB;EACxC,cAAc,EAAE,IAAI;CACrB",
+    "sources": [
+        "car-owner.component.scss"
+    ],
+    "names": [],
+    "file": "car-owner.component.css"
+}

@@ -1,0 +1,14 @@
+.car__register-container {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.btn__owner-register {
+  color: #fff !important;
+  background-color: var(--gemstone-color);
+  text-transform: uppercase;
+  font-weight: 560;
+  padding: 20px 15px;
+  margin: 20px;
+}
+/*# sourceMappingURL=car-register.component.css.map */

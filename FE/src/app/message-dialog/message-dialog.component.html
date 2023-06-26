@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+    {{data.message}}
+</div>
+<mat-dialog-actions align="end" *ngIf="data.navigatePages as navigatePages">
+    <ng-container>
+        <ng-container *ngFor="let navigatePage of navigatePages">
+            <ng-container *ngIf="navigatePage === 'login' ">
+                <button color="primary" mat-raised-button (click)="openLoginDialog()"
+                    mat-dialog-close>{{'cta.loginNow0'|i18next}}</button>
+            </ng-container>
+            <ng-container *ngIf="navigatePage === 'home' ">
+                <button color="primary" mat-button [routerLink]="['/home']"
+                    mat-dialog-close>{{'common.backToHome'|i18next}}</button>
+            </ng-container>
+            <ng-container *ngIf="navigatePage === 'close' ">
+                <button color="primary" mat-button mat-dialog-close>{{'common.understand'|i18next}}</button>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</mat-dialog-actions>

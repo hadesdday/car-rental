@@ -1,0 +1,75 @@
+.d-flex-bo {
+    display: flex;
+}
+.d-flex-bo .wrap-fit{
+    flex: 1;
+    padding-right: 10px;
+}
+.d-flex-bo .wrap-fit:last-child{
+    padding-right: unset;
+}
+// direction flex
+.d-flex-bo.flex-row-bo {
+    flex-direction: row;
+}
+
+.d-flex-bo.flex-row-reverse-bo {
+    flex-direction: row-reverse;
+}
+
+.d-flex-bo.flex-col-bo {
+    flex-direction: column;
+}
+
+.d-flex-bo.flex-col-reverse-bo {
+    flex-direction: column;
+}
+
+// justify content flex
+.d-flex-bo.justify-content-start-bo {
+    justify-content: start;
+}
+
+.d-flex-bo.justify-content-end-bo {
+    justify-content: end;
+}
+
+.d-flex-bo.justify-content-center-bo {
+    justify-content: center;
+}
+
+.d-flex-bo.justify-content-between-bo {
+    justify-content: space-between;
+}
+
+.d-flex-bo.justify-content-around-bo {
+    justify-content: space-around;
+}
+// align-item
+.d-flex-bo.align-items-start-bo {
+    align-items: start;
+}
+.d-flex-bo.align-items-end-bo {
+    align-items: end;
+}
+.d-flex-bo.align-items-center-bo {
+    align-items:center;
+}
+// wrap
+.d-flex-bo.flex-nowrap-bo{
+    flex-wrap: nowrap;
+}
+.d-flex-bo.flex-wrap-bo{
+    flex-wrap: wrap;
+}
+// auto margins
+.mr-r-auto-bo{
+    margin-right: auto !important;
+}
+.mr-l-auto-bo{
+    margin-right: auto !important;
+}
+// flex
+.flex-1-bo{
+    flex: 1
+}

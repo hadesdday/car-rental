@@ -1,0 +1,21 @@
+{
+  "/search-address": {
+    "target": "https://m-common.mioto.vn/lbs/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "headers": {
+      "Connection": "keep-alive"
+    }
+  },
+  "/api/**": {
+    "target": "http://localhost:8080/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Connection": "keep-alive"
+    }
+  }
+}

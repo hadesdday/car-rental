@@ -1,0 +1,299 @@
+.sign-up__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    
+}
+
+.sign-up__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('/assets/banner/sign-up-bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 0 200px
+}
+
+.sign-up__form {
+    border-radius: 5px;
+    padding: 20px 20px 40px;
+    z-index: 1;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    background-color: rgba($color: #fff, $alpha: 0.9);
+}
+.sign-up__form .progress__wrapper{
+    margin-bottom: 15px;
+}
+.sign-up__form .header {
+    margin-bottom: 10px;
+}
+
+.sign-up__form .line-form mat-form-field {
+    width: 100%;
+}
+
+.sign-up__form .line-form {
+    margin-bottom: 3px;
+}
+
+.sign-up__form .header h2 {
+    color: var(--gemstone-color);
+    margin: 0;
+}
+
+.sign-up__form .header .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.sign-up__form .sign-up-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--gemstone-color);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 10px;
+    letter-spacing: 4px;
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    border: unset;
+    background-color: transparent;
+    border-radius: 5px;
+}
+.sign-up__form .sign-up-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--gemstone-color);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 10px;
+    letter-spacing: 4px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    border: unset;
+    background-color: transparent;
+}
+.sign-up__form .sign-up-btn:disabled{
+    background-color: #ccc;
+    color: #666;
+    border-radius: 5px;
+}
+
+.sign-up__form .sign-up-btn:disabled:hover{
+    background-color: #ccc;
+    color: #666;
+    box-shadow:unset
+}
+.sign-up__form .sign-up-btn:disabled span{
+   display: none;
+}
+
+
+.sign-up__form .sign-up-btn:hover {
+    background: var(--gemstone-color);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--gemstone-color),
+}
+
+.sign-up__form .sign-up-btn span {
+    position: absolute;
+    display: block;
+}
+
+.sign-up__form .sign-up-btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gemstone-color));
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.sign-up__form .sign-up-btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--gemstone-color));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.sign-up__form .sign-up-btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--gemstone-color));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+
+.sign-up__form .sign-up-btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--gemstone-color));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+.sign-up__form .separate__group{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-wrap: nowrap;
+    margin: 15px 0
+}
+.sign-up__form .separate__group span{
+    height: 1px;
+    background: #ccc;
+    flex: 1;
+}
+.sign-up__form .separate__group p{
+    color: #666;
+    margin: 0 10px
+}
+.sign-up__form .more-connect__group button{
+    background: #fff;
+    color: var(--gemstone-color);
+    border-radius: 5px;
+    border: 1px solid var(--gemstone-color);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.sign-up__form .more-connect__group button img{
+    width: 22px;
+    height: 22px;
+}
+#fbSignInBtn{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2473f2;
+    color: #fff;
+    padding: 2px;
+    border: unset;
+}
+#fbSignInBtn .icon{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#fbSignInBtn .icon svg{
+    color: #2473f2
+}
+#fbSignInBtn span{
+    flex: 1;
+    text-align: center;
+}
+
+#signInButton:hover{
+    background: var(--gemstone-color);
+    color: #fff;
+}
+#signInButton:hover span{
+    color: #fff;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+
+
+::ng-deep .sign-up__form .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+}
+
+::ng-deep .sign-up__form .mat-mdc-form-field-icon-prefix,
+.mat-mdc-form-field-icon-suffix {
+    margin-left: 10px;
+}
+
+::ng-deep .sign-up__form mat-icon {
+    color: var(--gemstone-color);
+}
+
+::ng-deep asl-google-signin-button iframe{
+    color: red
+}

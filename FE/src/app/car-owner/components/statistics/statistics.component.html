@@ -1,0 +1,60 @@
+<div class="statistics__container bg-white">
+    <div class="text-center statistics__header-title">
+        <h1>{{'statistics.title'|i18next}}</h1>
+    </div>
+    <div class="d-flex-bo flex-wrap-bo justify-content-center-bo statistics__information bx__shadow text-center">
+        <div class=" statistics__information-col">
+            <p>{{'statistics.avgRating'|i18next}}</p>
+            <p>{{stats_information.avgRating}} <i class="fa-solid fa-star cl-star"></i></p>
+        </div>
+        <div class="statistics__information-col">
+            <p>{{'statistics.acceptedRentalRating'|i18next}}</p>
+            <p>{{stats_information.acceptedRentalRating}}%</p>
+        </div>
+        <div class="statistics__information-col">
+            <p>{{'statistics.cancelledRentalRating'|i18next}}</p>
+            <p>{{stats_information.cancelRentalRating}}%</p>
+        </div>
+        <div class="statistics__information-col">
+            <p>{{'statistics.totalRevenue'|i18next}}</p>
+            <p>{{getMoneyFormat(stats_information.totalRevenue)}}</p>
+        </div>
+        <div class="statistics__information-col">
+            <p>{{'statistics.totalRental'|i18next}}</p>
+            <p>{{stats_information.totalRental}}</p>
+        </div>
+        <div class="statistics__information-col">
+            <p>{{'statistics.totalCar'|i18next}}</p>
+            <p>{{stats_information.totalCar}}</p>
+        </div>
+    </div>
+    <div class="d-flex-bo flex-wrap-bo justify-content-center-bo statistics__options" [formGroup]="dateRangeFormGroup">
+        <mat-form-field appearance="outline">
+            <mat-label class="cl-black">{{'statistics.category'|i18next}}</mat-label>
+            <mat-select matInput formControlName="option" class="cl-black">
+                <mat-option value="0">{{'statistics.revenue'|i18next}}</mat-option>
+                <mat-option value="1">{{'statistics.rental'|i18next}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label class="cl-black">{{'statistics.fromDate'|i18next}}</mat-label>
+            <input matInput [matDatepicker]="fromDatepicker" formControlName="fromDate">
+            <mat-datepicker-toggle matIconSuffix [for]="fromDatepicker" class="cl-black"></mat-datepicker-toggle>
+            <mat-datepicker #fromDatepicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label class="cl-black">{{'statistics.toDate'|i18next}}</mat-label>
+            <input matInput [matDatepicker]="toDatepicker" formControlName="toDate">
+            <mat-datepicker-toggle matIconSuffix [for]="toDatepicker" class="cl-black"></mat-datepicker-toggle>
+            <mat-datepicker #toDatepicker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-button class="btn btn-primary cl-white btn__view"
+            (click)="fetchData()">{{'statistics.view'|i18next}}</button>
+    </div>
+    <div class="chart-container">
+        <canvas id="MyChart">{{ chart }}</canvas>
+    </div>
+</div>

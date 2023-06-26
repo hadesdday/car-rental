@@ -1,0 +1,62 @@
+.fav-banner{
+    padding: 75px 0;
+    background: linear-gradient(91.06deg,#06745c,#00a550);
+    position: relative;
+}
+.fav-banner .fav-banner-image{
+    background-image: url("https://www.mioto.vn/static/media/header-favs.48eb4b50.svg");
+    position: absolute;
+    width: 500px;
+    height: 185px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+}
+.fav-banner .content{
+    z-index: 1;
+    color: white;
+    position: relative;
+}
+.fav-banner .content .title{
+    margin: 0;
+    font-size: 3.2rem;
+}
+.fav-banner .content .mode-toggle{
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #34ad75;
+}
+.fav-banner .content .mode-toggle .sd-button, .fav-banner .content .mode-toggle .wd-button{
+    outline: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #fff;
+    border: unset;
+    background-color: transparent;
+    width: 140px;
+    height: 24px;
+    font-weight: 600;
+    box-sizing: content-box;
+}
+.fav-banner .content .mode-toggle button.active{
+    border-radius: inherit;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.2), 0 0 4px rgba(0,0,0,.2), -2px 2px 4px rgba(0,0,0,.2);
+    background-color: #fff;
+    color: var(--gemstone-color);
+}
+.body{
+    margin: 60px 0
+}
+.body .my-favs__empty{
+    padding: 40px 0;
+    color: black;
+}
+.body .my-favs__empty h4{
+    margin: 20px 0;
+} 
+.my-fav-box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}

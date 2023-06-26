@@ -1,0 +1,29 @@
+.statistics {
+  &__container {
+    min-height: 100vh;
+    padding: 5em 0;
+  }
+  &__header-title {
+    font-size: 240%;
+  }
+  &__options {
+    gap: 20px;
+    padding-top: 20px;
+  }
+  &__information {
+    width: 50%;
+    margin: 4em auto;
+    border-radius: 5px;
+    background-color: rgba($color: #0f1939, $alpha: 0.4);
+    color: #fff;
+    padding: 3em 0;
+    &-col {
+      flex: 0 0 30%;
+      font-size: 120%;
+    }
+  }
+}
+.btn__view {
+  padding: 28px 35px !important;
+  margin: 0;
+}

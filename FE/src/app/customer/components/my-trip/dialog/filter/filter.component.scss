@@ -1,0 +1,29 @@
+.modal-container {
+    min-width: 570px;
+}
+
+.modal-header {
+    padding: 60px 20px 40px
+}
+
+.modal-header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 0 20px 48px
+}
+
+
+// +Customize form field + autocomplate
+#filter-form .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+    border-bottom: 1px solid #ccc;
+    border: unset
+}
+
+#filter-form .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    font-size: 1.4rem;
+}

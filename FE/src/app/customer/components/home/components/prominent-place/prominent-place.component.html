@@ -1,0 +1,68 @@
+<div class="prominent-place">
+    <div class="destination-slt" [style.background]="setDestinationSltBgClr()">
+        <div class="grid m-wide">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="title-car">
+                        <ng-content select=".title-car"></ng-content>
+                    </div>
+                    <app-carousel [specItems]="categories"
+                        [itemRender]="destinationCarouselItemsTemplateRef"
+                        [isPerItemInStep]="true" [isActiveControl]="true"
+                        [isAutoActive]="true"></app-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="airport-slt" [style.backgroundColor]="tertiaryClr">
+        <div class="airport-note" [style.backgroundColor]="primaryClr">
+            <span>
+                <ng-content select=".airport-note"></ng-content>
+            </span>
+        </div>
+        <div class="grid airport-carousel-container">
+            <app-carousel #airPortCarousel [specItems]="categories1"
+                [itemRender]="airportCarouselItemsTemplateRef"
+                [isPerItemInStep]="false" [dotRender]="dotCarouselItemTempRef"
+                [isActiveControl]=false
+                [isActiveDots]="true"
+                ></app-carousel>
+        </div>
+    </div>
+</div>
+
+<ng-template #destinationCarouselItemsTemplateRef let-item="item" let-idx="idx"
+    let-curIdx="curIdx">
+    <li #imageCarouselItem class="image-carousel__item col l-2-4 c-3">
+        <div href="" class="destination-carousel-item">
+            <div class="destination-carousel-item__image">
+                <img
+                    src="https://n1-cstg.mioto.vn/1/cho_thue_xe_tu_lai_tphcm/hcm/p/m/cities/HoChiMinh_v2_wd.jpg"
+                    alt="">
+                <div class="destination-carousel-item__image--overlay"
+                    [style.background]="setImageBefore()"></div>
+            </div>
+        </div>
+    </li>
+</ng-template>
+<ng-template #airportCarouselItemsTemplateRef let-item="item" let-idx="idx"
+    let-curIdx="curIdx">
+    <li #imageCarouselItem class="image-carousel__item col l-2-4 c-3">
+        <div class="airport-carousel-item-wrapper">
+            <div class="airport-carousel-item" [style.borderColor]="primaryClr">
+                <div class="airport-carousel-item__image">
+                    <img
+                        src="https://n1-cstg.mioto.vn/g/2022/04/14/17/NGXIIKNY.jpg"
+                        alt="">
+                </div>
+            </div>
+            <h4>Tân Sơn Nhất</h4>
+        </div>
+    </li>
+</ng-template>
+
+<ng-template #dotCarouselItemTempRef let-dotIdx="dotIdx" let-currentIdx="currentIdx">
+    <li class="carousel-dot"
+        [style]="dotIdx === currentIdx? activeDot: unActiveDot" (click)=sltDot(dotIdx)>
+    </li>   
+</ng-template>

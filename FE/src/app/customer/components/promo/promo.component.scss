@@ -1,0 +1,74 @@
+.promo{
+
+}
+.promo__banner{
+    padding-top: 60px;
+    padding-bottom: 1px;
+    background: url("https://www.mioto.vn/static/media/try-7.63bb80f6.png");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.promo__banner__inner{
+
+}
+.promo__banner__title{
+    padding-right: 30px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+}
+.promo__banner__search{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    width: 390px;
+    margin-bottom: 20px
+}
+.promo__banner__search i{
+    background-position: 1px -74px;
+    margin-right: 14px;
+}
+.promo__banner__search input{
+    padding: 14px 20px;
+    text-transform: uppercase;
+    background-color: transparent;
+    flex: 1;
+    outline: none;
+}
+.promo-list{
+    padding: 30px 0 60px
+}
+
+.promo-item{
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0;
+}
+.promo-item .promo__content{
+} 
+.promo-item .promo__content .title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 0;
+} 
+.promo-item .promo__content .promo__percent{
+    color: #A9AAAD;
+    font-size: 1.4rem;
+} 
+.promo-item .promo__content .promo__percent span{
+    color: var(--gemstone-color)
+} 
+.promo-item:hover{
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+}

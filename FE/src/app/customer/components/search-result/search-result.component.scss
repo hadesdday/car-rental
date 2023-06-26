@@ -1,0 +1,320 @@
+.search__result-container {
+  height: 100%;
+  overscroll-behavior: none;
+  padding: 0 10em;
+  background-color: #e8eaef;
+  overflow: hidden !important;
+}
+
+#left {
+  background: white;
+  margin-right: 10px;
+  width: 30%;
+  padding: 30px;
+  overflow-x: hidden !important;
+}
+
+#right {
+  width: 69%;
+  padding-top: 10px;
+}
+
+#left,
+#right {
+  max-height: 80vh;
+  margin-top: 2px;
+  float: left;
+  overflow: scroll;
+  height: 100%;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--secondary-text);
+    border-radius: 10px;
+  }
+}
+
+.search {
+  &__bar {
+    gap: 10px;
+    padding: 1em 2em 0;
+    &-item {
+      flex: 0 0 30%;
+      margin-right: 1.5em;
+      z-index: 101;
+      label {
+        color: var(--gemstone-color);
+        font-weight: 600;
+      }
+    }
+    &-control {
+      width: 80%;
+      outline: none;
+    }
+  }
+  &__start {
+    &-date {
+      width: 40%;
+    }
+    &-hours {
+      width: 25%;
+      transform: translate(10px, 3px);
+    }
+  }
+  &__result {
+    &-box {
+      flex: 0 0 50%;
+      box-sizing: border-box;
+      padding: 10px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      .box__location {
+        i {
+          padding: 0 5px 10px;
+        }
+      }
+    }
+    &-tag {
+      padding: 5px;
+      margin: 5px;
+      width: 35%;
+      font-size: 85%;
+      background-color: var(--secondary-color);
+      border-radius: 3px;
+      text-align: center;
+    }
+    &-information {
+      .tags {
+        flex: 0 0 80%;
+      }
+      .price {
+        flex: 0 0 20%;
+        text-align: center;
+        padding-top: 10px;
+        h3 {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.car {
+  &__type {
+    &-item {
+      flex: 0 0 25%;
+      text-align: center;
+      .icon__div {
+        background-color: #f8f9fb;
+        padding: 1.7em 1em;
+        border-radius: 50%;
+        &.active {
+          border: 1px solid black;
+        }
+      }
+      img {
+        width: 100%;
+      }
+      p {
+        &.active {
+          color: black;
+          font-weight: bolder;
+        }
+      }
+    }
+    &-list {
+      gap: 30px;
+    }
+    &-title {
+      margin-top: 20px;
+    }
+  }
+}
+
+.advanced {
+  &__options {
+    &-toggle {
+      text-align: end;
+      transition: all 0.2 ease;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+ul.search__feature-list {
+  list-style-type: none;
+  li {
+    float: left;
+    width: 45%;
+    padding: 20px 5px;
+    margin: 5px 7px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 90%;
+    cursor: pointer;
+    &.active {
+      border-color: var(--gemstone-color);
+    }
+  }
+}
+
+.cl-black {
+  &::ng-deep .mdc-form-field {
+    color: black !important;
+  }
+}
+
+.btn-unfilter {
+  width: 100%;
+  color: var(--gemstone-color);
+  background-color: #fff;
+  border: 1px solid var(--gemstone-color);
+  padding: 15px 0;
+  margin: 30px 0;
+  border-radius: 2px;
+  font-size: 120%;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+  &:hover {
+    background-color: rgba($color: #0f61cc, $alpha: 0.1);
+  }
+}
+
+.img {
+  &__title {
+    position: absolute;
+    bottom: 5px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    color: #fff;
+    width: 100%;
+    background-image: linear-gradient(
+      180deg,
+      rgba(20, 20, 20, 0),
+      rgba(20, 20, 20, 0.469167) 27.4%,
+      rgba(20, 20, 20, 0.8) 80%
+    );
+    &-container {
+      position: relative;
+      img {
+        width: 100% ;
+        height: 315px;
+        object-fit: cover;
+      }
+      h4,
+      p {
+        padding: 0;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.search {
+  &__option {
+    &-modal {
+      position: absolute;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #fff, $alpha: 0.5);
+    }
+    &-box {
+      width: 35%;
+      background-color: #fff;
+      margin-top: 6.5em;
+      padding: 20px;
+      .option-title {
+        margin-top: 20px !important;
+      }
+      .distance-range {
+        padding: 15px 10px;
+        p {
+          font-weight: 600;
+        }
+        span {
+          color: black;
+          font-weight: normal;
+          border-bottom: 1px solid var(--secondary-text);
+          padding: 0 30px;
+          margin-left: 20px;
+        }
+      }
+      .prefix-label {
+        font-size: 130%;
+        margin: 0 10px;
+        &.fa-circle {
+          font-size: 90%;
+        }
+      }
+    }
+  }
+}
+.btn-search__modal {
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 120%;
+  border-radius: 2px;
+  background-color: var(--gemstone-color);
+  color: #fff;
+  border: none;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.flag-return {
+  margin: 10px;
+  font-size: 130%;
+}
+
+.text-note {
+  padding: 5px 10px 25px;
+}
+
+.empty-data {
+  flex: 0 0 47%;
+  justify-content: center;
+  padding-top: 5em;
+}
+
+//custom material styles
+.search__result-container {
+  .mat-mdc-select-min-line,
+  .mat-mdc-tab .mdc-tab__text-label,
+  .mat-mdc-select-arrow,
+  .mat-mdc-checkbox label {
+    color: black !important;
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: whitesmoke;
+  }
+
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+    .mdc-line-ripple::before {
+    border-bottom-color: var(--secondary-text);
+  }
+}
+.mat-dialog-bg {
+}
+.mat-dialog-bg .mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: transparent;
+}
+.my-back-drop {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Set the background color to a semi-transparent black */
+}

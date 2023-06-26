@@ -1,0 +1,186 @@
+<div class="header header--bg">
+    <div class="grid wide h-fit">
+        <div class="row d-flex-bo align-items-center-bo h-fit">
+            <div class="col l-6">
+                <div class="h-list d-flex-bo">
+                    <a class="header__logo" routerLink="/home">
+                        <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/34/8213141034_2055db8e-bdec-44dc-a1a7-61331b64d79f.png?cb=1679202023"
+                            alt="" />
+                    </a>
+                    <div class="header__contact">
+                        <div class="h-list">
+                            <div class="h-item">
+                                <a href="" class="h-item__link d-flex-bo align-items-center-bo">
+                                    <i class="fa-solid fa-phone mr-r-5"></i>
+                                    1900 9217
+                                </a>
+                            </div>
+                            <div class="h-item">
+                                <a href="" class="h-item__link d-flex-bo align-items-center-bo">
+                                    <i class="fa-solid fa-envelope mr-r-5"></i>
+                                    <span style="cursor: text"> contact@nlu.vn </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-6">
+                <div class="h-list d-flex-bo flex-row-reverse-bo">
+                    <div class="header__menu">
+                        <ng-container *ngIf="userService.user$ | async as user; else notUserTemplateRef">
+                            <div class="h-list">
+                                <div class="h-item h-item--separation">
+                                    <a class="h-item__link d-flex-bo align-items-center-bo">
+                                        <div class="dropdown">
+                                            <div #dropdownMenuButton id="dropdownMenuButton"
+                                                class="d-flex-bo align-items-center-bo">
+                                                <div class="avatar avatar--s">
+                                                    <!-- <img src="https://n1-astg.mioto.vn/g/2023/01/18/05/RFDgIbEPT2wzTs5OQo2C3A.jpg"
+                                                        class="avatar-image" /> -->
+                                                    <div class="name">{{user.fullName.charAt(0)}}</div>
+                                                </div>
+                                                <p class="username" [style]="
+                            'margin: 0 10px
+                                                    !important'
+                          ">
+                                                    {{ user.fullName }}
+                                                </p>
+                                                <i class="fa-solid fa-caret-down"></i>
+                                            </div>
+                                            <div id="dropdownMenu" class="dropdown-menu" *ngIf="activeUserMenu">
+                                                <ul>
+                                                    <li [routerLink]="i.path" *ngFor="let i of userMenus">
+                                                        <a>{{ i.label }}</a>
+                                                    </li>
+                                                    <li (click)="onClickSignOut()">
+                                                        <a>{{'common.logout'|i18next}}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="h-item h-item--separation">
+                                    <a class="h-item__link">
+                                        <div class="notify" #notifyMenuButton>
+                                            <div class="notify-icon-wrapper">
+                                                <i class="icon-bo notify-icon"></i>
+                                                <div class="badge">9+</div>
+                                            </div>
+                                            <div class="dropdown-menu" *ngIf="activeNotification">
+                                                <div class="notify__header">{{'common.new'|i18next}}</div>
+                                                <ul>
+                                                    <li>
+                                                        <a routerLink="/car-owner/rental-listing/details/1">
+                                                            <div class="cover-avatar-wrap">
+                                                                <div class="cover-avatar">
+                                                                    <img src="https://n1-cstg.mioto.vn/v6/p/m/avatars_notify/common.jpg"
+                                                                        alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="desc">
+                                                                <div class="title">Yêu cầu thuê xe</div>
+                                                                <div class="content">
+                                                                    Hieu Nguyen yêu cầu thuê xe 51F-11111,T6 21:00
+                                                                    01/03/2019 - T7 21:00 02/03/2019. Vui lòng xem
+                                                                    chi tiết, bấm đồng ý / từ chối để phản hồi
+                                                                    trong thời gian sớm nhất
+                                                                </div>
+                                                                <div class="timer">1 ngày trước</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a>
+                                                            <div class="cover-avatar-wrap">
+                                                                <div class="cover-avatar">
+                                                                    <img src="https://n1-cstg.mioto.vn/v6/p/m/avatars_notify/common.jpg"
+                                                                        alt="" />
+                                                                    <div class="sub-avatar">
+                                                                        <img src="https://n1-cstg.mioto.vn/v6/p/m/avatars_notify/sub/promo.jpg"
+                                                                            alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="desc">
+                                                                <div class="title">
+                                                                    CẦM LÁI CHEVROLET - DI CHUYỂN THẬT DỄ DÀNG
+                                                                </div>
+                                                                <div class="content">
+                                                                    Nhập mã MI03 - tiết kiệm 15% khi thuê xe có
+                                                                    tài tại Mioto
+                                                                </div>
+                                                                <div class="timer">1 ngày trước</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li *ngFor="let i of [1, 1, 1, 1]">
+                                                        <a class="read">
+                                                            <div class="cover-avatar-wrap">
+                                                                <div class="cover-avatar">
+                                                                    <img src="https://n1-cstg.mioto.vn/v6/p/m/avatars_notify/common.jpg"
+                                                                        alt="" />
+                                                                    <div class="sub-avatar">
+                                                                        <img src="https://n1-cstg.mioto.vn/v6/p/m/avatars_notify/sub/promo.jpg"
+                                                                            alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="desc">
+                                                                <div class="title">
+                                                                    CẦM LÁI CHEVROLET - DI CHUYỂN THẬT DỄ DÀNG
+                                                                </div>
+                                                                <div class="content">
+                                                                    Nhập mã MI03 - tiết kiệm 15% khi thuê xe có
+                                                                    tài tại Mioto
+                                                                </div>
+                                                                <div class="timer">1 ngày trước</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-template #notUserTemplateRef>
+                            <div class="h-list">
+                                <div class="h-item h-item--gemstone-hover">
+                                    <a class="h-item__link">
+                                        <button class="sign-up-btn" mat-button
+                                            (click)="openLoginFormDialog('400ms', '200ms')">
+                                            {{'common.login'|i18next}}
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="h-item h-item--genstome-hover">
+                                    <a routerLink="/sign-up" class="h-item__link">
+                                        <button class="sign-up-btn" mat-stroked-button>
+                                            {{'common.register'|i18next}}
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="header__become-owner">
+                        <div class="h-list">
+                            <div class="h-item h-item--gemstone-hover">
+                                <a routerLink="/car-owner/register"
+                                    class="h-item__link d-flex-bo align-items-center-bo">
+                                    <div class="wheel-svg-wrapper mr-r-5">
+                                        <app-wheel-svg></app-wheel-svg>
+                                    </div>
+                                    <span>{{'cta.becomeOwner'|i18next}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

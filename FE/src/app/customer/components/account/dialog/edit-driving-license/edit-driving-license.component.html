@@ -1,0 +1,62 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h1>Cập nhật giấy phép lái xe</h1>
+    </div>
+    <div class="modal-body">
+        <form class="form-default" id="license-form">
+            <div class="line-form">
+                <label for="" class="label">Số GPLX</label>
+                <p for="" class="info">Dãy 12 chữ số ở mặt trước GPLX</p>
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Nhập số GPLX đã cấp</mat-label>
+                        <input matInput >
+                    </mat-form-field>
+            </div>
+            <div class="line-form">
+                <label for="" class="label">Họ tên</label>
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Nhập họ tên</mat-label>
+                    <input matInput >
+                </mat-form-field>
+            </div>
+            <div class="line-form">
+                <label for="" class="label">Ngày sinh</label>
+                <div>
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Chọn ngày sinh</mat-label>
+                        <input matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="line-form">
+                <label for="" class="label">Ảnh bằng lái xe</label>
+                <p class="info">Hình ảnh GPLX mặt trước</p>
+                <p class="info" [style]="'margin-top: 0'"><strong>Lưu ý:</strong> Hình chụp cần thấy được <strong>Ảnh
+                        đại diện</strong>
+                    và <strong>Số GPLX</strong></p>
+                <div class="row">
+                    <div class="col l-6">
+                        <a class="slt-license-box">
+                            <div class="slt-button">
+                                    <button class="btn btn-m" mat-raised-button color="primary"
+                                        (click)="fileUploader.click()">
+                                        Chọn ảnh
+                                    </button>
+                            </div>
+                            <input #fileUploader id="fileUploader" [style]="'display: none'" type="file">
+                        </a>
+                    </div>
+                    <div class="col l-6">
+                        <div class="preview-license" [style]="'background-image: url(https://n1-ppstg.mioto.vn/g/2023/02/04/15/C035ram1dFgVvkHTq5gTZg.jpg)'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button style="margin: 0" class="w-fit btn btn--m" mat-raised-button color="primary">Cập
+                nhật</button>
+        </form>
+    </div>
+</div>

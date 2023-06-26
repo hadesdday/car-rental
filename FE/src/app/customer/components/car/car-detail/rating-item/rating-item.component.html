@@ -1,0 +1,60 @@
+<li class="comment-item"> 
+    <div class="row">
+        <div class="col l-2">
+            <div class="fix-avatar">
+                <a href="">
+                    <!-- <img src="https://n1-cstg.mioto.vn/m/avatars/p.jpg" alt=""> -->
+                    <span>{{rating.user.fullName.charAt(0)}}</span>
+                </a>
+            </div>
+        </div>
+        <div class="col l-10">
+            <a href="">
+                <div class="name">
+                    {{rating.user.fullName}}
+                </div>
+            </a>
+            <div class="comment-box">
+                <div class="group">
+                    <div class="star-ratings">
+                        <ng-container *ngFor="let
+                            user of
+                            [1,1,1,1,1]">
+                            <div class="star-container">
+                                <svg viewBox="0
+                                    0 51
+                                    48" class="widget-svg" style="width:
+                                    17px;
+                                    height:
+                                    17px;
+                                    transition:
+                                    transform
+                                    0.2s
+                                    ease-in-out
+                                    0s;">
+                                    <path class="star" d="m25,1
+                                        6,17h18l-14,11
+                                        5,17-15-10-15,10
+                                        5-17-14-11h18z" style="fill:
+                                        rgb(0,
+                                        165,
+                                        80);
+                                        transition:
+                                        fill
+                                        0.2s
+                                        ease-in-out
+                                        0s;">
+                                    </path>
+                                </svg>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <span style="font-size:
+                        1.2rem">3 ngày
+                        trước</span>
+                </div>
+                <div class="desc">{{rating.content}}</div>
+            </div>
+        </div>
+    </div>
+</li>

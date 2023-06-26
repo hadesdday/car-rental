@@ -1,0 +1,76 @@
+.footer {
+  color: var(--primary-text-color);
+  font-size: 1.6rem;
+  bottom: 0;
+}
+
+.footer .title {
+  text-transform: uppercase;
+}
+.footer.footer--bg {
+  background-color: var(--primary-color);
+}
+.footer-container {
+  padding: 80px 10px;
+}
+.logo-image-wrapper {
+}
+.logo-image-wrapper {
+  width: 100%;
+  object-fit: cover;
+}
+.about-us {
+  margin-bottom: 40px;
+}
+.payment {
+}
+.payment .title {
+  color: #fff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.payment-logo {
+  display: flex;
+}
+.payment-logo-wrapper {
+  width: 85px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: var(--primary-text-color);
+}
+.payment-logo-wrapper:not(:first-child) {
+  margin-left: 10px;
+}
+.payment-logo-wrapper .fix-img {
+  padding-bottom: 56.5%;
+}
+.payment-logo-wrapper .fix-img img {
+  object-fit: contain;
+}
+
+.language {
+  margin-left: 13em;
+}
+.language .title {
+  color: #fff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.language-logo {
+  display: flex;
+}
+.language-logo-wrapper {
+  width: 85px;
+  padding: 10px;
+  border-radius: 3px;
+}
+.language-logo-wrapper:not(:first-child) {
+  margin-left: 10px;
+  border-left: 1px solid var(--secondary-text);
+}
+.language-logo-wrapper .fix-img {
+  padding-bottom: 56.5%;
+}
+.language-logo-wrapper .fix-img img {
+  object-fit: contain;
+}

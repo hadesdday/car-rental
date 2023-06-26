@@ -1,0 +1,40 @@
+.statistics__container {
+  min-height: 100vh;
+  padding: 5em 0;
+}
+
+.statistics__header-title {
+  font-size: 240%;
+}
+
+.statistics__options {
+  gap: 20px;
+}
+
+.statistics__information {
+  width: 50%;
+  margin: 4em auto;
+  border-radius: 5px;
+  background-color: rgba(15, 25, 57, 0.4);
+  color: #fff;
+  padding: 3em 0;
+}
+
+.statistics__information-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  font-size: 120%;
+}
+
+.btn__view {
+  padding: 28px 35px !important;
+  margin: 0;
+}
+
+::ng-deep .mat-mdc-select-value,
+mat-label,
+mat-datepicker-toggle {
+  color: #000;
+}
+/*# sourceMappingURL=statistics.component.css.map */

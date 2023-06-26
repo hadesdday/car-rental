@@ -1,0 +1,27 @@
+.label {
+  &__car {
+    font-size: 100%;
+    margin: 10px;
+  }
+}
+
+.fs-150 {
+  font-size: 150%;
+}
+
+.owner {
+  &__nav {
+    &-item {
+      margin: 15px;
+      padding-right: 20px;
+      border-right: 1px solid #e8e8e8;
+      transition: all 0.2s ease;
+      &:hover {
+        color: var(--gemstone-color);
+      }
+      &.active {
+        color: var(--gemstone-color);
+      }
+    }
+  }
+}

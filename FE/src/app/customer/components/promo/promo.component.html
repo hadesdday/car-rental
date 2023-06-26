@@ -1,0 +1,47 @@
+<div class="promo">
+    <div class="promo__banner">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="promo__banner__inner">
+                        <div class="promo__banner__title">
+                            Khuyến mãi của tôi
+                        </div>
+                        <div class="promo__banner__search">
+                            <input type="text" placeholder="Nhập mã khuyến mãi">
+                            <i class="icon-bo search-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="promo-card-list">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="promo-list">
+                        <div class="row">
+                            <ng-container *ngIf="promos$ | async as promos">
+                                <div class="col l-3" *ngFor="let promo of promos">
+                                    <div class="promo-item" (click)="openPromoDetailDialog(promo)">
+                                        <div class="promo__content">
+                                            <img src="https://n1-cstg.mioto.vn/g/2018/03/17/16/52.jpg" alt="">
+                                            <div class="title">
+                                                {{promo.title}}
+                                            </div>
+                                            <div class="promo__percent">
+                                                Giảm <span>{{promo.discountPercent}}%</span> <br> (tối đa <span>{{promo.maxPrice | currency: 'VND'}}
+                                                   </span>)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

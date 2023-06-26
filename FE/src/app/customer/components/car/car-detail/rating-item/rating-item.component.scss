@@ -1,0 +1,49 @@
+.comment-item {
+    padding: 25px 0;
+    border-bottom: 0.25px solid rgba(0, 0, 0, .3);
+}
+
+.comment-item .fix-avatar {
+    position: relative;
+    padding-bottom: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 2px 5px rgb(0 0 0 / 30%);
+    background-color: var(--gemstone-color);
+}
+.comment-item .fix-avatar span{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+}
+
+.comment-item .fix-avatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment-item .name {}
+
+.comment-item .comment-box {}
+
+.comment-item .comment-box .group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.comment-item .comment-box .group .star-ratings {
+    display: flex;
+}
+
+.comment-item .comment-box .desc {
+    font-size: 1.4rem;
+}

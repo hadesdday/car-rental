@@ -1,0 +1,97 @@
+<div class="modal-header">
+  <h1>{{ data.title }}</h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-default">
+    <div class="line-form">
+      <div class="map-route">
+        <div id="deli-map" style="width: 100%; height: 300px; background: grey">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border: 0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="line-form">
+      <mat-radio-group aria-label="Select an option">
+        <label for="" class="label"> Vị trí xe </label>
+        <p class="subtext">
+          Bạn sẽ nhận và trả xe tại vị trí xe (địa chỉ cụ thể sẽ được hiển thị
+          sau khi đặt cọc)
+        </p>
+        <div class="location-section">
+          <mat-radio-button value="1"
+            >
+            {{ data.car.address.district.prefix }}
+            {{ data.car.address.district.name }} ,{{ data.car.address.province.domain }}
+            {{ data.car.address.province.name }}
+          </mat-radio-button>
+        </div>
+
+        <label for="" class="label">Giao xe tận nơi</label>
+        <div class="subtext">
+          Chủ xe sẽ giao và nhận xe đến tận nhà hoặc địa chỉ mà bạn lựa chọn
+          trên ứng dụn Rental Car
+        </div>
+        <div class="location-section">
+          <div class="notice-form note">
+            <p class="d-flex-bo justify-content-between-bo">
+              Giao nhận xe tận nơi trong
+              <span>20km</span>
+            </p>
+            <p class="d-flex-bo justify-content-between-bo">
+              Miễn phí giao nhận trong
+              <span>1 km</span>
+            </p>
+            <p class="d-flex-bo justify-content-between-bo">
+              Phí giao nhận xe (2 chiều)
+              <span>20 000đ/km</span>
+            </p>
+          </div>
+          <p class="primary-text">
+            Tổng phí giao nhận xe (2 chiều) là 102 000 đ cho quãng đường 6,1 km
+          </p>
+          <div class="space m"></div>
+        </div>
+
+        <label for="" class="label" [style]="'margin: 0'">
+          Chọn từ bản đồ
+        </label>
+        <div class="location-section" (click)="chooseFromMap()">
+          <mat-radio-button value="1"
+            >Quang Trung, Phường 11, Quận Gò Vấp, Thành phố Hồ Chí Minh, Việt
+            Nam</mat-radio-button
+          >
+        </div>
+
+        <label for="" class="label" [style]="'margin: 0'">
+          Giao tại sân bay
+        </label>
+        <div class="location-section">
+          <div
+            class="d-flex-bo justify-content-between-bo align-items-center-bo"
+          >
+            <mat-radio-button value="1"
+              >Quận 10, Thành phố Hồ Chí Minh</mat-radio-button
+            >
+            <span class="color: black">102 000 đ</span>
+          </div>
+        </div>
+      </mat-radio-group>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    class="btn btn-l w-fit"
+    color="primary"
+  >
+    Thay đổi
+  </button>
+</div>

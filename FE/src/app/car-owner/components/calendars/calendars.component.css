@@ -1,0 +1,56 @@
+.car__calendars-container {
+  min-height: 100vh;
+}
+
+.car__calendars-content {
+  gap: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.car__calendars-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 47%;
+          flex: 0 0 47%;
+}
+
+.car__calendars-col .btn-sort {
+  background-color: transparent;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 200%;
+  border: 2px solid var(--secondary-color);
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.car__calendars-col .btn-sort:hover {
+  background-color: var(--secondary-color);
+}
+
+.car__calendars-col .calendars__labels {
+  list-style-type: none;
+}
+
+.car__calendars-col .calendars__labels li {
+  float: left;
+  width: 25%;
+}
+
+.car__calendars-col .calendars__labels li i {
+  padding: 5px;
+}
+
+.text-header {
+  padding: 1.5em 0;
+  font-size: 250%;
+}
+
+mwl-calendar-month-view {
+  font-size: 110%;
+}
+/*# sourceMappingURL=calendars.component.css.map */

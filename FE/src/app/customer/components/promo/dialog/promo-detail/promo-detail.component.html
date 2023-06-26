@@ -1,0 +1,32 @@
+<div class="promo-detail__container">
+    <h1 class="promo-title">Mã khuyến mãi</h1>
+    <div>
+        <div class="promo-detail__cover">
+        </div>
+
+        <div class="promo-detail__content">
+            <div class="promo-detail__cover-detail">
+                <div class="cover-image">
+                    <img src="https://n1-cstg.mioto.vn/g/2018/03/17/16/52.jpg"
+                        alt="">
+                </div>
+                <div class="desc">
+                    <h4>{{data.promo.title}}</h4>
+                    <p>Áp dụng từ <span>{{data.promo.startDate |
+                            date:'dd/MM/yyyy'}}</span> đến
+                        <span>{{data.promo.endDate | date:'dd/MM/yyyy'}}</span></p>
+                </div>
+            </div>
+            <div class="promo-detail__body">
+                <h3>Ưu đãi {{data.promo.discountPercent}}% (tối đa
+                    {{data.promo.maxPrice | currency: 'VND' }})</h3>
+                <p>Giảm <span> {{data.promo.discountPercent}}% (tối đa
+                        {{data.promo.maxPrice | currency: 'VND' }})</span> cho
+                    tất cả chuyến đi khi nhập mã:</p>
+                <ul>
+                    <li *ngFor="let i of data.promo.contents">{{i}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

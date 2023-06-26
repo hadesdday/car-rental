@@ -1,0 +1,61 @@
+<div class="module-deal">
+    <h3 class="title">XE LIÊN QUAN</h3>
+    <app-carousel [specItems]="[1,1,1,1,1,1,1]" [itemRender]="relativeCarTemplateRef" [isPerItemInStep]="true"
+        [isActiveControl]="true"></app-carousel>
+</div>
+<ng-template #relativeCarTemplateRef let-item="item" let-idx="idx" let-curIdx="curIdx">
+    <li #imageCarouselItem class="image-carousel__item col l-3 c-3">
+        <div class="relative-car-item-wrapper">
+            <div class="relative-car-item">
+                <div class="relative-car-item__image">
+                    <img src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mazda_3_2020/p/g/2021/03/20/13/M7M_5xiTotPK8fEQPUhmEA.jpg"
+                        alt="" />
+                    <div class="price-car">950K</div>
+                </div>
+                <div class="desc-car">
+                    <div class="desc-car__name d-flex-bo">
+                        <h4>MITSUBISHI OUTLANDER 2020</h4>
+                        <i class="icon-bo icon-insurance"></i>
+                    </div>
+                    <div class="group-line">
+                        <span class="star">
+                            <div class="star_rate-num">5.0</div>
+                            <div class="star-container">
+                                <svg viewBox="0 0 51 48" class="widget-svg" style="
+                                    width: 17px;
+                                    height: 17px;
+                                    transition: transform 0.2s ease-in-out
+                                    0s;
+                                    ">
+                                    <path class="star" d="m25,1
+                                        6,17h18l-14,11 5,17-15-10-15,10
+                                        5-17-14-11h18z" style="
+                                        fill: var(--gemstone-color);
+                                        transition: fill 0.2s ease-in-out
+                                        0s;
+                                        "></path>
+                                </svg>
+                            </div>
+                            <div class="dot-car mr-side-5">•</div>
+                            <div class="trips mr-r-5">93 chuyến</div>
+                            <svg width="24" height="24" viewBox="0 0 24
+                                24" fill="none">
+                                <use href="#svg-cetificate" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="group-label">
+                        <span>Số tự động</span>
+                        <span>Giao xe tận nơi</span>
+                    </div>
+                    <div class="location">
+                        <p class="d-flex-bo align-items-center-bo">
+                            <i class="icon-bo location-icon"></i>
+                            Quận Phú Nhuận, Hồ Chí Minh
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ng-template>

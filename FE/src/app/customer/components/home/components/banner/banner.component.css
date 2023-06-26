@@ -1,0 +1,261 @@
+.banner {
+  padding: 100px 0 130px;
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  background-image: url("https://images.pexels.com/photos/21014/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff4c;
+  z-index: 1;
+}
+
+.banner__insurance-partner {
+  width: 510px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  padding: 12px 32px;
+  border-radius: 30px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.banner__insurance-partner .title {
+  color: #6e6e6e;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.partner-logo {
+  position: relative;
+}
+
+.partner-logo:not(:last-child):after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 40%;
+  right: -2px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-left: 1px solid #6e6e6e;
+  border-right: 1px solid #6e6e6e;
+}
+
+.partner-logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.banner__search-by-service {
+  width: 50vw;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  z-index: 2;
+}
+
+.banner__search-by-service .slogan {
+  font-size: 4rem;
+  line-height: 50px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.banner__search-by-service .slogan.landing-text {
+  color: #26282a;
+}
+
+.search-by-service__box {
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 25px;
+}
+
+.search-wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  padding: 25px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 5px;
+}
+
+.search-form {
+  -webkit-animation: fadeIn .5s linear;
+          animation: fadeIn .5s linear;
+}
+
+label.home-label {
+  font-weight: 600;
+  color: #00a550;
+  width: 100%;
+}
+
+.search-wrapper label.home-label {
+  font-size: 13px;
+}
+
+.service-box {
+  padding: 15px 30px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 130px;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.service-box.active {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-right: 2px solid #fff;
+}
+
+.service-box.service-box--first {
+  margin-top: unset;
+}
+
+.service-box:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+i.service-box__icon {
+  display: inline-block;
+  background-image: url("https://www.mioto.vn/static/media/tutorial_sprites.3aef2f3f.png");
+  background-repeat: no-repeat;
+  background-size: 500px 250px;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  text-indent: -9999px;
+}
+
+i.service-box__icon.service-box__icon--Selfdrive {
+  background-position: -202px -171px;
+  width: 75px;
+  height: 76px;
+}
+
+i.service-box__icon.service-box__icon--driver {
+  background-position: -425px -87px;
+  width: 75px;
+  height: 76px;
+}
+
+form.search-form .search-form__control {
+  margin-bottom: 15px;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: unset;
+}
+
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: white;
+  font-size: 1.4rem;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+  border-bottom-color: rgba(255, 255, 255, 0.85);
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled):hover .mdc-line-ripple::before {
+  border-bottom-color: #fff;
+}
+
+::ng-deep .mdc-text-field--focused .mdc-line-ripple--active {
+  border-bottom-color: #fff;
+}
+
+::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: var(--gemstone-color);
+}
+
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--primary-text-color);
+}
+
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--gemstone-color);
+}
+
+::ng-deep .mat-mdc-select-value {
+  color: var(--primary-text-color);
+}
+
+::ng-deep .mat-mdc-select-arrow {
+  color: var(--primary-text-color);
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow {
+  color: var(--gemstone-color);
+}
+
+::ng-deep .mat-primary .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: var(--gemstone-color);
+}
+
+::ng-deep .mat-calendar-body-selected {
+  color: #fff;
+}
+
+::ng-deep .mdc-text-field .mdc-text-field__input {
+  caret-color: var(--gemstone-color);
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+  color: var(--gemstone-color);
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: var(--gemstone-color);
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab__text-label {
+  color: var(--primary-text-color);
+}
+
+::ng-deep .mdc-form-field {
+  color: var(--primary-text-color) !important;
+}
+
+::ng-deep .mat-mdc-icon-button svg {
+  color: white;
+}
+
+::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
+  border-color: #fff !important;
+}
+/*# sourceMappingURL=banner.component.css.map */

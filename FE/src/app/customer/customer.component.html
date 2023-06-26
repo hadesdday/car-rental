@@ -1,0 +1,6 @@
+<div class="spinner__wrapper" *ngIf="progressSpinnerService.isActive$ | async">
+    <mat-spinner></mat-spinner>
+</div>
+<app-customer-header></app-customer-header>
+<router-outlet></router-outlet>
+<app-customer-footer></app-customer-footer>

@@ -1,0 +1,39 @@
+.contract__container {
+  padding: 30px;
+}
+
+.contract__title {
+  padding: 20px;
+}
+
+.contract__content {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.contract__col {
+  margin: 5em 0;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2em 5em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.contract__col a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 140%;
+}
+
+.contract__col:hover {
+  background-color: var(--secondary-color);
+  -webkit-box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.1) !important;
+          box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.1) !important;
+}
+/*# sourceMappingURL=contract.component.css.map */

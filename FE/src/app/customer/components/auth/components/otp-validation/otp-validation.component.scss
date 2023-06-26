@@ -1,0 +1,100 @@
+
+.otp-validation__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 300px;
+    background-image: linear-gradient(90deg, #5dd898,var(--gemstone-color));;
+}
+.otp-validation__wrapper{
+}
+.otp-validation__form{
+    background: #fff;
+    padding: 65px 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+    color: #000;
+    width: 500px;
+}
+.otp-validation__header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}   
+    
+.otp-validation__header span{
+    display: block;
+    width: 80px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #5dd898;
+}
+.otp-validation__header span:nth-child(1){
+    background-color: #5dd898;
+    z-index: 1;
+    transform: translate(calc(50% - 20px), 20px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.otp-validation__header span:nth-child(1) svg{
+    width: 70px;
+    height: 70px;
+    color: #fff;
+}
+.otp-validation__header span:nth-child(2){
+    background-color: var(--gemstone-color);
+    transform: translateX(-50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.otp-validation__form h2{
+    text-align: center;
+    font-weight: 700 !important;
+}
+.otp-validation__form p{
+   text-align: center;
+   font-size: 1.6rem;
+   margin: 30px 0;
+}
+.otp-validation__form p span{
+   color: var(--gemstone-color);
+   cursor: pointer;
+}
+.input-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10px;
+}
+.input-field input{
+    height: 50px;
+    width: 50px;
+    border-radius: 13px;
+    outline: none;
+    font-size: 1.4rem;
+    text-align: center;
+    border: 2px solid #ddd;
+    padding: unset;
+    font-weight: 500;
+}
+.button__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 50px;
+}
+.button__wrapper button{
+    height: 50px;
+    min-width: 50%;
+    border-radius: 10px;
+}
+
+.label__wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}

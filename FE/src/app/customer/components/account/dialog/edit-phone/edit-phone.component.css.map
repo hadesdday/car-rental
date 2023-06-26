@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAA;EACZ,SAAS,EAAE,KAAK;CACnB;;AACD,AAAA,aAAa,CAAA;EACT,OAAO,EAAE,cACb;CAAC;;AACD,AAAA,aAAa,CAAC,EAAE,CAAA;EACZ,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;CACrB;;AACD,AAAA,WAAW,CAAA;EACP,OAAO,EAAE,WACb;CAAC",
+    "sources": [
+        "edit-phone.component.scss"
+    ],
+    "names": [],
+    "file": "edit-phone.component.css"
+}

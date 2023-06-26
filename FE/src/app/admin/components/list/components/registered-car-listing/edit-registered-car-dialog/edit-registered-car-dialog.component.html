@@ -1,0 +1,81 @@
+<div class="edit__dialog">
+    <h2 mat-dialog-title>Chỉnh sửa thông tin xe</h2>
+    <mat-dialog-content>
+        <form (ngSubmit)="onSubmitForm()" [formGroup]="carFormGroup" class="edit__car-form">
+            <div class="d-flex-bo flex-wrap-bo">
+                <input type="hidden" formControlName="id">
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Biển số xe</mat-label>
+                    <input formControlName="plate" matInput>
+                </mat-form-field>
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label class="cl-black">Màu sắc</mat-label>
+                    <mat-select matInput formControlName="color">
+                        <mat-option [value]="item.value" *ngFor="let item of colors">{{item.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!carFormGroup.hasError('required')">
+                        Vui lòng chọn màu sắc của xe
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Hãng</mat-label>
+                    <mat-select matInput formControlName="brand">
+                        <mat-option [value]="item.id" *ngFor="let item of brands">{{item.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!carFormGroup.hasError('required')">
+                        Vui lòng chọn hãng xe
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Mẫu</mat-label>
+                    <mat-select matInput formControlName="model">
+                        <mat-option [value]="item.id" *ngFor="let item of models">{{item.name}}</mat-option>
+                        <mat-option [value]="12312312321">asdaw</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!carFormGroup.hasError('required')">
+                        Vui lòng chọn hãng xe
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Loại dịch vụ</mat-label>
+                    <mat-select matInput formControlName="serviceType">
+                        <mat-option [value]="item.id" *ngFor="let item of serviceTypes">{{item.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!carFormGroup.hasError('required')">
+                        Vui lòng chọn loại dịch vụ
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Giá</mat-label>
+                    <input formControlName="price" matInput>
+                </mat-form-field>
+
+                <mat-form-field class="w-fit" appearance="fill">
+                    <mat-label>Trạng thái</mat-label>
+                    <mat-select matInput formControlName="status">
+                        <mat-option [value]="item"
+                            *ngFor="let item of carStatuses.key;index as i">{{carStatuses.value[i]}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!carFormGroup.hasError('required')">
+                        Vui lòng chọn loại dịch vụ
+                    </mat-error>
+                </mat-form-field>
+
+
+            </div>
+            <div class="d-flex-bo justify-content-end-bo">
+                <button type="button" mat-raised-button color="warn" (click)="closeDialog()"
+                    style="margin-right:20px">Hủy bỏ</button>
+                <button type="submit" mat-raised-button color="primary" [disabled]="carFormGroup.invalid">Cập
+                    nhật</button>
+            </div>
+        </form>
+    </mat-dialog-content>
+</div>

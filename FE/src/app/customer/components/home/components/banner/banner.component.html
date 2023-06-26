@@ -1,0 +1,524 @@
+<div class="banner">
+    <div class="grid">
+        <div class="row">
+            <div class="col l-12">
+                <div class="banner__insurance-partner">
+                    <p class="title">{{'_banner.title'|i18next}}</p>
+                    <div class="partner-logo">
+                        <div class="row">
+                            <div class="partner-logo col l-4">
+                                <img class="image-fit" src="https://www.mioto.vn/static/media/global-care.f6fdc8ef.png"
+                                    alt="" />
+                            </div>
+                            <div class="partner-logo col l-4">
+                                <img class="image-fit" src="https://www.mioto.vn/static/media/mic.e9091023.png"
+                                    alt="" />
+                            </div>
+                            <div class="partner-logo col l-4">
+                                <img class="image-fit" src="https://www.mioto.vn/static/media/l_pjico.bb9b4a65.png"
+                                    alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__search-by-service">
+                    <h1 class="slogan landing-text">
+                        {{'_banner.slogan'|i18next}}
+                    </h1>
+                    <div class="search-by-service__box">
+                        <div class="row sm-gutters">
+                            <div class="col l-4">
+                                <div class="service-box service-box--first"
+                                    [class.active]="serviceType === 'Self_DRIVING'"
+                                    (click)="serviceType = 'Self_DRIVING'">
+                                    <i class="service-box__icon service-box__icon--Selfdrive"></i>
+                                    <p>{{'common.selfDriveCar'|i18next}}</p>
+                                </div>
+                                <div class="service-box" [class.active]="serviceType === 'DRIVER'"
+                                    (click)="serviceType = 'DRIVER'">
+                                    <i class="service-box__icon service-box__icon--driver"></i>
+                                    <p class="mr-r-5">{{'common.withDriverCar'|i18next}}</p>
+                                </div>
+                            </div>
+                            <div class="col l-8">
+                                <div class="search-wrapper">
+                                    <ng-container *ngIf="serviceType === 'Self_DRIVING'; else withDriver">
+                                        <form id="Self-driving__search-form" class="search-form"
+                                            [formGroup]="selfDrivingFormGroup">
+                                            <div class="search-form__control">
+                                                <label class="home-label w-fit">{{"common.location"|i18next}}</label>
+                                                <mat-form-field style="display: block" appearance="fill">
+                                                    <mat-label>{{'_banner.selfDriveInputLabel'|i18next}}</mat-label>
+                                                    <input type="text" matInput
+                                                        [matAutocomplete]="pickUpPlaceOfSelfDrivingAuto"
+                                                        formControlName="address" required />
+                                                    <mat-autocomplete #pickUpPlaceOfSelfDrivingAuto="matAutocomplete">
+                                                        <!-- <mat-option *ngFor="
+                                let option of filteredAddressOptions | async
+                              " [value]="option">
+                                                            {{ option }}
+                                                        </mat-option> -->
+                                                        <mat-option value="Thành Phố Hồ Chí Minh">Thành Phố Hồ Chí
+                                                            Minh</mat-option>
+                                                        <mat-option value="Thành Phố Hà Nội">Thành Phố Hà
+                                                            Nội</mat-option>
+                                                        <mat-option value="Thành Phố Đà Nẵng">Thành Phố Đà
+                                                            Nẵng</mat-option>
+                                                        <mat-option value="Đại Học Nông Lâm">Đại Học Nông
+                                                            Lâm</mat-option>
+                                                        <mat-option value="Đại Học Quốc Gia">Đại Học Quốc
+                                                            Gia</mat-option>
+                                                    </mat-autocomplete>
+                                                    <mat-error *ngIf="!selfDrivingFormGroup.hasError('required')">
+                                                        {{'error.requiredAddress'|i18next}}
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="search-form__control">
+                                                <label class="home-label w-fit">{{'common.startDate'|i18next}}</label>
+                                                <div class="row sm-gutters">
+                                                    <div class="col l-6">
+                                                        <mat-form-field style="width: 100%" appearance="fill">
+                                                            <mat-label>{{"_banner.chooseDayLabel"|i18next}}</mat-label>
+                                                            <input matInput
+                                                                [matDatepicker]="startDateOfUrbanDriverPicker"
+                                                                formControlName="startDate" [min]="todayDate"
+                                                                required />
+                                                            <mat-datepicker-toggle matIconSuffix
+                                                                [for]="startDateOfUrbanDriverPicker">
+                                                            </mat-datepicker-toggle>
+                                                            <mat-datepicker #startDateOfUrbanDriverPicker>
+                                                            </mat-datepicker>
+                                                            <mat-error
+                                                                *ngIf="!selfDrivingFormGroup.hasError('required')">
+                                                                {{'error.requiredDate'|i18next}}
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col l-6">
+                                                        <mat-form-field appearance="fill" style="width: 100%">
+                                                            <mat-label>{{'_banner.chooseHourLabel'|i18next}}</mat-label>
+                                                            <mat-select formControlName="startHour" required>
+                                                                <mat-option *ngFor="let hr of hrs" [value]="hr">
+                                                                    {{ hr }}
+                                                                </mat-option>
+                                                            </mat-select>
+                                                            <mat-error
+                                                                *ngIf="!selfDrivingFormGroup.hasError('required')">
+                                                                {{'error.requiredHour'|i18next}}
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="search-form__control">
+                                                <label class="home-label w-fit">{{'common.endDate'|i18next}}</label>
+                                                <div class="row sm-gutters">
+                                                    <div class="col l-6">
+                                                        <mat-form-field style="width: 100%" appearance="fill">
+                                                            <mat-label>{{'_banner.chooseDayLabel'|i18next}}</mat-label>
+                                                            <input matInput [matDatepicker]="endDateOfUrbanDriverPicker"
+                                                                [min]="todayDate" formControlName="endDate" required />
+                                                            <mat-datepicker-toggle matIconSuffix
+                                                                [for]="endDateOfUrbanDriverPicker">
+                                                            </mat-datepicker-toggle>
+                                                            <mat-datepicker #endDateOfUrbanDriverPicker>
+                                                            </mat-datepicker>
+                                                            <mat-error
+                                                                *ngIf="!selfDrivingFormGroup.hasError('required')">
+                                                                {{'error.requiredDate'|i18next}}
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col l-6">
+                                                        <mat-form-field appearance="fill" style="width: 100%">
+                                                            <mat-label>{{'_banner.chooseHourLabel'|i18next}}
+                                                            </mat-label>
+                                                            <mat-select formControlName="endHour" required>
+                                                                <mat-option *ngFor="let hr of hrs" [value]="hr">
+                                                                    {{ hr }}
+                                                                </mat-option>
+                                                            </mat-select>
+                                                            <mat-error
+                                                                *ngIf="!selfDrivingFormGroup.hasError('required')">
+                                                                {{'error.requiredHour'|i18next}}
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button [style]="'color: var(--gemstone-color)'" mat-raised-button
+                                                class="w-fit" (click)="onSubmitSelfDriveForm()">
+                                                <div class="d-flex-bo align-items-center-bo">
+                                                    {{"_banner.findCarButton"|i18next}}
+                                                </div>
+                                            </button>
+                                        </form>
+                                    </ng-container>
+                                    <ng-template #withDriver>
+                                        <mat-tab-group style="color: var(--primary-text-color)"
+                                            animationDuration="500ms">
+                                            <mat-tab [label]="'common.urban'|i18next">
+                                                <ng-container *ngTemplateOutlet="urban"></ng-container>
+                                            </mat-tab>
+                                            <mat-tab [label]="'common.interMunicipal'|i18next">
+                                                <ng-container *ngTemplateOutlet="interMunicipal"></ng-container>
+                                            </mat-tab>
+                                            <ng-template #urban>
+                                                <form [formGroup]="driverServiceFormGroup" class="search-form">
+                                                    <div class="search-form__control mr-t-10">
+                                                        <label
+                                                            class="home-label w-fit">{{'common.pickupPlace'|i18next}}</label>
+                                                        <mat-form-field style="display: block" appearance="fill">
+                                                            <mat-label>{{'_banner.withDriverInputLabel'|i18next}}</mat-label>
+                                                            <input formControlName="pickUpPlace" type="text" matInput
+                                                                [matAutocomplete]="auto" required />
+                                                            <mat-autocomplete #auto="matAutocomplete">
+                                                                <!-- <mat-option *ngFor="
+                                    let option of filteredAddressOptions | async
+                                  " [value]="option">
+                                                                    {{ option }}
+                                                                </mat-option> -->
+                                                                <mat-option value="Thành Phố Hồ Chí Minh">Thành Phố Hồ
+                                                                    Chí
+                                                                    Minh</mat-option>
+                                                                <mat-option value="Thành Phố Hà Nội">Thành Phố Hà
+                                                                    Nội</mat-option>
+                                                                <mat-option value="Thành Phố Đà Nẵng">Thành Phố Đà
+                                                                    Nẵng</mat-option>
+                                                                <mat-option value="Đại Học Nông Lâm">Đại Học Nông
+                                                                    Lâm</mat-option>
+                                                                <mat-option value="Đại Học Quốc Gia">Đại Học Quốc
+                                                                    Gia</mat-option>
+                                                            </mat-autocomplete>
+                                                            <mat-error
+                                                                *ngIf="!driverServiceFormGroup.hasError('required')">
+                                                                {{"error.requiredAddress"|i18next}}
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div formGroupName="startTime" class="search-form__control">
+                                                        <label
+                                                            class="home-label w-fit">{{"common.time"|i18next}}</label>
+                                                        <div class="row">
+                                                            <div class="col l-6">
+                                                                <mat-form-field color="primary" style="width: 100%"
+                                                                    appearance="fill">
+                                                                    <mat-label>{{"_banner.chooseDayLabel"|i18next}}</mat-label>
+                                                                    <input formControlName="rentalDate" matInput
+                                                                        [matDatepicker]="startRentalDateOfUrbanDriverPicker"
+                                                                        required [min]="todayDate" />
+                                                                    <mat-datepicker-toggle matIconSuffix
+                                                                        [for]="startRentalDateOfUrbanDriverPicker">
+                                                                    </mat-datepicker-toggle>
+                                                                    <mat-datepicker color="primary"
+                                                                        #startRentalDateOfUrbanDriverPicker>
+                                                                    </mat-datepicker>
+                                                                    <mat-error
+                                                                        *ngIf="!driverServiceFormGroup.hasError('required')">
+                                                                        {{"error.requiredDate"|i18next}}
+                                                                    </mat-error>
+                                                                </mat-form-field>
+                                                            </div>
+                                                            <div class="col l-6">
+                                                                <mat-form-field appearance="fill" style="width: 100%">
+                                                                    <mat-label>{{'_banner.chooseHourLabel'|i18next}}</mat-label>
+                                                                    <mat-select formControlName="startHour" required>
+                                                                        <mat-option
+                                                                            *ngFor="let option of startAndReturnHrOptions"
+                                                                            [value]="option.value">
+                                                                            {{ option.label }}
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                    <mat-error
+                                                                        *ngIf="!driverServiceFormGroup.hasError('required')">
+                                                                        {{"error.requiredHour"|i18next}}
+                                                                    </mat-error>
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col l-12">
+                                                                <mat-form-field appearance="fill" style="width: 100%">
+                                                                    <mat-label>{{"_banner.rentHours"|i18next}}
+                                                                    </mat-label>
+                                                                    <mat-select formControlName="rentalHours">
+                                                                        <mat-option
+                                                                            *ngFor="let rentalHrOption of rentalHrOptions"
+                                                                            [value]="rentalHrOption.value">
+                                                                            <div
+                                                                                class="d-flex-bo align-items-center-bo">
+                                                                                <div>
+                                                                                    <p>
+                                                                                        {{ rentalHrOption.label }}
+                                                                                    </p>
+                                                                                    <h5 style="font-weight: 300;"
+                                                                                        *ngIf="rentalHrOption.subLabel && withDriverTimeUp && this.driverServiceFormGroup.get('startTime')?.get('rentalHours')?.value === -1">
+                                                                                        {{ rentalHrOption.subLabel }}
+                                                                                    </h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="search-form__control"
+                                                        *ngIf="withDriverTimeUp && this.driverServiceFormGroup.get('startTime')?.get('rentalHours')?.value !== -1">
+                                                        <div class="row">
+                                                            <div class="col l-12">
+                                                                <p style="padding-left: 16px; font-size: 1.6rem">
+                                                                    {{getFinalDateInFormat()}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <div formGroupName="endTime" class="search-form__control"
+                                                        *ngIf="this.driverServiceFormGroup.get('startTime')?.get('rentalHours')?.value === -1">
+                                                        <label class="home-label w-fit">Kết thúc</label>
+                                                        <div class="row">
+                                                            <div class="col l-6">
+                                                                <mat-form-field style="width: 100%" appearance="fill">
+                                                                    <mat-label>{{"_banner.chooseDayLabel"|i18next}}</mat-label>
+                                                                    <input formControlName="rentalDate" matInput
+                                                                        [matDatepicker]="endRentalDateOfUrbanDriverPicker"
+                                                                        [min]="todayDate" />
+                                                                    <mat-datepicker-toggle matIconSuffix
+                                                                        [for]="endRentalDateOfUrbanDriverPicker">
+                                                                    </mat-datepicker-toggle>
+                                                                    <mat-datepicker #endRentalDateOfUrbanDriverPicker>
+                                                                    </mat-datepicker>
+                                                                </mat-form-field>
+                                                                <mat-error *ngIf="isValidUrbanForm===false"
+                                                                    class="error-title">
+                                                                    {{"error.requiredDate"|i18next}}
+                                                                </mat-error>
+                                                            </div>
+                                                            <div class="col l-6">
+                                                                <mat-form-field appearance="fill" style="width: 100%">
+                                                                    <mat-label>{{"_banner.chooseHourLabel"|i18next}}</mat-label>
+                                                                    <mat-select formControlName="endHour">
+                                                                        <mat-option
+                                                                            *ngFor="let option of startAndReturnHrOptions"
+                                                                            [value]="option.value">
+                                                                            {{ option.label }}
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                </mat-form-field>
+                                                                <mat-error *ngIf="isValidUrbanForm===false"
+                                                                    class="error-title">
+                                                                    {{"error.requiredDate"|i18next}}
+                                                                </mat-error>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button [style]="'color: var(--gemstone-color)'" mat-raised-button
+                                                        class="w-fit" (click)="onSubmitUrbanWithDriverForm()">
+                                                        <div class="d-flex-bo align-items-center-bo">
+                                                            {{"_banner.findCarButton"|i18next}}
+                                                        </div>
+                                                    </button>
+                                                </form>
+                                            </ng-template>
+                                            <ng-template #interMunicipal>
+                                                <form [formGroup]="interMunicipalFormGroup" class="search-form">
+                                                    <div class="search-form__control mr-t-10">
+                                                        <label
+                                                            class="home-label w-fit">{{"_banner.route"|i18next}}</label>
+                                                        <!-- địa điểm đón -->
+                                                        <mat-form-field style="display: block" appearance="fill">
+                                                            <mat-label>{{"_banner.pickupInputLabel"|i18next}}</mat-label>
+                                                            <input formControlName="pickUpPlace" type="text" matInput
+                                                                [matAutocomplete]="autoCom" />
+                                                            <mat-autocomplete #autoCom="matAutocomplete">
+                                                                <!-- <mat-option *ngFor="
+                                    let option of filteredAddressMunicipal | async
+                                  " [value]="option">
+                                                                    {{ option }}
+                                                                </mat-option> -->
+                                                                <mat-option value="Thành Phố Hồ Chí Minh">Thành Phố Hồ
+                                                                    Chí
+                                                                    Minh</mat-option>
+                                                                <mat-option value="Thành Phố Hà Nội">Thành Phố Hà
+                                                                    Nội</mat-option>
+                                                                <mat-option value="Thành Phố Đà Nẵng">Thành Phố Đà
+                                                                    Nẵng</mat-option>
+                                                                <mat-option value="Đại Học Nông Lâm">Đại Học Nông
+                                                                    Lâm</mat-option>
+                                                                <mat-option value="Đại Học Quốc Gia">Đại Học Quốc
+                                                                    Gia</mat-option>
+                                                            </mat-autocomplete>
+                                                            <mat-error
+                                                                *ngIf="!interMunicipalFormGroup.hasError('required')">
+                                                                {{"error.requiredAddress"|i18next}}
+                                                            </mat-error>
+                                                            <!-- địa điểm trả khách -->
+                                                        </mat-form-field>
+                                                        <mat-form-field style="display: block" appearance="fill">
+                                                            <mat-label>{{"_banner.pickupInputLabel"|i18next}}</mat-label>
+                                                            <input formControlName="destinationPlace" type="text"
+                                                                matInput [matAutocomplete]="autoComp" />
+                                                            <mat-autocomplete #autoComp="matAutocomplete">
+                                                                <!-- <mat-option *ngFor="
+                                    let option of filteredAddressMunicipal | async
+                                  " [value]="option">
+                                                                    {{ option }}
+                                                                </mat-option> -->
+                                                                <mat-option value="Thành Phố Hồ Chí Minh">Thành Phố Hồ
+                                                                    Chí
+                                                                    Minh</mat-option>
+                                                                <mat-option value="Thành Phố Hà Nội">Thành Phố Hà
+                                                                    Nội</mat-option>
+                                                                <mat-option value="Thành Phố Đà Nẵng">Thành Phố Đà
+                                                                    Nẵng</mat-option>
+                                                                <mat-option value="Đại Học Nông Lâm">Đại Học Nông
+                                                                    Lâm</mat-option>
+                                                                <mat-option value="Đại Học Quốc Gia">Đại Học Quốc
+                                                                    Gia</mat-option>
+                                                            </mat-autocomplete>
+                                                            <mat-error
+                                                                *ngIf="!interMunicipalFormGroup.hasError('required')">
+                                                                {{"error.requiredAddress"|i18next}}
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                        <!-- <section class="checkbox-white">
+                                                            <mat-checkbox formControlName="isOneWay">Tôi muốn đi một
+                                                                chiều</mat-checkbox>
+                                                        </section> -->
+                                                    </div>
+                                                    <div formGroupName="startTime" class="search-form__control">
+                                                        <label
+                                                            class="home-label w-fit">{{"common.time"|i18next}}</label>
+                                                        <div class="row">
+                                                            <div class="col l-6">
+                                                                <mat-form-field style="width: 100%" appearance="fill">
+                                                                    <mat-label>{{"_banner.chooseDayLabel"|i18next}}</mat-label>
+                                                                    <input formControlName="rentalDate" matInput
+                                                                        [matDatepicker]="startRentalDateOfMunicipalDriverPicker"
+                                                                        [min]="todayDate" />
+                                                                    <mat-datepicker-toggle matIconSuffix
+                                                                        [for]="startRentalDateOfMunicipalDriverPicker">
+                                                                    </mat-datepicker-toggle>
+                                                                    <mat-datepicker
+                                                                        #startRentalDateOfMunicipalDriverPicker>
+                                                                    </mat-datepicker>
+                                                                    <mat-error
+                                                                        *ngIf="!interMunicipalFormGroup.hasError('required')">
+                                                                        {{"error.requiredDate"|i18next}}
+                                                                    </mat-error>
+                                                                </mat-form-field>
+                                                            </div>
+                                                            <div class="col l-6">
+                                                                <mat-form-field appearance="fill" style="width: 100%">
+                                                                    <mat-label>{{"_banner.chooseHourLabel"|i18next}}
+                                                                    </mat-label>
+                                                                    <mat-select formControlName="startHour" required>
+                                                                        <mat-option
+                                                                            *ngFor="let option of startAndReturnHrOptions"
+                                                                            [value]="option.value">
+                                                                            {{ option.label }}
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                    <mat-error
+                                                                        *ngIf="!interMunicipalFormGroup.hasError('required')">
+                                                                        {{"error.requiredHour"|i18next}}
+                                                                    </mat-error>
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col l-12">
+                                                                <mat-form-field appearance="fill" style="width: 100%">
+                                                                    <mat-label>{{"_banner.rentHours"|i18next}}
+                                                                    </mat-label>
+                                                                    <mat-select formControlName="rentalHours">
+                                                                        <mat-option
+                                                                            *ngFor="let rentalHrOption of rentalHrOptions"
+                                                                            [value]="rentalHrOption.value">
+                                                                            <div
+                                                                                class="d-flex-bo align-items-center-bo">
+                                                                                <div>
+                                                                                    <p>
+                                                                                        {{ rentalHrOption.label }}
+                                                                                    </p>
+                                                                                    <h5 style="font-weight: 300;"
+                                                                                        *ngIf="rentalHrOption.subLabel && withDriverTimeUp && this.driverServiceFormGroup.get('startTime')?.get('rentalHours')?.value === -1">
+                                                                                        {{ rentalHrOption.subLabel }}
+                                                                                    </h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="search-form__control"
+                                                        *ngIf="withMunDriverTimeUp && this.interMunicipalFormGroup.get('startTime')?.get('rentalHours')?.value !== -1">
+                                                        <div class="row">
+                                                            <div class="col l-12">
+                                                                <p style="padding-left: 16px; font-size: 1.6rem">
+                                                                    {{getFinalDateMunicipal()}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+
+                                                    <div class="search-form__control"
+                                                        *ngIf="this.interMunicipalFormGroup.get('startTime')?.get('rentalHours')?.value === -1"
+                                                        formGroupName="endTime">
+                                                        <label class="home-label w-fit">{{"common.end"|i18next}}</label>
+                                                        <div class="row">
+                                                            <div class="col l-6">
+                                                                <mat-form-field style="width: 100%" appearance="fill">
+                                                                    <mat-label>{{"_banner.chooseDayLabel"|i18next}}</mat-label>
+                                                                    <input matInput [matDatepicker]="endMunicipalPicker"
+                                                                        formControlName="rentalDate"
+                                                                        [min]="todayDate" />
+                                                                    <mat-datepicker-toggle matIconSuffix
+                                                                        [for]="endMunicipalPicker">
+                                                                    </mat-datepicker-toggle>
+                                                                    <mat-datepicker
+                                                                        #endMunicipalPicker></mat-datepicker>
+                                                                </mat-form-field>
+                                                                <mat-error *ngIf="isValidMunicipalForm===false"
+                                                                    class="error-title">
+                                                                    {{"error.requiredDate"|i18next}}
+                                                                </mat-error>
+                                                            </div>
+                                                            <div class="col l-6">
+                                                                <mat-form-field appearance="fill" style="width: 100%">
+                                                                    <mat-label>{{"_banner.chooseHourLabel"|i18next}}
+                                                                    </mat-label>
+                                                                    <mat-select formControlName="endHour">
+                                                                        <mat-option
+                                                                            *ngFor="let option of startAndReturnHrOptions"
+                                                                            [value]="option.value">
+                                                                            {{ option.label }}
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                </mat-form-field>
+                                                                <mat-error *ngIf="isValidMunicipalForm===false">
+                                                                    {{"error.requiredHour"|i18next}}
+                                                                </mat-error>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button [style]="'color: var(--gemstone-color)'" mat-raised-button
+                                                        class="w-fit" (click)="onSubmitMunicipalWithDriverForm()">
+                                                        <div class="d-flex-bo align-items-center-bo">
+                                                            {{"_banner.findCarButton"|i18next}}
+                                                        </div>
+                                                    </button>
+                                                </form>
+                                            </ng-template>
+                                        </mat-tab-group>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

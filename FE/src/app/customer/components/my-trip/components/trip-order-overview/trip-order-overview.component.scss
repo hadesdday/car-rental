@@ -1,0 +1,102 @@
+.order-overview{
+    border-radius: 3px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 12px 0 rgb(0 0 0 / 12%);
+    margin: 50px;
+    font-size: 1.4rem;
+}
+.order-overview__info{
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+}
+.order-overview__title{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.order-overview__body{
+    display: flex;
+}
+.order-overview__body .desc .form-tag{
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: var(--gemstone-color);
+    font-weight: 600;
+}
+.order-overview__body .desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.order-overview__body .details .detail__item{
+    margin-bottom: 15px;
+}
+.order-overview__body .details .detail__item strong{
+    margin-right: 5px;
+}
+
+.order-overview__body .total-payment{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.order-overview__body .total-payment span{
+    color: var(--gemstone-color);
+}
+.order-overview__body .cover-image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.order-overview__body .cover-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.order-overview__status{
+    background-color: rgb(250,250,252);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.order-overview__status .status{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--gemstone-color);
+}
+.order-overview__status .status-message{
+    color: var(--first-dark-cyan-color);
+    display: flex;
+    align-items: center;
+}
+.order-overview__status .status .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 100rem;
+    position: relative;
+    margin-right: 5px
+}
+.order-overview__status .status .dot.active{
+    background-color: var(--gemstone-color);
+}
+.order-overview__status .status .dot::before{
+    content: "";
+    background-color: var(--gemstone-color);
+    opacity: .3;
+}
+.order-overview__actions{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--lighter-gemstone-color);
+}
+.order-overview__actions button{
+    margin-left: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}

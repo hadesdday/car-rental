@@ -1,0 +1,28 @@
+<div class="d-flex-bo flex-wrap-bo justify-content-center-bo statistics__options" [formGroup]="dateRangeFormGroup">
+    <mat-form-field appearance="outline">
+        <mat-label class="cl-black">Danh mục</mat-label>
+        <mat-select matInput formControlName="option" class="cl-black">
+            <mat-option value="0">Doanh thu</mat-option>
+            <mat-option value="1">Số chuyến</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label class="cl-black">Từ</mat-label>
+        <input matInput [matDatepicker]="fromDatepicker" formControlName="fromDate">
+        <mat-datepicker-toggle matIconSuffix [for]="fromDatepicker" class="cl-black"></mat-datepicker-toggle>
+        <mat-datepicker #fromDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label class="cl-black">Đến</mat-label>
+        <input matInput [matDatepicker]="toDatepicker" formControlName="toDate">
+        <mat-datepicker-toggle matIconSuffix [for]="toDatepicker" class="cl-black"></mat-datepicker-toggle>
+        <mat-datepicker #toDatepicker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-button class="btn btn-primary cl-white btn__view" (click)="fetchData()">Xem</button>
+</div>
+<div class="chart-container">
+    <canvas id="MyAdminChart">{{ chart }}</canvas>
+</div>

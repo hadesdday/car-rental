@@ -1,0 +1,95 @@
+<div class="car__calendars-container bg-white">
+    <h1 class="text-center text-header">{{'calendar.generalCalendar'|i18next}}</h1>
+
+    <div class="d-flex-bo flex-wrap-bo car__calendars-content">
+        <div class="car__calendars-col">
+            <!-- <button (click)="toggleSortedByOrder()" class="btn-sort">
+                <i class="fa-solid fa-arrow-up-wide-short" *ngIf="sortedByOrder===false" title="Sắp xếp tăng dần"></i>
+                <i class="fa-solid fa-arrow-down-wide-short" *ngIf="sortedByOrder===true" title="Sắp xếp giảm dần"></i>
+            </button> -->
+            <span [formGroup]="sortedByFormGroup">
+                <mat-form-field appearance="outline">
+                    <mat-select matInput formControlName="sortedBy">
+                        <mat-option value="0">{{'calendar.carName'|i18next}}</mat-option>
+                        <mat-option value="1">{{'calendar.defaultPrice'|i18next}}</mat-option>
+                        <mat-option value="2">{{'calendar.carPlate'|i18next}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="ml-10">
+                    <input matInput type="text" formControlName="nameOrCarPlate"
+                        [placeholder]="'calendar.searchInputPlaceholder'|i18next">
+                    <button matSuffix mat-icon-button (click)="searchByNameCarPlate()">
+                        <mat-icon><i class="fa-solid fa-magnifying-glass cl-gem"></i></mat-icon>
+                    </button>
+                </mat-form-field>
+            </span>
+        </div>
+        <div class="car__calendars-col">
+            <ul class="calendars__labels">
+                <li>{{'calendar.defaultPrice'|i18next}}</li>
+                <!-- <li>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Lặp lại tuần
+                </li> -->
+                <li>
+                    <i class="fa-solid fa-square cl-danger"></i>
+                    {{'calendar.rentedDay'|i18next}}
+                </li>
+                <li>
+                    <i class="fa-solid fa-square cl-waiting-1"></i>
+                    {{'calendar.pendingApproval'|i18next}}
+                </li>
+                <li>
+                    <i class="fa-solid fa-square cl-gem"></i>
+                    {{'calendar.pendingDelivery'|i18next}}
+                </li>
+                <li class="cl-gem">
+                    {{'calendar.customPrice'|i18next}}
+                </li>
+                <!-- <li>
+                    <i class="fa-solid fa-square cl-empty"></i>
+                    Ngày trống
+                </li> -->
+                <!-- <li>
+                    <i class="fa-solid fa-square cl-busy"></i>
+                    Ngày bận
+                </li> -->
+                <!-- <li>
+                    <i class="fa-solid fa-square cl-waiting-2"></i>
+                    Chờ duyệt
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- calendar component -->
+
+    <ng-template #customCalendarCell let-day="day" let-locale="locale">
+        <div class="cal-cell-top">
+            <span class="cal-day-badge bg-rented" *ngIf="day.badgeTotal> 0  && rentedSize(day)>0">{{
+                rentedSize(day)}}</span>
+            <span class="cal-day-badge bg-accepted" *ngIf="day.badgeTotal> 0 && acceptedSize(day)>0">{{acceptedSize(day)
+                }}</span>
+            <span class="cal-day-badge bg-pending" *ngIf="day.badgeTotal> 0  && pendingSize(day)>0">{{
+                pendingSize(day) }}</span>
+            <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+        </div>
+        <p style="margin: 5px" *ngIf="day.events.length===0">Trống</p>
+        <p style="margin: 5px" *ngIf="day.badgeTotal> 0  && rentedSize(day)>0">{{
+            rentedSize(day)}} {{'calendar.activeRental'|i18next}}</p>
+        <p style="margin: 5px" *ngIf="day.badgeTotal> 0 && pendingSize(day)>0">{{
+            pendingSize(day) }} {{'calendar.pendingApprovalRental'|i18next}}</p>
+        <p style="margin: 5px" *ngIf="day.badgeTotal> 0  && acceptedSize(day)>0">{{acceptedSize(day)
+            }} {{'calendar.pendingDeliveryRental'|i18next}}</p>
+        <!-- <p style="margin: 5px" *ngIf="day.events.length>0 &&!isBusy(day)">Có {{ day.events.length }} chuyến trong
+            ngày</p> -->
+        <!-- <p style="margin: 5px" *ngIf="day.events.length>0 &&isBusy(day)">Bận</p> -->
+    </ng-template>
+
+    <mwl-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+    </mwl-calendar-header>
+    <mwl-calendar-month-view [viewDate]="viewDate" [events]="filteredEvents" [activeDayIsOpen]="activeDayIsOpen"
+        (dayClicked)="dayClicked($event.day)" [refresh]="refresh" (eventTimesChanged)="eventTimesChanged($event)"
+        [locale]="locale" [cellTemplate]="customCalendarCell"></mwl-calendar-month-view>
+    <!-- (beforeViewRender)="beforeMonthViewRender($event)"></mwl-calendar-month-view> -->
+</div>

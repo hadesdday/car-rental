@@ -1,0 +1,317 @@
+<div class="account">
+    <div class="profile-cover">
+        <div class="profile-cover__qr-btn" (click)="openQrCode()">
+                <i class="icon-bo qr-code-icon">
+            </i>
+        </div>
+    </div>
+    <div class="grid wide">
+        <div class="profile-content">
+            <div class="profile-desc">
+                <div class="row">
+                    <div class="col l-3">
+                        <div class="avatar-box">
+                            <label for="updateAvatarInput" class="avatar avatar--xl">
+                                <div class="avatar-image" style="
+                    background-image: url('https://n1-astg.mioto.vn/g/2023/01/18/05/RFDgIbEPT2wzTs5OQo2C3A.jpg');
+                  "></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col l-9">
+                        <div class="snippet">
+                            <div class="profile-info">
+                                <div class="item-content">
+                                    <div class="item-title">
+                                        <p class="mr-r-10">Huỳnh Gia Huy</p>
+                                    </div>
+                                    <div class="d-flex-bo align-items-center-bo">
+                                        <span>Tham gia: 18/02/2023</span>
+                                        <div class="line mr-side-10"></div>
+                                        <strong>Chưa có chuyến</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="account-info">
+                <div class="account-info__inside">
+                    <div class="row">
+                        <div class="col l-2-4 c-12">
+                            <span class="label">Điện thoại</span>
+                            <div class="content">
+                                <span><i class="icon-bo verify-icon mr-r-5"></i>Đã xác thực</span>
+                            </div>
+                        </div>
+                        <div class="col l-2-4 c-12">
+                            <span class="label">GPLX</span>
+                            <div class="content">
+                                <i class="icon-bo error-icon"></i>
+                                <a class="verify prevent-click">
+                                    Chưa xác thực GPLX
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col l-2-4 c-12">
+                            <span class="label">Email</span>
+                            <div class="content">
+                                <span><i class="icon-bo verify-icon mr-r-5"></i>Đã xác thực</span>
+                            </div>
+                        </div>
+                        <div class="col l-2-4 c-12">
+                            <span class="label">Facebook</span>
+                            <div class="content">
+                                <span><i class="icon-bo verify-icon mr-r-5"></i>Huỳnh Gia Huy</span>
+                            </div>
+                        </div>
+                        <div class="col l-2-4 c-12">
+                            <span class="label">Google</span>
+                            <div class="content">
+                                <span><i class="icon-bo error-icon mr-r-5"></i>Chưa liên kết</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile__wrapper">
+            <div class="review-sect">
+                <div class="review-container">
+                    <div class="review review__wrapper">
+                        <div class="review">
+                            <h2 class="title">
+                                Nhận xét từ khách thuê
+                            </h2>
+                            <div class="group-view">
+                                <div class="star">
+                                    <div class="star__rate-num">5.0</div>
+                                    <div class="star__ratings">
+                                        <div class="star-container">
+                                            <svg viewBox="0 0 51 48" class="widget-svg" style="width: 17px;
+                                                height: 17px;
+                                                transition: transform
+                                                0.2s ease-in-out 0s;">
+                                                <path class="star" d="m25,1
+                                                    6,17h18l-14,11
+                                                    5,17-15-10-15,10
+                                                    5-17-14-11h18z" style="fill: rgb(0,
+                                                    165, 80);
+                                                    transition: fill
+                                                    0.2s ease-in-out
+                                                    0s;">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bar-line"></div>
+                                <div class="total-comment">41 đánh giá</div>
+                            </div>
+                            <hr class="line">
+                            <ul class="comment-list">
+                                <li class="comment-item" *ngFor="let i
+                                    of [1,1,1]">
+                                    <div class="row">
+                                        <div class="col l-1">
+                                            <div class="fix-avatar">
+                                                <a href="">
+                                                    <img src="https://n1-cstg.mioto.vn/m/avatars/p.jpg" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col l-11">
+                                            <a href="">
+                                                <div class="name">
+                                                    Huy Huynh
+                                                </div>
+                                            </a>
+                                            <div class="comment-box">
+                                                <div class="group">
+                                                    <div class="star-ratings">
+                                                        <ng-container *ngFor="let
+                                                            user of
+                                                            [1,1,1,1,1]">
+                                                            <div class="star-container">
+                                                                <svg viewBox="0
+                                                                    0 51
+                                                                    48" class="widget-svg" style="width:
+                                                                    17px;
+                                                                    height:
+                                                                    17px;
+                                                                    transition:
+                                                                    transform
+                                                                    0.2s
+                                                                    ease-in-out
+                                                                    0s;">
+                                                                    <path class="star" d="m25,1
+                                                                        6,17h18l-14,11
+                                                                        5,17-15-10-15,10
+                                                                        5-17-14-11h18z" style="fill:
+                                                                        rgb(0,
+                                                                        165,
+                                                                        80);
+                                                                        transition:
+                                                                        fill
+                                                                        0.2s
+                                                                        ease-in-out
+                                                                        0s;">
+                                                                    </path>
+                                                                </svg>
+                                                            </div>
+                                                        </ng-container>
+                                                    </div>
+                                                    <span style="font-size:
+                                                        1.2rem">3 ngày
+                                                        trước</span>
+                                                </div>
+                                                <div class="desc">Comment</div>
+                                            </div>
+                                            <div class="text-align--right">
+                                                <span class="service-type">Có tài</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="properties">
+                <div class="properties__wrapper">
+                    <div class="wd-carousel-wrapper">
+                        <h2>Xe có tài xế của Lưu Mạnh Dũng (1 xe)</h2>
+                        <app-carousel [specItems]="[1,1,1,1,1]"
+                            [itemRender]="carouselItemsTemplateRef"
+                            [isPerItemInStep]="true"></app-carousel>
+                            <ng-template #carouselItemsTemplateRef let-item="item" let-idx="idx"
+                            let-curIdx="curIdx">
+                            <li (click)="navigateCarDetail()" #imageCarouselItem
+                                class="image-carousel__item col l-4 c-3">
+                                <div class="car-card-item-wrapper">
+                                    <div class="car-card-item">
+                                        <div class="car-card-item__image">
+                                            <img
+                                                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mazda_3_2020/p/g/2021/03/20/13/M7M_5xiTotPK8fEQPUhmEA.jpg"
+                                                alt="" />
+                                            <div class="price-car">950K</div>
+                                        </div>
+                                        <div class="desc-car">
+                                            <div class="desc-car__name d-flex-bo">
+                                                <h4>MITSUBISHI OUTLANDER 2020</h4>
+                                                <i class="icon-bo icon-insurance"></i>
+                                            </div>
+                                            <div class="group-line">
+                                                <span class="star">
+                                                    <div class="star_rate-num">5.0</div>
+                                                    <div class="star-container">
+                                                        <svg viewBox="0 0 51 48" class="widget-svg"
+                                                            style="
+                                                            width: 17px;
+                                                            height: 17px;
+                                                            transition: transform 0.2s ease-in-out 0s;
+                                                            ">
+                                                            <path class="star" d="m25,1
+                                                                6,17h18l-14,11 5,17-15-10-15,10
+                                                                5-17-14-11h18z" style="
+                                                                fill: var(--gemstone-color);
+                                                                transition: fill 0.2s ease-in-out 0s;
+                                                                "></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="dot-car mr-side-5">•</div>
+                                                    <div class="trips mr-r-5">93 chuyến</div>
+                                                    <div class="certificate-wrapper">
+                                                        <app-certificate-svg></app-certificate-svg>
+                                                    </div>
+                                                    </span>
+                                                </div>
+                                                <div class="group-label">
+                                                    <span>Số tự động</span>
+                                                    <span>Giao xe tận nơi</span>
+                                                </div>
+                                                <div class="location">
+                                                    <p class="d-flex-bo align-items-center-bo">
+                                                        <i class="icon-bo location-icon"></i>
+                                                        Quận Phú Nhuận, Hồ Chí Minh
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                        </ng-template>
+                    </div>
+                    <div class="sd-carousel-wrapper">
+                        <h2>Xe tự lái của Lưu Mạnh Dũng (1 xe)</h2>
+                        <app-carousel [specItems]="[1,1,1,1,1]"
+                            [itemRender]="carouselItemsTemplateRef"
+                            [isPerItemInStep]="true"></app-carousel>
+                            <ng-template #carouselItemsTemplateRef let-item="item" let-idx="idx"
+                            let-curIdx="curIdx">
+                            <li (click)="navigateCarDetail()" #imageCarouselItem
+                                class="image-carousel__item col l-4 c-3">
+                                <div class="car-card-item-wrapper">
+                                    <div class="car-card-item">
+                                        <div class="car-card-item__image">
+                                            <img
+                                                src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mazda_3_2020/p/g/2021/03/20/13/M7M_5xiTotPK8fEQPUhmEA.jpg"
+                                                alt="" />
+                                            <div class="price-car">950K</div>
+                                        </div>
+                                        <div class="desc-car">
+                                            <div class="desc-car__name d-flex-bo">
+                                                <h4>MITSUBISHI OUTLANDER 2020</h4>
+                                                <i class="icon-bo icon-insurance"></i>
+                                            </div>
+                                            <div class="group-line">
+                                                <span class="star">
+                                                    <div class="star_rate-num">5.0</div>
+                                                    <div class="star-container">
+                                                        <svg viewBox="0 0 51 48" class="widget-svg"
+                                                            style="
+                                                            width: 17px;
+                                                            height: 17px;
+                                                            transition: transform 0.2s ease-in-out 0s;
+                                                            ">
+                                                            <path class="star" d="m25,1
+                                                                6,17h18l-14,11 5,17-15-10-15,10
+                                                                5-17-14-11h18z" style="
+                                                                fill: var(--gemstone-color);
+                                                                transition: fill 0.2s ease-in-out 0s;
+                                                                "></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="dot-car mr-side-5">•</div>
+                                                    <div class="trips mr-r-5">93 chuyến</div>
+                                                    <div class="certificate-wrapper">
+                                                        <app-certificate-svg></app-certificate-svg>
+                                                    </div>
+                                                    </span>
+                                                </div>
+                                                <div class="group-label">
+                                                    <span>Số tự động</span>
+                                                    <span>Giao xe tận nơi</span>
+                                                </div>
+                                                <div class="location">
+                                                    <p class="d-flex-bo align-items-center-bo">
+                                                        <i class="icon-bo location-icon"></i>
+                                                        Quận Phú Nhuận, Hồ Chí Minh
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input #updateAvatarInput type="file" id="updateAvatarInput" [style]="'display: none'">
+<input type="file" id="updateCoverInput" [style]="'display: none'">

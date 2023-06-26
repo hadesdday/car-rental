@@ -1,0 +1,951 @@
+<div
+  class="car-detail-container"
+  [class.car-detail-dialog]="data"
+  *ngIf="car$ | async as car"
+>
+  <app-cover ></app-cover>
+  <div class="grid l-wide">
+    <div class="module-detail">
+      <div class="row">
+        <div class="col l-7">
+          <div class="car-detail">
+            <div class="car-detail__info"></div>
+            <div class="car-detail__info">
+              <div class="car-detail__desc short-desc">
+                <div class="group-name">
+                  <h1 class="car-title">
+                    {{ car.model.name }} {{ car.yearOfManufacture }}
+                  </h1>
+                </div>
+                <div class="group-line">
+                  <div class="star">
+                    <div class="star_rate-num">5.0</div>
+                    <div class="star-container">
+                      <svg
+                        viewBox="0 0 51 48"
+                        class="widget-svg"
+                        style="
+                          width: 17px;
+                          height: 17px;
+                          transition: transform 0.2s ease-in-out 0s;
+                        "
+                      >
+                        <path
+                          class="star"
+                          d="m25,1
+                                                    6,17h18l-14,11
+                                                    5,17-15-10-15,10
+                                                    5-17-14-11h18z"
+                          style="
+                            fill: rgb(0, 165, 80);
+                            transition: fill 0.2s ease-in-out 0s;
+                          "
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="bar-line"></div>
+                  <div class="trips">17 chuyến</div>
+                </div>
+                <div class="group-label">
+                  <span>Số tự động</span>
+                  <span>Giao xe tận nơi</span>
+                </div>
+              </div>
+            </div>
+            <div class="car-detail__info">
+              <div class="car-detail__desc">
+                <div class="group characteristic row">
+                  <div class="col l-4">
+                    <div class="title">Đặc điểm</div>
+                  </div>
+                  <div class="col l-8">
+                    <ul class="w-fit">
+                      <div class="row">
+                        <div class="col l-6">
+                          <div class="d-flex-bo align-items-center-bo">
+                            <i class="icon-bo chair-icon"></i>
+                            <span>{{ car.seats }}</span>
+                          </div>
+                        </div>
+                        <div class="col l-6">
+                          <div class="d-flex-bo align-items-center-bo">
+                            <i class="icon-bo trans-icon mr-r-5"></i>
+                            <span *ngIf="car.transmission === 'AUTOMATIC'"
+                              >Số tự động</span
+                            >
+                            <span *ngIf="car.transmission === 'MANUAL'"
+                              >Số sàn</span
+                            >
+                          </div>
+                        </div>
+                        <div class="col l-6">
+                          <div class="d-flex-bo align-items-center-bo">
+                            <i class="icon-bo diesel-icon"></i>
+                            <span>{{ car.fuel }}</span>
+                          </div>
+                        </div>
+                        <div class="col l-6">
+                          <div class="d-flex-bo align-items-center-bo">
+                            <i class="icon-bo fuel-consumption-icon"></i>
+                            <span>{{ car.fuelConsumption }}km/lít</span>
+                          </div>
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+                <div class="group row">
+                  <div class="col l-4">
+                    <div class="title">Các tiện nghi khác</div>
+                  </div>
+                  <div class="col l-8">
+                    <ul class="features">
+                      <ng-container *ngFor="let f of car.features">
+                        <li>
+                          {{ f.name }}
+                        </li>
+                      </ng-container>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="car-detail__desc">
+                <div class="group row">
+                  <div class="col l-3">
+                    <div class="title">Chủ xe</div>
+                  </div>
+                  <div class="col l-9">
+                    <div class="profile-mini">
+                      <div class="about-owner">
+                        <a class="d-flex-bo">
+                          <div class="avatar mr-r-10">
+                            <a href="">
+                              <div class="avatar-image">
+                                <span style="color: #fff">
+                                  {{ car.user.fullName.charAt(0) }}
+                                </span>
+                              </div>
+                              <div class="host-star">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0
+                                                                    24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M3.74373
+                                                                        14.1812L0
+                                                                        20.4535L4.36948
+                                                                        20.2293L6.35463
+                                                                        23.999L9.81785
+                                                                        18.1959C7.33642
+                                                                        17.5754
+                                                                        5.20562
+                                                                        16.1312
+                                                                        3.74373
+                                                                        14.1812Z"
+                                    fill="#FFA800"
+                                  ></path>
+                                  <path
+                                    d="M20.2329
+                                                                        14.1812C18.7834
+                                                                        16.1302
+                                                                        16.655
+                                                                        17.575
+                                                                        14.1816
+                                                                        18.2039L17.6518
+                                                                        23.999L19.6348
+                                                                        20.2413L23.9995
+                                                                        20.4648L20.2329
+                                                                        14.1812Z"
+                                    fill="#FFA800"
+                                  ></path>
+                                  <circle
+                                    cx="12.0004"
+                                    cy="8.72698"
+                                    r="8.72698"
+                                    fill="#FFA800"
+                                  ></circle>
+                                  <circle
+                                    cx="12.0028"
+                                    cy="8.7269"
+                                    r="7.09067"
+                                    fill="#FFE99D"
+                                  ></circle>
+                                  <path
+                                    d="M11.7334
+                                                                        4.59761C11.85
+                                                                        4.28582
+                                                                        12.291
+                                                                        4.28582
+                                                                        12.4076
+                                                                        4.59761L13.2976
+                                                                        6.9777C13.3482
+                                                                        7.11297
+                                                                        13.4747
+                                                                        7.2049
+                                                                        13.619
+                                                                        7.2112L16.1576
+                                                                        7.32213C16.4901
+                                                                        7.33666
+                                                                        16.6264
+                                                                        7.7561
+                                                                        16.3659
+                                                                        7.96333L14.3773
+                                                                        9.54523C14.2643
+                                                                        9.63513
+                                                                        14.216
+                                                                        9.78388
+                                                                        14.2546
+                                                                        9.92305L14.9336
+                                                                        12.3717C15.0225
+                                                                        12.6925
+                                                                        14.6657
+                                                                        12.9517
+                                                                        14.3881
+                                                                        12.768L12.2691
+                                                                        11.3656C12.1487
+                                                                        11.2859
+                                                                        11.9923
+                                                                        11.2859
+                                                                        11.8719
+                                                                        11.3656L9.7529
+                                                                        12.768C9.47531
+                                                                        12.9517
+                                                                        9.11852
+                                                                        12.6925
+                                                                        9.20746
+                                                                        12.3717L9.88644
+                                                                        9.92305C9.92503
+                                                                        9.78388
+                                                                        9.8767
+                                                                        9.63513
+                                                                        9.76368
+                                                                        9.54523L7.7751
+                                                                        7.96333C7.5146
+                                                                        7.7561
+                                                                        7.65088
+                                                                        7.33666
+                                                                        7.98344
+                                                                        7.32213L10.5221
+                                                                        7.2112C10.6663
+                                                                        7.2049
+                                                                        10.7929
+                                                                        7.11297
+                                                                        10.8434
+                                                                        6.9777L11.7334
+                                                                        4.59761Z"
+                                    fill="#FFA800"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </a>
+                          </div>
+                          <div
+                            class="desc d-flex-bo align-items-center-bo mr-l-10"
+                          >
+                            <a href="">
+                              <p style="font-size: 1.8rem" class="fw-500">
+                                {{ car.user.fullName }}
+                              </p>
+                              <div class="star d-flex-bo align-items-center-bo">
+                                <div class="star_rate-num">5.0</div>
+                                <div class="star-ratings">
+                                  <div class="star-container">
+                                    <svg
+                                      viewBox="0
+                                                                            0 51
+                                                                            48"
+                                      class="widget-svg"
+                                      style="
+                                        width: 17px;
+                                        height: 17px;
+                                        transition: transform 0.2s ease-in-out
+                                          0s;
+                                      "
+                                    >
+                                      <path
+                                        class="star"
+                                        d="m25,1
+                                                                                6,17h18l-14,11
+                                                                                5,17-15-10-15,10
+                                                                                5-17-14-11h18z"
+                                        style="
+                                          fill: rgb(0, 165, 80);
+                                          transition: fill 0.2s ease-in-out 0s;
+                                        "
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div class="dot-car mr-side-10">•</div>
+                                <div class="trips">41 chuyến</div>
+                              </div>
+                            </a>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="note">
+                        Lưu ý: Số điện thoại của chủ xe sẽ được hiển thị sau khi
+                        đặt cọc.
+                      </div>
+                      <div class="owner-response">
+                        <div class="owner-response__desc">
+                          <p>Tỉ lệ phản hồi</p>
+                          <span>100%</span>
+                        </div>
+                        <div class="owner-response__desc">
+                          <p>Thời gian phản hồi</p>
+                          <span>0.0 tiếng</span>
+                        </div>
+                        <div class="owner-response__desc">
+                          <p>Tỉ lệ đồng ý</p>
+                          <span>90%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="car-detail__desc">
+                <div class="group row">
+                  <div class="col l-3">
+                    <div class="title">Vị trí</div>
+                  </div>
+                  <div class="col l-9">
+                    <div
+                      id="map"
+                      style="width: 100%; height: 300px; background-color: grey"
+                    >
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        style="border: 0"
+                      ></iframe>
+                    </div>
+                    <div class="space m"></div>
+                    <p>
+                      <i class="icon-bo icon-location"></i>
+                      {{ car.address.district.prefix }},
+                      {{ car.address.district.name }} ,{{
+                        car.address.province.domain
+                      }}
+                      {{ car.address.province.name }}
+                      <span class="font-13" style="color: rgb(107, 107, 107)"
+                        >(Địa chỉ cụ thể sẽ được hiển thị sau khi đặt cọc)</span
+                      >
+                    </p>
+                    <div class="space m"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="car-detail__desc button-group">
+                <div class="d-flex-bo justify-content-between-bo">
+                  <div class="wrap-fit">
+                    <button class="w-fit btn btn-l" mat-raised-button color="">
+                      Báo xấu
+                    </button>
+                  </div>
+                  <div class="wrap-fit">
+                    <button
+                      class="w-fit btn btn-l gemstone-raised-button"
+                      mat-raised-button
+                      color="primary"
+                      *ngIf="car.isFav"
+                      (click)="updateFavCar('-')"
+                    >
+                      Bỏ yêu thích
+                    </button>
+                    <button
+                      class="w-fit btn btn-l gemstone-raised-button"
+                      mat-raised-button
+                      color="primary"
+                      *ngIf="!car.isFav"
+                      (click)="updateFavCar('+')"
+                    >
+                      Thêm vào danh sách yêu thích
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="car-detail__desc">
+                <div class="review">
+                  <h3 class="title">Đánh giá</h3>
+                  <div class="group-view">
+                    <div class="star">
+                      <div class="star__rate-num">5.0</div>
+                      <div class="star__ratings">
+                        <div class="star-container">
+                          <svg
+                            viewBox="0 0 51 48"
+                            class="widget-svg"
+                            style="
+                              width: 17px;
+                              height: 17px;
+                              transition: transform 0.2s ease-in-out 0s;
+                            "
+                          >
+                            <path
+                              class="star"
+                              d="m25,1
+                                                            6,17h18l-14,11
+                                                            5,17-15-10-15,10
+                                                            5-17-14-11h18z"
+                              style="
+                                fill: rgb(0, 165, 80);
+                                transition: fill 0.2s ease-in-out 0s;
+                              "
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bar-line"></div>
+                    <div class="total-comment">41 đánh giá</div>
+                  </div>
+                  <hr class="line" />
+                  <ul class="comment-list">
+                    <ng-container *ngFor="let rating of car.ratings">
+                      <app-rating-item
+                        [rating]="rating"
+                        pp-rating-item
+                      ></app-rating-item>
+                    </ng-container>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col l-5">
+          <div class="sidebar-container">
+            <div class="rental-box">
+              <ng-container *ngIf="formType === 'sd'; else withDriverForm">
+                <ng-container
+                  [ngTemplateOutlet]="selfDrivingForm"
+                ></ng-container>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-module-deal></app-module-deal>
+  </div>
+  <ng-template #withDriverForm>
+    <p>wd</p>
+    <form [formGroup]="carBookingFG" action="">
+      <div class="price">
+        <h1>{{ car.service.defaultPrice }} <span>/ngày</span></h1>
+      </div>
+      <div class="line-form has-timer">
+        <h4 for="" class="label">Thời gian</h4>
+        <div class="row sm-gutters">
+          <div class="col l-6">
+            <mat-form-field style="width: 100%" appearance="fill">
+              <mat-label>Chọn một ngày</mat-label>
+              <input
+                formControlName="pickUpDate"
+                matInput
+                [matDatepicker]="pickUpDatePicker"
+              />
+              <mat-datepicker-toggle matIconSuffix [for]="pickUpDatePicker">
+              </mat-datepicker-toggle>
+              <mat-datepicker #pickUpDatePicker> </mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col l-6">
+            <mat-form-field appearance="fill" style="width: 100%">
+              <mat-label>Chọn giờ bắt đầu thuê</mat-label>
+              <mat-select formControlName="pickUpTime">
+                <mat-option
+                  *ngFor="let option of startAndReturnHrOptions"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row sm-gutters">
+          <div class="col l-12">
+            <mat-form-field appearance="fill" style="width: 100%">
+              <mat-label>Số giờ thuê </mat-label>
+              <mat-select formControlName="pickUpTime">
+                <mat-option
+                  *ngFor="let option of rentalHrOptions"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <strong>Thời gian kết thúc 10:00 10/03/2023</strong>
+        <div class="space m"></div>
+        <div class="notice-message" *ngIf="car.isDenyRent">
+          <p>
+            <i class="icon-bo icon-notice"></i>
+            Xe bận trong khoảng thời gian trên. Vui lòng đặt xe khác hoặc thay
+            đổi lịch trình thích hợp.
+          </p>
+        </div>
+        <div class="notice-message" *ngIf="!car.isDenyRent" style="color:rgb(0, 165, 80)">
+          <p>
+            <i class="fa-solid fa-circle-check"></i>
+            Thời gian thuê xe hợp lý
+          </p>
+        </div>
+      </div>
+      <div class="line-form local">
+        <h4 for="" class="label">Vị trí</h4>
+        <mat-tab-group>
+          <mat-tab label="Nội thành">
+            <div class="delivery-map"></div>
+            <div class="d-flex-bo justify-content-between-bo">
+              <label for="" class="label cl-gem">Điểm đón</label>
+              <a
+                class="cl-gem"
+                (click)="
+                  editDeliveryLocation(
+                    'Địa
+                              điểm đưa
+                              đón',
+                    car
+                  )
+                "
+              >
+                Thay đổi
+              </a>
+            </div>
+            <a
+              class="form-location"
+              (click)="
+                editDeliveryLocation(
+                  'Địa
+                          điểm đưa
+                          đón',
+                  car
+                )
+              "
+            >
+              <div class="wrap-icon">
+                <i class="icon-bo start-location-icon"></i>
+              </div>
+              <div class="wrap-address">
+                <p>
+                  Đại học Nông Lâm, Bến xe buýt ĐH Nông Lâm Quốc lộ 1, Phường
+                  Đông Hòa, Quận Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam
+                </p>
+              </div>
+            </a>
+          </mat-tab>
+          <mat-tab label="Liên tỉnh">
+            <div class="delivery-map"></div>
+            <div class="route-info">
+              <label for="" class="label cl-gem">Lộ trình</label>
+              <a
+                class="form-location"
+                (click)="
+                  editDeliveryLocation(
+                    'Địa điểm đưa
+                              đón',
+                    car
+                  )
+                "
+              >
+                <div class="wrap-icon">
+                  <i class="icon-bo start-location-icon"></i>
+                </div>
+                <div class="wrap-address">
+                  <p>
+                    Đại học Nông Lâm, Bến xe buýt ĐH Nông Lâm Quốc lộ 1, Phường
+                    Đông Hòa, Quận Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam
+                  </p>
+                </div>
+              </a>
+              <a
+                class="form-location"
+                (click)="
+                  editDeliveryLocation(
+                    'Địa điểm đưa
+                              đón',
+                    car
+                  )
+                "
+              >
+                <div class="wrap-icon">
+                  <i class="icon-bo end-location-icon"></i>
+                </div>
+                <div class="wrap-address">
+                  <p>
+                    Đại học Nông Lâm, Bến xe buýt ĐH Nông Lâm Quốc lộ 1, Phường
+                    Đông Hòa, Quận Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam
+                  </p>
+                </div>
+              </a>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="line-form">
+        <label for="" class="label cl-gem"> Thông tin lộ trình </label>
+        <ul>
+          <li>Số km tối đa được đi:<strong> 50 km</strong></li>
+          <li>
+            Phí phụ thu vượt <strong>50 km</strong>:<strong> 6k/km</strong>
+          </li>
+          <li>
+            Phí phụ thu vượt <strong>2 giờ</strong>: <strong>60k/giờ</strong>
+          </li>
+        </ul>
+      </div>
+      <div class="line-form">
+        <label for="" class="label cl-gem"> Thông tin đưa đón </label>
+        <ul>
+          <li>Hỗ trợ đưa đón trong vòng<strong> 50 km</strong></li>
+          <li>Phí đưa đón<strong>10K /km</strong></li>
+          <li>Miễn phí đưa đón trong vòng <strong>5 km</strong></li>
+        </ul>
+      </div>
+      <div class="line-form car-bill">
+        <h4 class="label">Chi tiết giá</h4>
+        <div class="bill-wrapper">
+          <div class="group">
+            <p>Đơn giá thuê</p>
+            <p>1 090 000 / ngày</p>
+          </div>
+          <div class="group">
+            <p>Phí dịch vụ</p>
+            <p>1 090 000 / ngày</p>
+          </div>
+          <div class="group">
+            <p>Phí bảo hiểm</p>
+            <p>1 090 000 / ngày</p>
+          </div>
+          <div class="group has-line">
+            <p>Tổng phí thuê xe</p>
+            <p>1 253 500 x <strong> 2 ngày</strong></p>
+          </div>
+          <div class="group">
+            <p>Phí giao nhận xe</p>
+            <p>110 000 (6,5 km)</p>
+          </div>
+          <div class="group has-line">
+            <strong class="cl-gem">Tổng cộng</strong>
+            <strong>1 385 300đ</strong>
+          </div>
+          <div class="space m"></div>
+          <div class="promotion-code d-flex-bo flex-row-reverse-bo">
+            <a (click)="editPromo()">
+              <p>Mã khuyến mãi</p>
+            </a>
+          </div>
+          <div class="space m"></div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        class="btn btn-l w-fit"
+        (click)="confirmBooking(car)"
+        color="primary"
+      >
+        Đặt xe
+      </button>
+      <div class="space m"></div>
+    </form>
+  </ng-template>
+  <ng-template #selfDrivingForm>
+    <form [formGroup]="sdFormGroup" action="">
+      <div class="price">
+        <h1>
+          {{ car.service.defaultPrice | currency : "VND" }}<span>/ngày</span>
+        </h1>
+      </div>
+      <div class="line-form has-timer">
+        <label for="" class="label">Ngày nhận xe</label>
+        <div class="row sm-gutters">
+          <div class="col l-6">
+            <mat-form-field style="width: 100%" appearance="fill">
+              <mat-label>Chọn một ngày</mat-label>
+              <input
+                formControlName="startDate"
+                matInput
+                [matDatepicker]="pickUpDatePicker"
+                [min]="curDate"
+              />
+              <mat-datepicker-toggle matIconSuffix [for]="pickUpDatePicker">
+              </mat-datepicker-toggle>
+              <mat-datepicker #pickUpDatePicker> </mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col l-6">
+            <mat-form-field appearance="fill" style="width: 100%">
+              <mat-label>Chọn giờ bắt đầu thuê</mat-label>
+              <mat-select formControlName="startTime">
+                <mat-option
+                  *ngFor="let option of startAndReturnHrOptions"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="line-form has-timer">
+        <label for="" class="label">Ngày trả xe</label>
+        <div class="row sm-gutters">
+          <div class="col l-6">
+            <mat-form-field style="width: 100%" appearance="fill">
+              <mat-label>Chọn một ngày</mat-label>
+              <input
+                formControlName="endDate"
+                matInput
+                [matDatepicker]="returnDatePicker"
+                [min]="curDate"
+              />
+              <mat-datepicker-toggle matIconSuffix [for]="returnDatePicker">
+              </mat-datepicker-toggle>
+              <mat-datepicker #returnDatePicker> </mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col l-6">
+            <mat-form-field appearance="fill" style="width: 100%">
+              <mat-label>Chọn giờ bắt đầu thuê</mat-label>
+              <mat-select formControlName="endTime">
+                <mat-option
+                  *ngFor="let option of startAndReturnHrOptions"
+                  [value]="option.value"
+                >
+                  {{ option.label }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="notice-message" *ngIf="car.isDenyRent">
+          <p>
+            <i class="icon-bo icon-notice"></i>
+            Xe bận trong khoảng thời gian trên. Vui lòng đặt xe khác hoặc thay
+            đổi lịch trình thích hợp.
+          </p>
+        </div>
+        <div class="notice-message" *ngIf="!car.isDenyRent" style="color:rgb(0, 165, 80)">
+          <p>
+            <i class="fa-solid fa-circle-check"></i>
+            Thời gian thuê xe hợp lý
+          </p>
+        </div>
+        <div class="line-form notice-form">
+          <div class="d-flex-bo justify-content-between-bo">
+            <span>Thời gian nhận xe</span>
+            <div>
+              <span
+                >{{
+                  sdFormGroup.get("startDate")!.value | date:'dd/MM/yyyy'
+                }}-</span
+              >{{
+                timerUtilService.formatDuration(
+                  sdFormGroup.get("startTime")!.value
+                )
+              }}
+            </div>
+          </div>
+          <div class="d-flex-bo justify-content-between-bo">
+            <span>Thời gian trả xe</span>
+            <div>
+              <span
+                >{{
+                  sdFormGroup.get("endDate")!.value | date:'dd/MM/yyyy'
+                }}-</span
+              >{{
+                timerUtilService.formatDuration(
+                  sdFormGroup.get("endTime")!.value
+                )
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line-form local">
+        <div class="d-flex-bo justify-content-between-bo">
+          <label for="" class="label"> Địa điểm giao nhận xe </label>
+          <span
+            class="link-trip font-13"
+            (click)="
+              editDeliveryLocation(
+                'Địa điểm giao nhận
+                      xe',
+                car
+              )
+            "
+            >Thay đổi</span
+          >
+        </div>
+        <div class="note w-fit">
+          <a class="location-picker">
+            <svg class="icon-svg mr-r-5" viewBox="0 0 24 24">
+              <path
+                d="m12 22.5c5.799 0 10.5-4.701 10.5-10.5
+                              0-5.799-4.701-10.5-10.5-10.5-5.799 0-10.5
+                              4.701-10.5 10.5 0 5.799 4.701 10.5 10.5
+                              10.5zm0 1.5c6.6274 0 12-5.3726 12-12
+                              0-6.6274-5.3726-12-12-12-6.6274 0-12
+                              5.3726-12 12 0 6.6274 5.3726 12 12 12z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                d="m7.5 10.494c0-2.4778 2.0187-4.4937
+                              4.5-4.4937 2.4813 0 4.5 2.0159 4.5 4.4937 0
+                              1.2789-0.7204 2.918-2.1412 4.8719-1.0399
+                              1.4301-2.0635 2.484-2.1066 2.5281-0.0662
+                              0.068-0.1572 0.1063-0.2522
+                              0.1063s-0.186-0.0383-0.2522-0.1063c-0.0431-0.0442-1.0667-1.098-2.1066-2.5281-1.4208-1.9539-2.1412-3.593-2.1412-4.8719zm4.5095
+                              1.5064c0.9955 0 1.8025-0.8059 1.8025-1.8
+                              0-0.99411-0.807-1.8-1.8025-1.8s-1.8025
+                              0.80589-1.8025 1.8c0 0.9941 0.807 1.8 1.8025
+                              1.8z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+            <span>
+              {{ car.address.district.prefix }},
+              {{ car.address.district.name }} ,{{
+                car.address.province.domain
+              }}
+              {{ car.address.province.name }}</span
+            >
+          </a>
+        </div>
+        <ng-container *ngFor="let extraFee of car.service.extraFeeList">
+          <ng-container *ngIf="extraFee.code === 'delivery'">
+            <div class="line-form notice-form">
+              <div class="d-flex-bo justify-content-between-bo">
+                <p>Giao nhận xe tận nơi trong</p>
+                <p>{{ extraFee.limitValue }}{{ extraFee.unit }}</p>
+              </div>
+              <div class="d-flex-bo justify-content-between-bo">
+                <p>Phí giao xe vượt quá</p>
+                <p>{{ extraFee.fee }}/{{ extraFee.unit }}</p>
+              </div>
+              <ng-template #notDelivery>
+                Chủ xem không giao xe (Địa chỉ cụ thể sẽ được hiển thị sau khi
+                thanh toán)
+              </ng-template>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+      <div class="line-form local">
+        <label for="" class="label"> Phụ phí </label>
+        <div
+          class="box-extra-fee"
+          *ngFor="let extraFee of car.service.extraFeeList"
+        >
+          <ng-container *ngIf="extraFee.code === 'distance'">
+            <div class="d-flex-bo justify-content-between-bo">
+              <p>{{ extraFee.name }}</p>
+              <p>{{ extraFee.fee | currency : "VND" }}/{{ extraFee.unit }}</p>
+            </div>
+            <div class="note-fee">
+              Phụ phí phát sinh nếu lộ trình di chuyển vượt quá
+              <strong>{{ extraFee.limitValue }}{{ extraFee.unit }}</strong> khi
+              thuê xe 1 ngày
+            </div>
+          </ng-container>
+          <ng-container *ngIf="extraFee.code === 'time'">
+            <div class="d-flex-bo justify-content-between-bo">
+              <p>{{ extraFee.name }}</p>
+              <p>{{ extraFee.fee | currency : "VND" }}/{{ extraFee.unit }}</p>
+            </div>
+            <div class="note-fee">
+              Phụ phí phát sinh nếu hoàn trả xe trễ giờ. Trường hợp trễ quá
+              <strong>{{ extraFee.limitValue }}{{ extraFee.unit }}</strong
+              >, phụ phí thêm 1 ngày thuê
+            </div>
+          </ng-container>
+          <ng-container *ngIf="extraFee.code === 'cleaning'">
+            <div class="d-flex-bo justify-content-between-bo">
+              <p>{{ extraFee.name }}</p>
+              <p>{{ extraFee.fee | currency : "VND" }}</p>
+            </div>
+            <div class="note-fee">
+              Phụ phí phát sinh khi xe hoàn trả không đảm bảo vệ sinh (nhiều vết
+              bẩn, bùn cát, sình lầy...)
+            </div>
+          </ng-container>
+          <ng-container *ngIf="extraFee.code === 'deodorization'">
+            <div class="d-flex-bo justify-content-between-bo">
+              <p>{{ extraFee.name }}</p>
+              <p>{{ extraFee.fee | currency : "VND" }}</p>
+            </div>
+            <div class="note-fee">
+              Phụ phí phát sinh khi xe hoàn trả bị ám mùi khó chịu (mùi thuốc
+              lá, thực phẩm nặng mùi...)
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="car-bill">
+        <label class="label">Chi tiết giá</label>
+        <div class="bill-wrapper">
+          <div class="group">
+            <p>Đơn giá thuê</p>
+            <p>{{ car.service.defaultPrice | currency : "VND" }}/ ngày</p>
+          </div>
+          <div class="group">
+            <p>Phí dịch vụ</p>
+            <p>{{ car.insuranceFee | currency : "VND"}}</p>
+          </div>
+          <div class="group">
+            <p>Phí bảo hiểm</p>
+            <p>{{ car.appServiceFee | currency : "VND" }}</p>
+          </div>
+          <div class="group" *ngIf="car.discountPrice > 0">
+            <p>Áp dung mã giảm</p>
+            <p>-{{ car.discountPrice | currency : "VND"}}</p>
+          </div>
+          <div class="group has-line">
+            <p>Tổng phí thuê xe</p>
+            <p>
+              {{ car.rentalFee | currency : "VND" }} x
+              <strong> {{ car.rentalDay }} ngày</strong>
+            </p>
+          </div>
+          <div class="group has-line">
+            <strong>Tổng cộng</strong>
+            <strong>{{ car.totalFee | currency : "VND" }}</strong>
+          </div>
+          <div class="space m"></div>
+          <div class="promotion-code d-flex-bo flex-row-reverse-bo">
+            <a (click)="editPromo()">
+              <p>Mã khuyến mãi</p>
+            </a>
+          </div>
+          <div class="space m"></div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        class="btn btn-l w-fit"
+        (click)="confirmBooking(car)"
+        color="primary"
+        [disabled]="car.isDenyRent"
+      >
+        Đặt xe
+      </button>
+      <div class="space m"></div>
+    </form>
+  </ng-template>
+</div>

@@ -1,0 +1,94 @@
+//modifier common style
+  .fix-img{
+    padding: 0;
+    height: 50%;
+  }  
+  .booking-oto-avatar{
+    width: 120px;
+    height: 120px;
+  }
+//
+.cancel-btn{
+    background-color: #000;
+    color: #fff;
+}
+.detail{
+}
+.detail__info{
+    padding:15px 0
+}
+.detail__info .about-owner{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.detail__info .about-owner .about-owner__name{
+    font-size: 1.6rem;
+    margin-top: 10px !important;
+}
+.detail__name{
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.detail__owner__line{
+    margin-bottom: 20px;
+}
+.car-location{
+    
+}
+.car-location #location-map{
+    width: 100%;
+    height: 350px;
+    background-color: #ccc;
+    margin: 10px 0 20px;
+}
+.price{}
+.price-table{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.price-table__line{
+    border-bottom: 1px solid #ccc;
+    padding-bottom:10px;
+    margin-bottom: 10px
+}
+.price-table__line{
+    border-bottom: 1px solid #ccc;
+    padding-bottom:10px;
+    margin-bottom: 10px
+}
+.price-table .price-detail{
+    min-width: 200px;
+}
+.price-table .total{
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+.license-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.license-list .license-item{
+    display: flex;
+    margin-bottom: 10px;
+    flex: 0 0 33.33333333333%
+}
+.license-list .license-item .icon-wrapper{
+    margin-right: 5px;
+}
+.cancel-license{}
+
+.cancel-license ul{
+    padding-left: 12px
+}    
+.cancel-license li{
+    list-style: disc;
+}
+.cancel-license .note{
+    color: blue
+}

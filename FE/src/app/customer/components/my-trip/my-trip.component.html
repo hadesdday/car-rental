@@ -1,0 +1,52 @@
+<div class="my-trip">
+    <div class="my-trip__header">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="mat-tab-wrapper">
+                        <mat-tab-group animationDuration="2000ms" [(selectedIndex)]="sltTabIdx" *ngIf="(userTrip$ | async) as userTrip">
+                            <mat-tab label="Chuyến hiện tại">
+                                <ng-container *ngIf="userTrip.rentalCars.length == 0; else rentalCarsTempRef">
+                                    <a href="">aaa</a>
+                                    <ng-container [ngTemplateOutlet]="emptyTrip">
+                                    </ng-container>
+                                </ng-container>
+                            </mat-tab>
+                            <mat-tab label="Lịch sử chuyến">
+                                <ng-container *ngIf="userTrip.rentedCars.length == 0; else rentedCarsTempRef">
+                                    <ng-container [ngTemplateOutlet]="emptyTrip">
+                                    </ng-container>
+                                </ng-container>
+                            </mat-tab>
+                            <ng-template #rentalCarsTempRef>
+                                <div class="row">
+                                    <div class="col l-12" *ngFor="let i of userTrip.rentalCars">
+                                        <app-trip-order-overview [rentalCar]="i"></app-trip-order-overview> 
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <ng-template #rentedCarsTempRef>
+                                <div class="row">
+                                    <div class="col l-12" *ngFor="let i of userTrip.rentedCars">
+                                        <app-trip-order-overview [rentalCar]="i"></app-trip-order-overview> 
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </mat-tab-group>
+                        <div class="filter" (click)="openFilterDialog()">
+                            <button class="btn btn-m" mat-stroked-button color="primary"><i class="mr-r-10 fa-solid fa-filter"></i>Bộ lọc</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #emptyTrip>
+    <div class="empty-trip">
+        <img src="https://www.mioto.vn/static/media/trips.d2edc6d9.svg" alt="">
+        <p>Bạn chưa có chuyến nào, hãy thuê ngay một chiếc xe để trải nghiệm dịch vụ của Mioto</p>
+        <button mat-raised-button class="btn btn-m" color="primary">Tìm xe ngay</button>
+    </div>
+</ng-template>

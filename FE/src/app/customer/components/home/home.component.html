@@ -1,0 +1,26 @@
+<div class="home">
+    <app-banner></app-banner>
+    <app-promo>
+    </app-promo>
+    <app-prominent-place [primaryClr]="'var(--first-purple-color)'" [secondaryClr]="'var(--second-purple-color)'"
+        [tertiaryClr]="'var(--third-purple-color)'">
+        <h3 class="title-car"> {{'_home.popularSelfDrive'|i18next}}</h3>
+        <h3 class="airport-note"> {{'common.pickup'|i18next}} <br> {{'common.airport'|i18next}}</h3>
+    </app-prominent-place>
+    <app-prominent-place [primaryClr]="'var(--first-dark-cyan-color)'" [secondaryClr]="'var(--second-dark-cyan-color)'"
+        [tertiaryClr]="'var(--third-dark-cyan-color)'">
+        <h3 class="title-car"> {{'_home.popularWithDriver'|i18next}}
+        </h3>
+        <h3 class="airport-note">{{'common.pickup' | i18next}} <br> {{'common.airport'|i18next}}
+        </h3>
+    </app-prominent-place>
+    <app-owner></app-owner>
+    <app-prominent-car>
+        <h3 class="title-car"> {{'_home.popularCarSelfDrive'|i18next}}
+        </h3>
+    </app-prominent-car>
+    <!-- <app-prominent-car>
+        <h3 class="title-car"> {{'_home.popularCarWithDriver'|i18next}}
+        </h3>
+    </app-prominent-car> -->
+</div>

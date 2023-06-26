@@ -1,0 +1,49 @@
+.footer {
+  color: var(--primary-text-color);
+  font-size: 1.6rem;
+  bottom: 0;
+}
+
+.footer.footer--bg {
+  background-color: var(--primary-color);
+}
+
+.footer-container {
+  padding: 80px 10px;
+}
+
+.about-us {
+  margin-bottom: 40px;
+}
+
+.payment .title {
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.payment-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.payment-logo-wrapper {
+  width: 85px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: var(--primary-text-color);
+}
+
+.payment-logo-wrapper:not(:first-child) {
+  margin-left: 10px;
+}
+
+.payment-logo-wrapper .fix-img {
+  padding-bottom: 56.5%;
+}
+
+.payment-logo-wrapper .fix-img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=customer-footer.component.css.map */

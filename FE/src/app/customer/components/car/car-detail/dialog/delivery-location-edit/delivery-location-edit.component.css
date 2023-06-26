@@ -1,0 +1,96 @@
+* {
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: -.5px;
+}
+
+.modal-container {
+  min-width: 570px;
+}
+
+.modal-header {
+  padding: 60px 20px 40px;
+}
+
+.modal-header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.modal-body {
+  padding: 0 20px 48px;
+}
+
+form.form-default .primary-text {
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 15px;
+}
+
+.form-default .line-form {
+  margin-bottom: 20px;
+}
+
+.form-default p {
+  margin: 0 0 20px;
+  color: #a9aaad;
+  font-size: 1.4rem;
+}
+
+.form-default .line-form label.label {
+  display: block;
+  margin-bottom: 10px;
+  color: #141414;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.form-default .line-form .subtext {
+  color: #6e6e6e;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.notice-form {
+  background-color: rgba(250, 125, 25, 0.1);
+  padding: 1rem 1.5rem;
+  margin-bottom: 10px;
+}
+
+.notice-form p {
+  margin-bottom: 10px;
+  color: #141414;
+  line-height: 20px;
+}
+
+.notice-form p:last-child {
+  margin-bottom: 0;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content {
+  color: black;
+}
+
+::ng-deep .mat-mdc-checkbox.mat-accent .mdc-checkbox--selected ~ .mdc-checkbox__ripple {
+  background-color: var(--gemstone-color-hover);
+}
+
+::ng-deep .mat-ripple {
+  display: none;
+}
+
+.mat-mdc-radio-button.mat-accent {
+  --mdc-radio-disabled-selected-icon-color: #000;
+  --mdc-radio-disabled-unselected-icon-color: #000;
+  --mdc-radio-unselected-focus-icon-color: #212121;
+  --mdc-radio-unselected-hover-icon-color: #212121;
+  --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-radio-selected-focus-icon-color: var(--gemstone-color);
+  --mdc-radio-selected-hover-icon-color: var(--gemstone-color);
+  --mdc-radio-selected-icon-color: var(--gemstone-color);
+  --mdc-radio-selected-pressed-icon-color: var(--gemstone-color);
+  --mat-mdc-radio-ripple-color: #000;
+  --mat-mdc-radio-checked-ripple-color: var(--gemstone-color);
+}
+/*# sourceMappingURL=delivery-location-edit.component.css.map */

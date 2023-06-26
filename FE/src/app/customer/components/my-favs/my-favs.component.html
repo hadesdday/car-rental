@@ -1,0 +1,53 @@
+<div class="fav-banner">
+    <div class="fav-banner-image">
+    </div>
+    <div class="content">
+        <div class="grid m-wide">
+            <div class="d-flex-bo align-items-center-bo justify-content-between-bo">
+                <h1 class="title">Xe yêu  thích của tôi</h1>
+                <div class="mode-toggle">
+                    <button class="sd-button" (click)="modeType='sd'" [class.active]="modeType === 'sd'">Xe tự lái</button>
+                    <button class="wd-button" (click)="modeType='wd'" [class.active]="modeType === 'wd'">Xe có tài xế</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div class="tab-list">
+        <div class="grid m-wide">
+            <div class="tab-item" *ngIf="modeType === 'sd'">
+                <ng-container *ngIf="sdFavCars.length > 0; else notFavCarTemplateRef">
+                    <ng-container [ngTemplateOutlet]="sdItemsTemplateRef"></ng-container>
+                </ng-container>
+            </div>
+            <div class="tab-item" *ngIf="modeType === 'wd'">
+                <ng-container *ngIf="wdFavCars.length > 0; else notFavCarTemplateRef">
+                    <ng-container [ngTemplateOutlet]="wdItemsTemplateRef"></ng-container>
+                </ng-container>
+            </div>
+            <ng-template #notFavCarTemplateRef>
+                <div class="my-favs__empty">
+                    <div class="d-flex-bo justify-content-center-bo align-items-center-bo flex-col-bo">
+                        <img src="https://www.mioto.vn/static/media/trips.d2edc6d9.svg" alt="">
+                        <h4>Bạn chưa có chuyến yêu thích</h4>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<ng-template #sdItemsTemplateRef>
+    <div class="row">
+        <div *ngFor="let car of sdFavCars" (click)="navigateCarDetail()" #imageCarouselItem class="car-card  col l-4 c-3">
+            <app-car-card [car]="car"></app-car-card>
+        </div>
+    </div>
+</ng-template>
+<ng-template #wdItemsTemplateRef>
+    <div class="row">
+        <div *ngFor="let car of wdFavCars" (click)="navigateCarDetail()" #imageCarouselItem class="car-card  col l-4 c-3">
+            <app-car-card [car]="car"></app-car-card>
+        </div>
+    </div>
+</ng-template>

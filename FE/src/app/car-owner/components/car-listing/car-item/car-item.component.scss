@@ -1,0 +1,157 @@
+.car {
+    &__listing {
+      &-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5em;
+      }
+      &-content {
+        gap: 30px;
+      }
+      &-column {
+        background-color: #fff;
+        padding: 20px;
+        &:nth-child(1) {
+          flex: 0 0 25%;
+          height: 20vh;
+          mat-form-field {
+            margin-top: 10px;
+            color: #000;
+          }
+        }
+        &:nth-child(2) {
+          border-radius: 3px;
+          flex: 0 0 70%;
+        }
+      }
+      &-item {
+        flex: 0 0 47%;
+  
+        .car__status {
+          position: relative;
+          padding: 1px 0px;
+          top: 10%;
+          left: 5px;
+          z-index: 10;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 20px;
+          color: #fff;
+          height: 35px;
+          &.suspend {
+            width: 230px;
+          }
+          &.active {
+            width: 180px;
+          }
+          .status-text {
+            font-size: 120%;
+            margin-top: 5px;
+            &::before {
+              content: "";
+              padding: 0px 10px;
+              margin-left: 10px;
+              margin-right: 10px;
+              border-radius: 50%;
+            }
+            //status div
+            &.suspended::before {
+              border: 2px solid #a7aaae;
+              background-color: var(--secondary-text);
+            }
+            //status div
+            &.active::before {
+              background-color: var(--gemstone-color);
+            }
+          }
+        }
+  
+        h1 {
+          padding-bottom: 5px;
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+        span {
+          font-size: 120%;
+        }
+        .text-price {
+          color: var(--gemstone-color);
+          padding-top: 15px;
+          padding-bottom: 30%;
+          border-bottom: 2px solid var(--secondary-color);
+        }
+      }
+      &-action {
+        padding: 10px 0;
+        button {
+          padding: 15px;
+          margin-right: 20px;
+          width: 45%;
+          border-radius: 3px;
+          border-color: transparent;
+          font-weight: 600;
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          font-size: 90%;
+          &:hover {
+            opacity: 0.8;
+          }
+          &.btn__detail {
+            background-color: #000;
+          }
+          &.btn__management {
+            background-color: var(--gemstone-color);
+          }
+        }
+      }
+    }
+    &__list {
+      gap: 25px;
+      padding-top: 10px;
+    }
+  }
+  
+  //mobile
+  @media screen and (max-width: 739px) {
+    .car__listing {
+      &-column {
+        flex: 0 0 100% !important;
+      }
+      &-action {
+        button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  
+  //tablet
+  @media screen and (min-width: 740px) and (max-width: 1023px) {
+    .car__listing {
+      &-column {
+        flex: 0 0 100% !important;
+      }
+      &-action {
+        button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  //desktop and larger
+  @media screen and (min-width: 1023px) {
+    .car__listing {
+      &-action {
+        button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  

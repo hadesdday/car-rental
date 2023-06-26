@@ -1,0 +1,315 @@
+.owner__register-form {
+  min-height: 100vh;
+  background: var(--secondary-color);
+}
+
+.owner__register-container {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.owner__register-content {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+::ng-deep.mat-step-icon {
+  padding: 30px;
+  font-size: 150%;
+}
+
+::ng-deep.mat-step-icon-state-number {
+  font-weight: 600;
+}
+
+::ng-deep.mat-step-icon-state-edit,
+::ng-deep .mat-step-icon-selected {
+  background-color: var(--gemstone-color) !important;
+}
+
+::ng-deep.mat-horizontal-content-container {
+  margin: 30px 10px;
+}
+
+::ng-deep.mat-horizontal-stepper-header-container {
+  margin: 20px 100px;
+}
+
+::ng-deep.mat-mdc-slider.mat-primary {
+  --mdc-slider-handle-color: var(--gemstone-color);
+  --mdc-slider-focus-handle-color: var(--gemstone-color);
+  --mdc-slider-hover-handle-color: var(--gemstone-color);
+  --mdc-slider-active-track-color: var(--gemstone-color);
+  --mdc-slider-inactive-track-color: var(--secondary-text);
+  --mdc-slider-with-tick-marks-active-container-color: #fff;
+  --mdc-slider-with-tick-marks-inactive-container-color: var(
+      --gemstone-color
+    );
+  --mat-mdc-slider-ripple-color: var(--gemstone-color);
+  --mat-mdc-slider-hover-ripple-color: var(--gemstone-color-hover);
+  --mat-mdc-slider-focus-ripple-color: var(--gemstone-color-hover);
+}
+
+.register__car-title {
+  margin-top: 20px;
+}
+
+.register__car-subtitle {
+  margin: 1em 0 2.5em;
+  font-size: 140%;
+}
+
+.input__car-form {
+  width: 47%;
+}
+
+.basic__information-container {
+  gap: 40px;
+}
+
+.basic__information-field {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 47%;
+          flex: 0 0 47%;
+}
+
+.car__information-features {
+  gap: 40px;
+}
+
+.car__information-feature {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+}
+
+.car__features-item {
+  border: 2px solid var(--secondary-text);
+  padding: 20px 0;
+  font-size: 170%;
+  border-radius: 5px;
+}
+
+.car__features-item i {
+  font-size: 220%;
+}
+
+.car__features-item.active {
+  border: 2px solid var(--gemstone-color);
+}
+
+.car__information__footer {
+  margin-top: 10em;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+}
+
+.car__information__footer .btn__primary,
+.car__information__footer .btn__secondary {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 46%;
+          flex: 0 0 46%;
+  padding: 2em 0;
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+.car__information__footer .btn__primary {
+  background-color: var(--gemstone-color);
+  color: var(--white);
+}
+
+.car__information__footer .btn__secondary {
+  background-color: var(--secondary-text);
+  color: var(--white);
+}
+
+.discount__status-container {
+  gap: 0px;
+}
+
+.discount__status-field {
+  margin-bottom: 5px;
+}
+
+.discount__subtitle {
+  font-size: 150%;
+}
+
+.discount__field {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 47%;
+          flex: 0 0 47%;
+}
+
+.discount__field-group {
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.discount__field mat-slider {
+  width: 90%;
+}
+
+.flex-end {
+  direction: ltr;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.modal__address {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__address-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal__address-title {
+  text-align: center;
+  padding: 3em;
+  font-size: 150%;
+}
+
+.modal__address-fields {
+  margin: 20px;
+}
+
+.modal__address-fields p.text-secondary {
+  margin: 10px 0;
+}
+
+.btn__location-action {
+  padding: 15px 30px;
+  text-align: center;
+  width: 49%;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 140%;
+  color: #fff;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.btn__location-action:hover {
+  opacity: 0.7;
+}
+
+.btn__location-action[disabled] {
+  opacity: 0.5;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fast__rent-6 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 47%;
+          flex: 0 0 47%;
+}
+
+.address__div-input {
+  border: 2px solid var(--secondary-color);
+  background-color: #f8f8f8;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+.ico__upload {
+  font-size: 300%;
+}
+
+.btn__upload {
+  background-color: var(--gemstone-color);
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 739px) {
+  ::ng-deep.mat-step-icon {
+    padding: 20px;
+  }
+  ::ng-deep.mat-horizontal-stepper-header-container {
+    margin: 0px;
+  }
+  .input__car-form {
+    width: 100%;
+  }
+  .basic__information-field {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .car__information-feature {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+  }
+  .car__information__footer {
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+  }
+  .mobile-fw-flex {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .modal__address-content {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+  .car__information-feature {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 27%;
+            flex: 0 0 27%;
+    gap: 0px;
+  }
+  .modal__address-content {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .car__information-feature {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 28%;
+            flex: 0 0 28%;
+    gap: 20px;
+  }
+}
+/*# sourceMappingURL=register-form.component.css.map */

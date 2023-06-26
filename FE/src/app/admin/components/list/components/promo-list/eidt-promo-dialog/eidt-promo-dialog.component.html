@@ -1,0 +1,90 @@
+<div class="promo-edit__wrapper">
+    <h2 mat-dialog-title>Chỉnh sửa khuyến mãi</h2>
+    <mat-dialog-content>
+        <form (ngSubmit)="obSubmitUpdatePromo(promoFG.value)"
+        class="promo-form" [formGroup]="promoFG">
+        <div class="d-flex-bo flex-col-reverse-bo">
+            <mat-form-field appearance="fill">
+                <mat-label>Tiêu đề</mat-label>
+                <input formControlName="title" matInput>
+            </mat-form-field>
+            <div class="pd-b-10" formArrayName="contents"
+                *ngIf="contentsArray.length !=
+                0">
+                <ng-container *ngFor="let c of contentsArray.controls;
+                    index as i">
+                    <mat-form-field class="w-fit">
+                        <mat-label>Nội dung {{i + 1}}</mat-label>
+                        <textarea [formControlName]="i" matInput></textarea>
+                    </mat-form-field>
+                    <div class="d-flex-bo justify-content-end-bo"
+                        [style.margin-bottom]="'20px'">
+                        <button (click)="addContent()" type="button"
+                            mat-raised-button color="primary"
+                            class="mr-r-10">Thêm</button>
+                        <button (click)="removeContent(i)" type="button"
+                            mat-raised-button color="warn">Xoá</button>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="row">
+                <div class="col l-4">
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Số lượng</mat-label>
+                        <input type="number" formControlName="quantity"
+                            matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col l-4">
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Phần trăm giảm giá</mat-label>
+                        <input type="number"
+                            formControlName="discountPercent" matInput>
+                        <span matTextPrefix>%</span>
+                    </mat-form-field>
+                </div>
+                <div class="col l-4">
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Tối đa</mat-label>
+                        <input type="number"
+                            formControlName="maxPrice" matInput>
+                        <span matTextPrefix>₫</span>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l-6">
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Ngày kích hoạt</mat-label>
+                        <input formControlName="startDate" matInput
+                            [matDatepicker]="startPicker">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix
+                            [for]="startPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #startPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col l-6">
+                    <mat-form-field class="w-fit" appearance="fill">
+                        <mat-label>Ngày hết hạn</mat-label>
+                        <input formControlName="endDate" matInput
+                            [matDatepicker]="picker">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix
+                            [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <mat-radio-group formControlName="status" aria-label="Select an option">
+                    <mat-radio-button value="ACTIVATED">Kích hoạt</mat-radio-button>
+                    <mat-radio-button value="UNACTIVATED">Không kích hoạt</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="d-flex-bo justify-content-end-bo">
+            <button type="submit" mat-raised-button color="primary"
+                [disabled]="promoFG.invalid">Thêm mới</button>
+        </div>
+        </form>
+    </mat-dialog-content>
+</div>

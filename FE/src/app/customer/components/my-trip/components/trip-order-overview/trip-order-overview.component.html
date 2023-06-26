@@ -1,0 +1,74 @@
+<div class="order-overview" *ngIf="rentalCar">
+    <div class="order-overview__status">
+        <div class="status-wrap">
+            <div class="status-message">
+                <i class="fa-solid fa-car mr-r-5"></i>
+                <span *ngIf="rentalCar.status === 'RENTED'">Đang thuê</span>
+                <span *ngIf="rentalCar.status === 'COMPLETED'">Hoàn thành</span>
+            </div>
+            <div class="status">
+                <div class="dot active"></div>
+                <p [style]="'margin: 0'" *ngIf="rentalCar.status === 'RENTED'"> Đang trong chuyến</p>
+                <p [style]="'margin: 0'" *ngIf="rentalCar.status === 'COMPLETED'"> Đã kết thúc chuyến</p>
+            </div>
+        </div>
+        <div class="timer">1 tháng trước</div>
+    </div>
+    <div class="order-overview__info">
+        <h1 class="order-overview__title">{{rentalCar.car.model.name}} {{rentalCar.car.yearOfManufacture}}</h1>
+        <div class="row order-overview__body">
+            <div class="col l-6">
+                <div class="cover-image">
+                    <img
+                        src="https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/toyota_rush_2020/p/g/2020/07/27/14/M8rokWqgWGq-igXzKyqGmA.jpg"
+                        alt="" />
+                </div>
+            </div>
+            <div class="col l-6">
+                <div class="desc">
+                    <div class="details">
+                        <div class="detail__item">
+                            <strong>Tên chủ xe: </strong> <span>{{rentalCar.user.fullName}}</span>
+                        </div>
+                        <div class="detail__item">
+                            <strong>Loại xe: </strong>
+                            <div class="form-tag" [style]="
+                                'backgroundColor: rgb(231,234,239); color:
+                                rgb(120,120,120)'
+                                ">
+                                <span *ngIf="rentalCar.car.transmission === 'AUTOMATIC'">Số tự động</span>
+                                <span *ngIf="rentalCar.car.transmission === 'MANUAL'">Số sàn</span>
+                            </div>
+                        </div>
+                        <div class="detail__item">
+                            <strong>Chế độ: </strong>
+                            <div class="form-tag">{{rentalCar.car.transmission}}</div>
+                        </div>
+                        <div class="detail__item">
+                            <strong>Đơn giá thuê: </strong>
+                            <span>{{rentalCar.rentalPrice | currency:
+                                'VND'}}</span>
+                        </div>
+                        <div class="detail__item">
+                            <strong>Bắt đầu: </strong>
+                            <span>{{rentalCar.startDate | date :'short'}}</span>
+                        </div>
+                        <div class="detail__item end-time">
+                            <strong>Kết thúc: </strong>
+                            <span>{{rentalCar.endDate | date :'short'}}</span>
+                        </div>
+                    </div>
+                    <div class="total-payment">
+                        Tổng thanh toán:<span>
+                            {{rentalCar.rentalPrice | currency:
+                            'VND'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order-overview__actions">
+        <button mat-raised-button color="primary" class="btn btn-m">Thuê lại</button>
+        <button mat-raised-button  class="btn btn-m">Đánh giá</button>
+    </div>
+</div>

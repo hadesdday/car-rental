@@ -1,0 +1,30 @@
+.owner{
+    background-image: url('https://www.mioto.vn/static/media/bg-main-2.32d315cd.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 58%;
+}
+.owner-wrapper{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.inner__wrapper{
+    max-width: 420px;
+    color: var(--primary-text-color);
+}
+.inner__wrapper h2{
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.25;
+    font-size: 4rem;
+}
+.inner__wrapper p{
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.btn-secondary{
+    border: 1px solid #fff;
+}   
